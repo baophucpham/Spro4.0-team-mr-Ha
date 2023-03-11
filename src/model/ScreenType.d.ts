@@ -1,0 +1,50 @@
+import { BottomTabScreenProps } from '@react-navigation/bottom-tabs'
+import { NativeStackNavigationOptions } from '@react-navigation/native-stack'
+import { StackNavigationOptions, StackScreenProps } from '@react-navigation/stack'
+import { BottomSheetProps as BTSProps } from 'component/bottomSheet/BottomSheet'
+import { BottomSheetSwipeProps as BTSSProps } from 'component/bottomSheet/BottomSheetSwipe'
+import { SelectCityProps } from 'component/customView/SelectCity'
+import { SelectCountryProps } from 'component/customView/SelectCountry'
+import { StyleProp, ViewStyle } from 'react-native'
+
+export interface ScreenProps extends StackScreenProps<any> {}
+export interface TabScreenProps extends BottomTabScreenProps<any> {}
+
+export interface ScreenParams extends NavigateParams<any> {
+	option?: StackNavigationOptions
+	screen?: string
+	params?: any
+}
+export type NavigateParams<T> = {
+	[Property in keyof T]: any
+}
+
+// @ts-ignore
+export interface ModalsParams extends AlertParams, BTSProps, BTSSProps {
+	type?: 'alert' | 'bottom' | 'bottom-swipe'
+	backgroundColor?: string
+	closeOnTouchOutSide?: boolean
+}
+
+export interface AlertParams {
+	title?: string
+	content?: string
+	buttonSubmit?: string
+	buttonCancel?: string
+	onSubmit?: () => void
+	onCancel?: () => void
+}
+
+export interface DialogProps extends SelectCountryProps, SelectCityProps {
+	screen?: any
+	style?: StyleProp<ViewStyle>
+	options?: NativeStackNavigationOptions
+}
+
+export interface BottomSheetSwipeProps extends BTSSProps {
+	closeOnTouchOutSide?: boolean
+}
+
+export interface BottomSheetProps extends BTSProps {
+	closeOnTouchOutSide?: boolean
+}
