@@ -20,6 +20,7 @@ const images = {
 	ic_avatar: require('./images/ic_avatar.png'),
 	ic_edit: require('./images/ic_edit.png'),
 	ic_arrow_down: require('./images/ic_arrow_down.png'),
+	ic_arrow_down_vector: require('./images/ic_arrow_down_vector.png'),
 	ic_location: require('./images/ic_location.png'),
 	ic_calendar: require('./images/ic_calendar.png'),
 	ic_woman: require('./images/ic_woman.png'),

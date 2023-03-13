@@ -16,4 +16,7 @@ export const Stacks = {
 	HomeStack: 'HomeStack',
 	Modals: 'Modals',
 	Dialog: 'Dialog',
+	HomeTask: 'HomeTask',
+	Notification: 'Notification',
+	More:'More',
 }

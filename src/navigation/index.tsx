@@ -12,6 +12,9 @@ import { Platform } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { enableScreens } from 'react-native-screens'
 import { Dialog, Modals } from 'screen/modal'
+import { More } from 'screen/more'
+import { Notification } from 'screen/notification'
+import { HomeTask } from 'screen/task'
 import { Welcome } from 'screen/welcome'
 import Device from 'utils/Device'
 import AuthenStack from './authenStack/AuthenStack'
@@ -40,6 +43,22 @@ const AppStack: React.FC = () => {
 				<Stack.Screen name={Stacks.Welcome} component={Welcome} />
 				<Stack.Screen name={Stacks.AuthenStack} component={AuthenStack} />
 				<Stack.Screen name={Stacks.HomeStack} component={HomeStack} />
+				<Stack.Screen name={Stacks.HomeTask} component={HomeTask}/>
+				<Stack.Screen name={Stacks.Notification} component={Notification}/>
+				<Stack.Screen name={Stacks.More} component={More} options={{
+						animation: 'default',
+						// gestureEnabled: false,
+						animationDuration: 400,
+						...(Navigator.defaultOptions as any),
+						headerTitleStyle: Style.h6,
+						headerLeft: () => (
+							<NavigationBackButton
+								icon={images.ic_close}
+								style={{ paddingHorizontal: sizes.s8 }}
+							/>
+						),
+					}}/>
+
 				<Stack.Screen
 					name={Stacks.Modals}
 					component={Modals}
