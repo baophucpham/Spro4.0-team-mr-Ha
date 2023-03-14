@@ -31,7 +31,12 @@ const InputCode: React.FC<ScreenProps> = ({ navigation }) => {
 						onChangeText={setCode}
 						autoCapitalize="characters"
 					/>
-					<Buttons title="Tiếp tục" style={Style.top32} disabled={!code} onPress={onPress} />
+					<Buttons
+						title="Tiếp tục"
+						style={Style.top32}
+						//  disabled={!code}
+						onPress={onPress}
+					/>
 				</View>
 			</ImageBackground>
 		</Flex>

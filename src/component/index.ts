@@ -29,6 +29,7 @@ export { default as ToastDebug } from './toast/ToastDebug';
 export { default as Checkbox } from './checkbox/Checkbox';
 export { default as RangeSlide } from './rangeSlider/RangeSlide';
 export { default as Input } from './input/Input';
+export { default as Separator } from './separator/Separator';
 // custom view for modals
 export { default as ChangePassSuccess } from './customView/ChangePassSuccess';
 export { default as ImagePickerPopup } from './customView/ImagePickerPopup';

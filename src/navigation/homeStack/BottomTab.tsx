@@ -26,8 +26,8 @@ const TabScreen = [
 	{
 		name: 'More',
 		screen: More,
-		icon: images.ic_search,
-		icon_selected: images.ic_search,
+		icon: images.ic_more,
+		icon_selected: images.ic_more_selected,
 		badge: 0,
 	},
 	// {

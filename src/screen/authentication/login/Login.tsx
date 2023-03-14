@@ -35,7 +35,7 @@ const Login: React.FC<ScreenProps> = ({ navigation }) => {
 					<Buttons
 						title="Tiếp tục"
 						style={Style.top32}
-						disabled={!username || !password}
+						// disabled={!username || !password}
 						onPress={onPress}
 					/>
 				</View>

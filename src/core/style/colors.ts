@@ -21,10 +21,11 @@ export const colors = {
 	text: '#262626',
 	borderInput: '#DFDFDF',
 	placeholder: '#8C8C8C',
-	ink2:'#595959',
+	ink2: '#595959',
+	secondary_text: '#8D8D8D',
+	separator: '#F7F7F7',
 
 	primary_text: '#3B3A47',
-	secondary_text: '#6C6B75',
 	disable_text: '#B6B6BF',
 
 	border: '#CECED1',

@@ -44,9 +44,7 @@ const Avatar: React.FC<Props> = ({
 				style={[styles.avatar, { width: size, height: size }]}
 			/>
 			{isEdit && (
-				<View style={styles.ic_edit}>
-					<FastImage source={images.ic_edit} style={Style.icon16} />
-				</View>
+				<FastImage source={images.ic_camera_avatar} style={[Style.icon24, styles.ic_edit]} />
 			)}
 		</TouchableOpacity>
 	);
@@ -62,11 +60,8 @@ const styles = StyleSheet.create({
 		borderRadius: sizes.s104,
 	},
 	ic_edit: {
-		backgroundColor: colors.primary,
-		padding: sizes.s10,
-		borderRadius: sizes.s30,
 		position: 'absolute',
-		right: 0,
-		bottom: 0,
+		right: -sizes.s5,
+		bottom: -sizes.s5,
 	},
 });

@@ -18,4 +18,11 @@ export const images = {
 	ic_Running: require('./images/ic_Running.png'),
 	ic_ShareTask: require('./images/ic_ShareTask.png'),
 	ic_search: require('./images/ic_search.png'),
+	ic_camera_avatar: require('./images/ic_camera_avatar.png'),
+	ic_more: require('./images/ic_more.png'),
+	ic_more_selected: require('./images/ic_more_selected.png'),
+	ic_avatar: require('./images/ic_avatar.png'),
+	ic_next: require('./images/ic_next.png'),
+	ic_setting: require('./images/ic_setting.png'),
+	ic_logout: require('./images/ic_logout.png'),
 };
