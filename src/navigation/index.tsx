@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import {
 	createNativeStackNavigator,
-	NativeStackNavigationOptions
+	NativeStackNavigationOptions,
 } from '@react-navigation/native-stack';
 import { images } from 'assets';
 import { Stacks } from 'common';

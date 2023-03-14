@@ -2,8 +2,9 @@ import { images } from 'assets';
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { TabScreenProps } from 'model';
 
-const HomeTask = () => {
+const HomeTask: React.FC<TabScreenProps> = () => {
 	return (
 		<View style={styles.container}>
 			<View style={styles.quickReport}>
