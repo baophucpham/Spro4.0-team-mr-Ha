@@ -29,21 +29,21 @@ const HomeTask = () => {
             <Text>Hoàn thành</Text>
             <View style={styles.viewIconNumberCard}>
               <Image style={styles.icon} source={images.ic_finish}/>
-              <Text>02</Text>
+              <Text style={styles.mumberCard}>02</Text>
             </View>
           </View>
           <View style={styles.card}>
             <Text>Quá hạn</Text>
             <View style={styles.viewIconNumberCard}>
               <Image style={styles.icon} source={images.ic_overrated}/>
-              <Text>02</Text>
+              <Text style={styles.mumberCard}>02</Text>
             </View>
           </View>
           <View style={styles.card}>
             <Text>Chưa quá hạn</Text>
             <View style={styles.viewIconNumberCard}>
               <Image style={styles.icon} source={images.ic_waiting}/>
-              <Text>02</Text>
+              <Text style={styles.mumberCard}>02</Text>
             </View>
           </View>
         </View>
@@ -52,21 +52,21 @@ const HomeTask = () => {
             <Text>Phản hồi</Text>
             <View style={styles.viewIconNumberCard}>
               <Image style={styles.icon} source={images.ic_Feedback}/>
-              <Text>02</Text>
+              <Text style={styles.mumberCard}>02</Text>
             </View>
           </View>
           <View style={styles.card}>
             <Text>Mở lại</Text>
             <View style={styles.viewIconNumberCard}>
               <Image style={styles.icon} source={images.ic_reopen}/>
-              <Text>02</Text>
+              <Text style={styles.mumberCard}>02</Text>
             </View>
           </View>
           <View style={styles.card}>
             <Text>Sự cố</Text>
             <View style={styles.viewIconNumberCard}>
               <Image style={styles.icon} source={images.ic_issue}/>
-              <Text>02</Text>
+              <Text style={styles.mumberCard}>02</Text>
             </View>
           </View>
         </View>
@@ -75,7 +75,7 @@ const HomeTask = () => {
             <Text>Đã hủy</Text>
             <View style={styles.viewIconNumberCard}>
               <Image style={styles.icon} source={images.ic_CancelTask}/>
-              <Text>02</Text>
+              <Text style={styles.mumberCard}>02</Text>
             </View>
           </View>
         </View>
@@ -90,21 +90,21 @@ const HomeTask = () => {
             <Text>Đã giao</Text>
             <View style={styles.viewIconNumberCard}>
               <Image style={styles.icon} source={images.ic_Assign}/>
-              <Text>02</Text>
+              <Text style={styles.mumberCard}>02</Text>
             </View>
           </View>
           <View style={styles.card}>
             <Text>Đang chạy</Text>
             <View style={styles.viewIconNumberCard}>
               <Image style={styles.icon} source={images.ic_Running}/>
-              <Text>02</Text>
+              <Text style={styles.mumberCard}>02</Text>
             </View>
           </View>
           <View style={styles.card}>
             <Text>Hoàn thành</Text>
             <View style={styles.viewIconNumberCard}>
               <Image style={styles.icon} source={images.ic_finish}/>
-              <Text>02</Text>
+              <Text style={styles.mumberCard}>02</Text>
             </View>
           </View>
         </View>
@@ -113,21 +113,21 @@ const HomeTask = () => {
             <Text>Phản hồi</Text>
             <View style={styles.viewIconNumberCard}>
               <Image style={styles.icon} source={images.ic_Feedback}/>
-              <Text>02</Text>
+              <Text style={styles.mumberCard}>02</Text>
             </View>
           </View>
           <View style={styles.card}>
             <Text>Đã hủy</Text>
             <View style={styles.viewIconNumberCard}>
               <Image style={styles.icon} source={images.ic_CancelTask}/>
-              <Text>02</Text>
+              <Text style={styles.mumberCard}>02</Text>
             </View>
           </View>
           <View style={styles.card}>
             <Text>Chia sẻ</Text>
             <View style={styles.viewIconNumberCard}>
               <Image style={styles.icon} source={images.ic_ShareTask}/>
-              <Text>02</Text>
+              <Text style={styles.mumberCard}>02</Text>
             </View>
           </View>
         </View>
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
     quickReport:{
       backgroundColor: '#FFFFFF',
       marginBottom: 8,
-      paddingBottom: 36
+      paddingBottom: 36,
     },
     MyTask:{
       backgroundColor: '#FFFFFF',
@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
       flexDirection:'row',
       paddingHorizontal: 16,
       justifyContent: 'space-between',
-      paddingBottom: 8
+      paddingBottom: 8,
     },
     card:{
       width:'32%',
@@ -206,5 +206,9 @@ const styles = StyleSheet.create({
       flexDirection:'row',
       justifyContent: 'space-between',
       marginTop:4,
+    },
+    mumberCard:{
+      fontSize: 20,
+      fontWeight: '500',
     },
 })
