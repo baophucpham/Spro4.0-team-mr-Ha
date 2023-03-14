@@ -9,8 +9,10 @@ export interface InputProps extends TextInputProps {
 	iconLeft?: FastImageProps['source'];
 	onPressIconRight?: () => void;
 	onPressIconLeft?: () => void;
+	isPassword?: boolean;
 }
 
 export interface InputState {
 	isFocused: boolean;
+	isHidePassword?: boolean;
 }

@@ -1,14 +1,13 @@
 import { images } from 'assets';
-import { Stacks } from 'common';
+import { Screens } from 'common';
 import { Buttons, Flex, Input } from 'component';
 import { colors, Navigator, sizes, Style } from 'core/index';
 import { ScreenProps } from 'model';
 import React, { useEffect, useState } from 'react';
-import { Image, ImageBackground, StyleSheet, View } from 'react-native';
+import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
 
-const Login: React.FC<ScreenProps> = ({ navigation }) => {
-	const [username, setUsernam] = useState<string>('');
-	const [password, setPassword] = useState<string>('');
+const InputCode: React.FC<ScreenProps> = ({ navigation }) => {
+	const [code, setCode] = useState<string>('');
 
 	useEffect(() => {
 		navigation.setOptions({
@@ -17,34 +16,29 @@ const Login: React.FC<ScreenProps> = ({ navigation }) => {
 	}, []);
 
 	const onPress = () => {
-		Navigator.reset(Stacks.HomeStack);
+		Navigator.navigate(Screens.Login);
 	};
 
 	return (
 		<Flex style={Style.flex} safeFooter={false} keyboardOffset={1}>
-			<ImageBackground source={images.background_login} style={styles.background}>
+			<ImageBackground source={images.background_onboard} style={styles.background}>
 				<View style={styles.container}>
 					<Image source={images.logo_spro} style={styles.logo} />
-					<Input placeholder="Tài khoản" value={username} onChangeText={setUsernam} />
+					<Text style={styles.title}>Vui lòng nhập code khách hàng cho lần đầu đăng nhập</Text>
 					<Input
-						isPassword
-						placeholder="Mật khẩu"
-						value={password}
-						onChangeText={setPassword}
+						placeholder="Nhập mã"
+						value={code}
+						onChangeText={setCode}
+						autoCapitalize="characters"
 					/>
-					<Buttons
-						title="Tiếp tục"
-						style={Style.top32}
-						disabled={!username || !password}
-						onPress={onPress}
-					/>
+					<Buttons title="Tiếp tục" style={Style.top32} disabled={!code} onPress={onPress} />
 				</View>
 			</ImageBackground>
 		</Flex>
 	);
 };
 
-export default Login;
+export default InputCode;
 
 const styles = StyleSheet.create({
 	background: {

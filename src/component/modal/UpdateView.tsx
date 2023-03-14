@@ -1,11 +1,11 @@
-import { images } from 'assets'
-import { colors, screenWidth, Style } from 'core'
-import React from 'react'
-import { Image, Modal, StyleSheet, Text, View } from 'react-native'
+import { images } from 'assets';
+import { colors, screenWidth, Style } from 'core';
+import React from 'react';
+import { Image, Modal, StyleSheet, Text, View } from 'react-native';
 
 interface Props {
-	visible: boolean
-	percent: string | number
+	visible: boolean;
+	percent: string | number;
 }
 const UpdateView: React.FC<Props> = (props: Props) => {
 	return (
@@ -15,16 +15,16 @@ const UpdateView: React.FC<Props> = (props: Props) => {
 				<Text style={styles.title}>{'Downloading an update'}</Text>
 				<View style={styles.outside}>
 					<View
-						style={[styles.inside, { backgroundColor: colors.primary, width: props.percent }]}
+						style={[styles.inside, { backgroundColor: colors.blue, width: props.percent }]}
 					/>
 				</View>
 				<Text style={[styles.title, { marginTop: 10 }]}>{props.percent}</Text>
 			</View>
 		</Modal>
-	)
-}
+	);
+};
 
-export default UpdateView
+export default UpdateView;
 
 const styles = StyleSheet.create({
 	container: {
@@ -53,4 +53,4 @@ const styles = StyleSheet.create({
 		height: screenWidth * 0.5,
 		alignSelf: 'center',
 	},
-})
+});

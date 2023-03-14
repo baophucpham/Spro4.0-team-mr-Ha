@@ -1,50 +1,43 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { images } from 'assets'
-import { colors, Navigator, sizes, Style } from 'core'
-import React, { memo } from 'react'
-import { Image, StyleSheet, Text, View } from 'react-native'
-import { Chat, NewsFeed, Notification, Profile, SearchFriend } from 'screen/home'
-import { Device } from 'utils'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { images } from 'assets';
+import { colors, Navigator, sizes, Style } from 'core';
+import React, { memo } from 'react';
+import { Image, StyleSheet, Text, View } from 'react-native';
+import { Device } from 'utils';
+import { HomeTask, More, Notification } from 'screen/home';
 
-const Tab = createBottomTabNavigator()
+const Tab = createBottomTabNavigator();
 
 const TabScreen = [
 	{
-		name: 'NewsFeed',
-		screen: NewsFeed,
-		icon: images.ic_home,
-		icon_selected: images.ic_home_selected,
-		badge: 0,
-	},
-	{
-		name: 'Search',
-		screen: SearchFriend,
-		icon: images.ic_search,
-		icon_selected: images.ic_search_selected,
-		badge: 0,
-	},
-	{
-		name: 'Chat',
-		screen: Chat,
-		icon: images.ic_message,
-		icon_selected: images.ic_message_selected,
+		name: 'HomeTask',
+		screen: HomeTask,
+		icon: images.ic_Feedback,
+		icon_selected: images.ic_Feedback,
 		badge: 0,
 	},
 	{
 		name: 'Notification',
 		screen: Notification,
-		icon: images.ic_notification,
-		icon_selected: images.ic_notification_selected,
+		icon: images.ic_search,
+		icon_selected: images.ic_search,
 		badge: 0,
 	},
 	{
-		name: 'Profile',
-		screen: Profile,
-		icon: images.ic_profile,
-		icon_selected: images.ic_profile_selected,
+		name: 'More',
+		screen: More,
+		icon: images.ic_search,
+		icon_selected: images.ic_search,
 		badge: 0,
 	},
-]
+	// {
+	// 	name: 'Profile',
+	// 	screen: Profile,
+	// 	icon: images.ic_profile,
+	// 	icon_selected: images.ic_profile_selected,
+	// 	badge: 0,
+	// },
+];
 
 const BottomTab = () => {
 	const renderTabScreen = () => {
@@ -72,13 +65,13 @@ const BottomTab = () => {
 				}}
 				component={tab.screen}
 			/>
-		))
-	}
+		));
+	};
 
-	return <Tab.Navigator>{renderTabScreen()}</Tab.Navigator>
-}
+	return <Tab.Navigator>{renderTabScreen()}</Tab.Navigator>;
+};
 
-export default memo(BottomTab)
+export default memo(BottomTab);
 
 const styles = StyleSheet.create({
 	badge: {
@@ -95,4 +88,4 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 	},
 	badge_text: { ...Style.medium, fontSize: sizes.s10, color: colors.white },
-})
+});

@@ -1,6 +1,6 @@
-import { colors, sizes, Style } from 'core'
-import { throttle } from 'lodash'
-import React from 'react'
+import { colors, sizes, Style } from 'core';
+import { throttle } from 'lodash';
+import React from 'react';
 import {
 	StyleSheet,
 	Text,
@@ -9,66 +9,60 @@ import {
 	StyleProp,
 	ViewStyle,
 	TextStyle,
-} from 'react-native'
-import Image, { ImageStyle } from 'react-native-fast-image'
+} from 'react-native';
+import Image, { ImageStyle } from 'react-native-fast-image';
 
 export interface NavigationButtonProps {
-	title?: string
-	titleStyle?: StyleProp<TextStyle>
-	icon?: any
-	iconStyle?: StyleProp<ImageStyle>
-	tintColor?: string
-	color?: string
-	badge?: any
-	badgeStyle?: StyleProp<ViewStyle>
-	titleBadgeStyle?: StyleProp<TextStyle>
-	containerStyle?: StyleProp<ViewStyle>
-	style?: StyleProp<ViewStyle>
-	onPress?: () => void
-	disabled?: boolean
+	title?: string;
+	titleStyle?: StyleProp<TextStyle>;
+	icon?: any;
+	iconStyle?: StyleProp<ImageStyle>;
+	tintColor?: string;
+	color?: string;
+	badge?: any;
+	badgeStyle?: StyleProp<ViewStyle>;
+	titleBadgeStyle?: StyleProp<TextStyle>;
+	containerStyle?: StyleProp<ViewStyle>;
+	style?: StyleProp<ViewStyle>;
+	onPress?: () => void;
+	disabled?: boolean;
 }
 
 export default class NavigationButton extends React.Component<NavigationButtonProps, any> {
 	renderItem = () => {
-		const { title, titleStyle, icon, iconStyle, tintColor, color = colors.black } = this.props
+		const { title, titleStyle, icon, iconStyle, tintColor, color = colors.black } = this.props;
 		if (title) {
 			return (
 				<Text style={[Style.txt14, { color: color || tintColor }, titleStyle]}>{title}</Text>
-			)
+			);
 		}
 		if (icon) {
-			return (
-				<Image
-					source={icon}
-					style={[styles.icon, { tintColor: tintColor }, iconStyle]}
-					tintColor={tintColor}
-				/>
-			)
+			return <Image source={icon} style={[styles.icon, iconStyle]} tintColor={tintColor} />;
 		}
-		return null
-	}
+		return null;
+	};
 
 	onPressButton = (action?: () => void) =>
 		throttle(
 			() => {
-				action && action()
+				action && action();
 			},
 			1000,
 			{ leading: true, trailing: false }
-		)
+		);
 
 	_getBadge = (badge: any) => {
 		if (typeof badge === 'number') {
-			return badge >= 100 ? '99+' : badge
+			return badge >= 100 ? '99+' : badge;
 		} else {
-			return ' '
+			return ' ';
 		}
-	}
+	};
 
 	renderBadge() {
-		const { badge, badgeStyle, titleBadgeStyle } = this.props
+		const { badge, badgeStyle, titleBadgeStyle } = this.props;
 		if (!badge) {
-			return null
+			return null;
 		}
 		return (
 			<View pointerEvents="none" style={[styles.viewBadge, badgeStyle]}>
@@ -76,11 +70,11 @@ export default class NavigationButton extends React.Component<NavigationButtonPr
 					{this._getBadge(badge)}
 				</Text>
 			</View>
-		)
+		);
 	}
 
 	renderContent() {
-		const { containerStyle, style, onPress, disabled, title } = this.props
+		const { containerStyle, style, onPress, disabled, title } = this.props;
 		return (
 			<View style={containerStyle}>
 				<TouchableOpacity
@@ -92,11 +86,11 @@ export default class NavigationButton extends React.Component<NavigationButtonPr
 				</TouchableOpacity>
 				{this.renderBadge()}
 			</View>
-		)
+		);
 	}
 
 	render() {
-		return <>{this.renderContent()}</>
+		return <>{this.renderContent()}</>;
 	}
 }
 
@@ -105,7 +99,7 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'center',
 		flex: 1,
-		paddingHorizontal: sizes.s24,
+		paddingHorizontal: sizes.s16,
 	},
 	txtBadge: {
 		color: colors.white,
@@ -113,7 +107,7 @@ const styles = StyleSheet.create({
 	},
 	viewBadge: {
 		borderRadius: 10,
-		backgroundColor: colors.error,
+		backgroundColor: colors.red,
 		alignItems: 'center',
 		justifyContent: 'center',
 		position: 'absolute',
@@ -124,10 +118,10 @@ const styles = StyleSheet.create({
 		width: sizes.s10,
 	},
 	icon: {
-		width: sizes.s20,
-		height: sizes.s20,
+		width: sizes.s24,
+		height: sizes.s24,
 	},
 	title: {
 		fontSize: sizes.s14,
 	},
-})
+});

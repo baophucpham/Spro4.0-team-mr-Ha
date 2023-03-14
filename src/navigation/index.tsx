@@ -1,27 +1,23 @@
-import { NavigationContainer } from '@react-navigation/native'
+import { NavigationContainer } from '@react-navigation/native';
 import {
 	createNativeStackNavigator,
-	NativeStackNavigationOptions,
-} from '@react-navigation/native-stack'
-import { images } from 'assets'
-import { Stacks } from 'common'
-import { NavigationBackButton } from 'component'
-import { Navigator, sizes, Style } from 'core'
-import React from 'react'
-import { Platform } from 'react-native'
-import { useSafeAreaInsets } from 'react-native-safe-area-context'
-import { enableScreens } from 'react-native-screens'
-import { Dialog, Modals } from 'screen/modal'
-import { More } from 'screen/more'
-import { Notification } from 'screen/notification'
-import { HomeTask } from 'screen/task'
-import { Welcome } from 'screen/welcome'
-import Device from 'utils/Device'
-import AuthenStack from './authenStack/AuthenStack'
-import HomeStack from './homeStack/HomeStack'
+	NativeStackNavigationOptions
+} from '@react-navigation/native-stack';
+import { images } from 'assets';
+import { Stacks } from 'common';
+import { NavigationBackButton } from 'component';
+import { Navigator, sizes, Style } from 'core';
+import React from 'react';
+import { Platform } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { enableScreens } from 'react-native-screens';
+import { Dialog, Modals } from 'screen/modal';
+import Device from 'utils/Device';
+import AuthenStack from './authenStack/AuthenStack';
+import HomeStack from './homeStack/HomeStack';
 
-const Stack = createNativeStackNavigator()
-enableScreens()
+const Stack = createNativeStackNavigator();
+enableScreens();
 
 const screenOptionsNativeStack: NativeStackNavigationOptions = {
 	headerShown: false,
@@ -31,34 +27,17 @@ const screenOptionsNativeStack: NativeStackNavigationOptions = {
 	animationTypeForReplace: 'push',
 	animation: 'slide_from_right',
 	presentation: Platform.OS === 'android' ? 'modal' : undefined,
-}
+};
 
 const AppStack: React.FC = () => {
-	const insets = useSafeAreaInsets()
-	Device.setDeviceInset(insets)
+	const insets = useSafeAreaInsets();
+	Device.setDeviceInset(insets);
 
 	return (
 		<NavigationContainer ref={(ref) => Navigator.setNavigationRef(ref)}>
 			<Stack.Navigator screenOptions={screenOptionsNativeStack}>
-				<Stack.Screen name={Stacks.Welcome} component={Welcome} />
 				<Stack.Screen name={Stacks.AuthenStack} component={AuthenStack} />
 				<Stack.Screen name={Stacks.HomeStack} component={HomeStack} />
-				<Stack.Screen name={Stacks.HomeTask} component={HomeTask}/>
-				<Stack.Screen name={Stacks.Notification} component={Notification}/>
-				<Stack.Screen name={Stacks.More} component={More} options={{
-						animation: 'default',
-						// gestureEnabled: false,
-						animationDuration: 400,
-						...(Navigator.defaultOptions as any),
-						headerTitleStyle: Style.h6,
-						headerLeft: () => (
-							<NavigationBackButton
-								icon={images.ic_close}
-								style={{ paddingHorizontal: sizes.s8 }}
-							/>
-						),
-					}}/>
-
 				<Stack.Screen
 					name={Stacks.Modals}
 					component={Modals}
@@ -80,7 +59,7 @@ const AppStack: React.FC = () => {
 						headerTitleStyle: Style.h6,
 						headerLeft: () => (
 							<NavigationBackButton
-								icon={images.ic_close}
+								icon={images.ic_back}
 								style={{ paddingHorizontal: sizes.s8 }}
 							/>
 						),
@@ -88,7 +67,7 @@ const AppStack: React.FC = () => {
 				/>
 			</Stack.Navigator>
 		</NavigationContainer>
-	)
-}
+	);
+};
 
-export default AppStack
+export default AppStack;
