@@ -21,6 +21,7 @@ export const colors = {
 	text: '#262626',
 	borderInput: '#DFDFDF',
 	placeholder: '#8C8C8C',
+	ink2:'#595959',
 
 	primary_text: '#3B3A47',
 	secondary_text: '#6C6B75',

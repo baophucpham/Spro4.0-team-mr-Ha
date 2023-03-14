@@ -1,15 +1,19 @@
+import { images } from 'assets';
 import Icon from 'component/image/Icon';
 import { colors, sizes, Style } from 'core';
 import { InputProps, InputState } from 'model';
 import React, { Component } from 'react';
-import { StyleSheet, Text, TextInput, View } from 'react-native';
+import { StyleSheet, Text, TextInput, View, TouchableOpacity } from 'react-native';
 
 export default class Input extends Component<InputProps, InputState> {
+	inputRef: React.MutableRefObject<TextInput>;
 	constructor(props: InputProps) {
 		super(props);
 		this.state = {
 			isFocused: false,
+			isHidePassword: this.props.isPassword,
 		};
+		this.inputRef = React.createRef<any>();
 	}
 
 	renderLabel = () => {
@@ -26,6 +30,10 @@ export default class Input extends Component<InputProps, InputState> {
 		}
 	};
 
+	onPressInput = () => {
+		this.inputRef.current.focus();
+	};
+
 	render() {
 		const {
 			style,
@@ -35,31 +43,46 @@ export default class Input extends Component<InputProps, InputState> {
 			iconLeft,
 			onPressIconRight,
 			onPressIconLeft,
+			isPassword,
+			...inputProps
 		} = this.props || {};
+		const { isHidePassword } = this.state;
 		const borderColor = this.state.isFocused ? colors.blue : colors.borderInput;
 
 		return (
-			<View style={[styles.container, style]}>
+			<TouchableOpacity
+				activeOpacity={1}
+				style={[styles.container, style]}
+				onPress={this.onPressInput}>
 				{this.renderLabel()}
 				<View style={[styles.inputContainer, { borderColor }]}>
 					{this.renderIcon(iconLeft, onPressIconLeft, styles.iconLeft)}
 					<TextInput
+						{...inputProps}
+						ref={this.inputRef}
 						style={[styles.input, inputStyle]}
 						placeholder={placeholder}
 						placeholderTextColor={colors.placeholder}
 						onFocus={() => this.setState({ isFocused: true })}
 						onBlur={() => this.setState({ isFocused: false })}
+						secureTextEntry={isHidePassword}
 					/>
-					{this.renderIcon(iconRight, onPressIconRight, styles.iconRight)}
+					{isPassword
+						? this.renderIcon(
+								this.state.isHidePassword ? images.ic_eye : images.ic_eye_slash,
+								() => this.setState({ isHidePassword: !isHidePassword }),
+								styles.iconRight
+						  )
+						: this.renderIcon(iconRight, onPressIconRight, styles.iconRight)}
 				</View>
-			</View>
+			</TouchableOpacity>
 		);
 	}
 }
 
 const styles = StyleSheet.create({
 	container: {
-		marginTop: sizes.s12,
+		marginTop: sizes.s16,
 	},
 	inputContainer: {
 		paddingVertical: sizes.s9,
