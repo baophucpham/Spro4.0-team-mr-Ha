@@ -92,6 +92,16 @@ const images = {
 	ic_twitter: require('./images/ic_twitter.png'),
 	ic_instagram: require('./images/ic_instagram.png'),
 	ic_fb: require('./images/ic_fb.png'),
+	ic_finish: require('./images/ic_finish.png'),
+	ic_overrated: require('./images/ic_overrated.png'),
+	ic_waiting: require('./images/ic_waiting.png'),
+	ic_reopen: require('./images/ic_reopen.png'),
+	ic_issue: require('./images/ic_Issue.png'),
+	ic_Feedback: require('./images/ic_Feedback.png'),
+	ic_CancelTask: require('./images/ic_CancelTask.png'),
+	ic_Assign: require('./images/ic_Assign.png'),
+	ic_Running: require('./images/ic_Running.png'),
+	ic_ShareTask: require('./images/ic_ShareTask.png'),
 }
 
 export { images }
