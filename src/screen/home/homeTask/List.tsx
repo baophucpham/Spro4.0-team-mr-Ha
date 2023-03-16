@@ -19,14 +19,14 @@ const List = () => {
                     <Text style={styles.mumberCard}>02</Text>
                 </View>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity style={styles.card} onPress={navigateToListDetail}>
                 <Text>Đang chạy</Text>
                 <View style={styles.viewIconNumberCard}>
                     <Image style={styles.icon} source={images.ic_Running} />
                     <Text style={styles.mumberCard}>02</Text>
                 </View>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity style={styles.card} onPress={navigateToListDetail}>
                 <Text>Hoàn thành</Text>
                 <View style={styles.viewIconNumberCard}>
                     <Image style={styles.icon} source={images.ic_finish} />
@@ -35,21 +35,21 @@ const List = () => {
             </TouchableOpacity>
         </View>
         <View style={styles.viewCard}>
-            <TouchableOpacity style={styles.card} >
+            <TouchableOpacity style={styles.card} onPress={navigateToListDetail}>
                 <Text>Phản hồi</Text>
                 <View style={styles.viewIconNumberCard}>
                     <Image style={styles.icon} source={images.ic_Feedback} />
                     <Text style={styles.mumberCard}>02</Text>
                 </View>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity style={styles.card} onPress={navigateToListDetail}>
                 <Text>Đã hủy</Text>
                 <View style={styles.viewIconNumberCard}>
                     <Image style={styles.icon} source={images.ic_CancelTask} />
                     <Text style={styles.mumberCard}>02</Text>
                 </View>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity style={styles.card} onPress={navigateToListDetail}>
                 <Text>Chia sẻ</Text>
                 <View style={styles.viewIconNumberCard}>
                     <Image style={styles.icon} source={images.ic_ShareTask} />

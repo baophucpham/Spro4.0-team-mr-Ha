@@ -27,4 +27,10 @@ export const images = {
 	ic_logout: require('./images/ic_logout.png'),
 	ic_bottomTabTask: require('./images/ic_bottomTabTask.png'),
 	ic_bottomTabTasknoHover: require('./images/ic_bottomTabTasknoHover.png'),
+	avatar_default: require('./images/avatar-default.png'),
+	ic_plush:require('./images/ic_plush.png'),
+	avatar_default_2: require('./images/avatar_default_2.png'),
+	ic_arrowright: require('./images/ic_arrowRight.png'),
+	ic_critical: require('./images/ic_critical.png'),
+	ic_task: require('./images/ic_task.png'),
 };
