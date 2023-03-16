@@ -1,14 +1,18 @@
 import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { sizes } from 'core/index'
+import { Navigator, sizes } from 'core/index'
 import { images } from 'assets'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import { Screens } from 'common'
 
 const List = () => {
+    const navigateToListDetail = () =>{
+        Navigator.navigate(Screens.ListDetail);
+    }
   return (
     <View>
       <View style={styles.viewCard}>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity style={styles.card} onPress={navigateToListDetail}>
                 <Text>Đã giao</Text>
                 <View style={styles.viewIconNumberCard}>
                     <Image style={styles.icon} source={images.ic_Assign} />
@@ -31,7 +35,7 @@ const List = () => {
             </TouchableOpacity>
         </View>
         <View style={styles.viewCard}>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity style={styles.card} >
                 <Text>Phản hồi</Text>
                 <View style={styles.viewIconNumberCard}>
                     <Image style={styles.icon} source={images.ic_Feedback} />
