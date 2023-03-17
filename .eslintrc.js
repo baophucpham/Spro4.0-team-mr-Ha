@@ -25,6 +25,7 @@ module.exports = {
 						html: true,
 					},
 				],
+				'block-scoped':'off'
 			},
 		},
 	],

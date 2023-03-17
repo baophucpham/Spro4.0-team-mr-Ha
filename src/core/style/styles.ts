@@ -100,6 +100,12 @@ export const Style = StyleSheet.create({
 		fontFamily: fonts.regular,
 		color: colors.text,
 	},
+	txt16_blue: {
+		fontSize: sizes.s16,
+		lineHeight: sizes.s24,
+		fontFamily: fonts.regular,
+		color: colors.blue,
+	},
 	txt16_bold: {
 		fontSize: sizes.s16,
 		lineHeight: sizes.s24,

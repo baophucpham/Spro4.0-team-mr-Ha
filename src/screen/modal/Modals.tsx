@@ -1,8 +1,8 @@
-import { BottomSheet, BottomSheetSwipe } from 'component'
-import { colors, Navigator, screenWidth, sizes, Style } from 'core'
-import { throttle } from 'lodash'
-import { ModalsParams } from 'model'
-import React, { Component } from 'react'
+import { BottomSheet, BottomSheetSwipe } from 'component';
+import { colors, Navigator, screenWidth, sizes, Style } from 'core';
+import { throttle } from 'lodash';
+import { ModalsParams } from 'model';
+import React, { Component } from 'react';
 import {
 	Animated,
 	StyleSheet,
@@ -10,23 +10,23 @@ import {
 	TouchableOpacity,
 	TouchableWithoutFeedback,
 	View,
-} from 'react-native'
+} from 'react-native';
 
 export default class Modals extends Component<any> {
-	bottomSheetRef: any
-	params: ModalsParams
-	scale: any
+	bottomSheetRef: any;
+	params: ModalsParams;
+	scale: any;
 	constructor(props: any) {
-		super(props)
-		Navigator.setModalsNavigation(props.navigation)
-		this.bottomSheetRef = React.createRef<any>()
-		this.params = this.props.route?.params || {}
-		this.scale = new Animated.Value(0)
+		super(props);
+		Navigator.setModalsNavigation(props.navigation);
+		this.bottomSheetRef = React.createRef<any>();
+		this.params = this.props.route?.params || {};
+		this.scale = new Animated.Value(0);
 	}
 
 	componentDidMount(): void {
 		if (this.params.type === 'alert') {
-			this.animationAlert(1)
+			this.animationAlert(1);
 		}
 	}
 
@@ -35,20 +35,20 @@ export default class Modals extends Component<any> {
 			useNativeDriver: true,
 			toValue: value,
 			duration: 200,
-		}).start(callBack)
+		}).start(callBack);
 	}
 
 	clodeModals = throttle((callback?: () => void) => {
-		const { closeOnTouchOutSide = true } = this.params
+		const { closeOnTouchOutSide = true } = this.params;
 		if (!closeOnTouchOutSide) {
-			return
+			return;
 		}
 		if (this.bottomSheetRef.current) {
-			this.bottomSheetRef.current?.close(() => Navigator.hideModal())
+			this.bottomSheetRef.current?.close(() => Navigator.hideModal());
 		} else {
-			this.animationAlert(0, () => Navigator.hideModal(callback))
+			this.animationAlert(0, () => Navigator.hideModal(callback));
 		}
-	}, 1000)
+	}, 1000);
 
 	renderComponent = () => {
 		const {
@@ -61,7 +61,7 @@ export default class Modals extends Component<any> {
 			onCancel = () => {},
 			screen = <></>,
 			height = 0,
-		} = this.params
+		} = this.params;
 		switch (type) {
 			case 'alert':
 				return (
@@ -79,9 +79,9 @@ export default class Modals extends Component<any> {
 							activeOpacity={0.7}
 							style={[styles.item_alert, Style.borderBottom]}
 							onPress={() => {
-								this.clodeModals(onCancel)
+								this.clodeModals(onCancel);
 							}}>
-							<Text style={[styles.text_button_alert, { color: colors.error }]}>
+							<Text style={[styles.text_button_alert, { color: colors.red }]}>
 								{buttonCancel}
 							</Text>
 						</TouchableOpacity>
@@ -89,14 +89,14 @@ export default class Modals extends Component<any> {
 							activeOpacity={0.7}
 							style={styles.item_alert}
 							onPress={() => {
-								this.clodeModals(onSubmit)
+								this.clodeModals(onSubmit);
 							}}>
-							<Text style={[styles.text_button_alert, { color: colors.primary }]}>
+							<Text style={[styles.text_button_alert, { color: colors.blue }]}>
 								{buttonSubmit}
 							</Text>
 						</TouchableOpacity>
 					</Animated.View>
-				)
+				);
 
 			case 'bottom':
 				return (
@@ -106,7 +106,7 @@ export default class Modals extends Component<any> {
 						onClose={this.clodeModals}
 						{...this.params}
 					/>
-				)
+				);
 
 			case 'bottom-swipe':
 				return (
@@ -117,14 +117,14 @@ export default class Modals extends Component<any> {
 						screen={screen}
 						{...this.params}
 					/>
-				)
+				);
 			default:
-				return
+				return;
 		}
-	}
+	};
 
 	render() {
-		const { type = 'alert' } = this.params || {}
+		const { type = 'alert' } = this.params || {};
 
 		return (
 			<View style={[styles.container]}>
@@ -136,7 +136,7 @@ export default class Modals extends Component<any> {
 					</View>
 				</TouchableWithoutFeedback>
 			</View>
-		)
+		);
 	}
 }
 
@@ -161,4 +161,4 @@ const styles = StyleSheet.create({
 		...Style.semibold,
 	},
 	border_bottom: {},
-})
+});

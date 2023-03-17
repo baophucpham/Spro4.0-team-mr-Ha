@@ -94,6 +94,7 @@ const styles = StyleSheet.create({
 	input: {
 		flex: 1,
 		...Style.txt14,
+		padding: 0,
 	},
 	iconRight: {
 		marginLeft: sizes.s4,

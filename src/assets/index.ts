@@ -25,4 +25,6 @@ export const images = {
 	ic_next: require('./images/ic_next.png'),
 	ic_setting: require('./images/ic_setting.png'),
 	ic_logout: require('./images/ic_logout.png'),
+	ic_config_app: require('./images/ic_config_app.png'),
+	ic_language: require('./images/ic_language.png'),
 };
