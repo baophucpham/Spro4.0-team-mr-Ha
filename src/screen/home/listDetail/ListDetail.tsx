@@ -4,8 +4,9 @@ import React, { useEffect } from 'react'
 import { Flex, Buttons } from 'component';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import { images } from 'assets';
-import { sizes, colors, Style } from 'core/index';
+import { sizes, colors, Style, Navigator } from 'core/index';
 import CradTask from './CradTask';
+import TimeLineBottomSheet from '../homeTask/TimeLineBottomSheet';
 
 const ListDetail = ({navigation}: any) => {
     useEffect(() => {
@@ -18,6 +19,13 @@ const ListDetail = ({navigation}: any) => {
             ),
 		});
 	}, []);
+
+    const showOptionDay = () =>{
+		Navigator.showBottom({
+			screen: TimeLineBottomSheet,
+			hideTitle: false,
+		})
+	}
 
     const data = [
         {   id: 1,
@@ -50,8 +58,7 @@ const ListDetail = ({navigation}: any) => {
         },
     ]
   return (
-    <Flex>
-        <ScrollView style={styles.scrollView}>
+    <View style={styles.ListDetailContainer}>
             <View style={styles.headerView}>
                 <View style={styles.headerTitle}>
                     <Text style={styles.titleHeader}>Quis nostrud exercitation</Text>
@@ -102,6 +109,7 @@ const ListDetail = ({navigation}: any) => {
                     </Text>
                 </TouchableOpacity>
             </View>
+        <ScrollView style={styles.scrollView}>
             <View>
                 {data?.map((item: any,index: number)=>(
                     <View style={styles.viewCard} key={index}>
@@ -118,16 +126,19 @@ const ListDetail = ({navigation}: any) => {
                 <Text style={styles.btnFinish}>Hoàn thành</Text>
             </TouchableOpacity>
         </View>
-    </Flex>
+    </View>
   )
 }
 
 export default ListDetail
 
 const styles = StyleSheet.create({
+    ListDetailContainer:{
+        flex:1,
+    },
     scrollView:{
         backgroundColor: colors.separator,
-        marginBottom: sizes.s60
+        marginBottom: sizes.s60,
     },
     btnHeader:{
         marginRight: sizes.s16,

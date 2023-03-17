@@ -34,4 +34,12 @@ export const images = {
 	ic_critical: require('./images/ic_critical.png'),
 	ic_task: require('./images/ic_task.png'),
 	ic_close: require('./images/ic_close.png'),
+	ic_workResult: require('./images/ic_workResult.png'),
+	ic_arrowRightBlack: require('./images/ic_arrowRightBlack.png'),
+	ic_checkList: require('./images/ic_checkList.png'),
+	ic_link: require('./images/ic_link.png'),
+	icon_warning: require('./images/icon_warning.png'),
+	ic_file: require('./images/ic_file.png'),
+	ic_messenger: require('./images/ic_messenger.png'),
+	ic_add: require('./images/ic_add.png'),
 };

@@ -1,9 +1,12 @@
+/* eslint-disable react/no-unstable-nested-components */
 import { Image, StyleSheet, Text, View } from 'react-native'
 import React, { useEffect } from 'react'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { images } from 'assets';
-import { colors, sizes } from 'core/index';
-import { Flex } from 'component';
+import { colors, Navigator, sizes } from 'core/index';
+import { Flex, ToastDebug } from 'component';
+import ListBtn from './ListBtn';
+import TimeLineBottomSheet from '../homeTask/TimeLineBottomSheet';
 
 const TaskDetail = ({navigation}:any) => {
     useEffect(() => {
@@ -16,6 +19,14 @@ const TaskDetail = ({navigation}:any) => {
             ),
 		});
 	}, []);
+
+    const showOptionDay = () =>{
+		Navigator.showBottom({
+			screen: TimeLineBottomSheet,
+			hideTitle: false,
+		})
+	}
+
   return (
     <View style={styles.container}>
     <View style={styles.taskDetailContainer}>
@@ -25,25 +36,42 @@ const TaskDetail = ({navigation}:any) => {
         </View>
         <View style={styles.headerTaskDetail}>
             <Text>
-                Self assigned / Board  Ipsum dolor sit  amet  / 
+                Self assigned / Board  Ipsum dolor sit  amet  /
                 List  Ipsum dolor sit  amet sum dolor sit  amet dolor ...
-            </Text> 
+            </Text>
         </View>
         <View style={styles.headerContent}>
-                    <View style={styles.viewTextIcon} >
-                        <Text style={styles.titleContent}>Người tạo</Text>
-                        <Image style={styles.icon} source={images.avatar_default}/>
-                    </View>
-                    <View style={styles.viewTextIcon}>
-                        <Text style={styles.titleContent}>Người nhận</Text>
-                        <Image style={styles.icon} source={images.avatar_default}/>
-                    </View>
-                    <View style={styles.viewTextIcon}>
-                        <Text style={styles.titleContent}>Trạng thái</Text>
-                        <Image style={styles.icon} source={images.ic_Running}/>
-                    </View>
-                </View>
+            <View style={styles.viewTextIcon} >
+                <Text style={styles.titleContent}>Người tạo</Text>
+                <Image style={styles.icon} source={images.avatar_default}/>
+            </View>
+            <View style={styles.viewTextIcon}>
+                <Text style={styles.titleContent}>Người nhận</Text>
+                <Image style={styles.icon} source={images.avatar_default}/>
+            </View>
+            <View style={styles.viewTextIcon}>
+                <Text style={styles.titleContent}>Trạng thái</Text>
+                <Image style={styles.icon} source={images.ic_Running}/>
+            </View>
+        </View>
+        <View style={styles.viewBtn}>
+            <TouchableOpacity style={styles.styleBtn} onPress={showOptionDay}>
+                <Text style={styles.nameButton}>Task</Text>
+                <Image style={styles.styleIconBtn} source={images.ic_arrow_down_vector} />
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.styleBtn} onPress={showOptionDay}>
+                <Image style={styles.iconCrittcal} source={images.ic_critical}/>
+                <Text style={styles.nameButton}>Bình Thường</Text>
+                <Image style={styles.styleIconBtn} source={images.ic_arrow_down_vector} />
+            </TouchableOpacity>
+            <View style={styles.percentTask}>
+                <Text style={styles.numberPercentTask}>20%</Text>
+            </View>
+        </View>
 
+        <View style={styles.viewListBtn}>
+            <ListBtn/>
+        </View>
     </View>
         <View style={styles.Footer}>
             <TouchableOpacity>
@@ -62,12 +90,17 @@ export default TaskDetail
 const styles = StyleSheet.create({
     container:{
         flex: 1,
+        backgroundColor: colors.separator,
+    },
+    iconCrittcal:{
+        width: sizes.s14,
+        height: sizes.s14,
     },
     btnHeader:{
         marginRight: sizes.s16,
     },
     taskDetailContainer:{
-        backgroundColor: colors.placeholder,
+        backgroundColor: colors.separator,
     },
     headerTaskDetail:{
         backgroundColor: colors.white,
@@ -138,5 +171,46 @@ const styles = StyleSheet.create({
     icon:{
         width:sizes.s24,
         height:sizes.s24,
+    },
+    viewBtn: {
+		padding: sizes.s16,
+		flexDirection: 'row',
+        backgroundColor: colors.white,
+	},
+	styleBtn: {
+		paddingHorizontal: sizes.s16,
+		paddingVertical: sizes.s9,
+		flexDirection: 'row',
+		borderWidth: sizes.s1,
+		borderColor: '#DFDFDF',
+		borderRadius: sizes.s26,
+		textAlign: 'center',
+		alignItems: 'center',
+        marginRight: sizes.s12,
+	},
+	styleIconBtn: {
+		width: sizes.s11,
+		height: sizes.s6,
+	},
+    percentTask:{
+        paddingHorizontal: sizes.s12,
+		paddingVertical: sizes.s4,
+        backgroundColor: colors.blue2,
+        borderRadius: sizes.s26,
+        textAlign: 'center',
+		alignItems: 'center',
+    },
+    numberPercentTask:{
+        fontWeight: '500',
+        color:colors.blue,
+        fontSize: sizes.s16,
+        lineHeight: sizes.s24,
+    },
+    nameButton:{
+        marginHorizontal: sizes.s12,
+    },
+    viewListBtn:{
+        marginTop: sizes.s8,
+        // backgroundColor: colors.white,
     },
 })
