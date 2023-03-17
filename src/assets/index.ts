@@ -33,4 +33,5 @@ export const images = {
 	ic_arrowright: require('./images/ic_arrowRight.png'),
 	ic_critical: require('./images/ic_critical.png'),
 	ic_task: require('./images/ic_task.png'),
+	ic_close: require('./images/ic_close.png'),
 };

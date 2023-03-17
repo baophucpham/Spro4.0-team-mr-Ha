@@ -127,6 +127,7 @@ export default ListDetail
 const styles = StyleSheet.create({
     scrollView:{
         backgroundColor: colors.separator,
+        marginBottom: sizes.s60
     },
     btnHeader:{
         marginRight: sizes.s16,

@@ -3,15 +3,18 @@ import React, { useEffect, useState } from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { TabScreenProps } from 'model';
-import { BottomSheetSwipe, Flex } from 'component';
+import { BottomSheet, BottomSheetSwipe, Flex } from 'component';
 import { colors, Navigator, sizes } from 'core/index';
 import Card from './Card';
 import Table from './Table';
 import List from './List';
 import Task from './Task'
+import SearchBootomSheet from './SearchBottomSheet';
+import TimeLineBottomSheet from './TimeLineBottomSheet';
 
 const HomeTask: React.FC<TabScreenProps> = ({navigation}) => {
-	const [changeTab, setChangeTab] = useState(1)
+	const [changeTab, setChangeTab] = useState(1);
+	const [openSreach, setOpenSearch] = useState<boolean>(false)
 	useEffect(() => {
 		navigation.setOptions({
 			headerShown: false,
@@ -28,8 +31,23 @@ const HomeTask: React.FC<TabScreenProps> = ({navigation}) => {
 		setChangeTab(3)
 	}
 	const showBottomsheet = () => {
-		Navigator.showBottomSwipe({
-			screen:List,
+		Navigator.showBottom({
+			screen: SearchBootomSheet,
+			hideTitle: false,
+		})
+	}
+
+	const showOptionDay = () =>{
+		Navigator.showBottom({
+			screen: TimeLineBottomSheet,
+			hideTitle: false,
+		})
+	}
+
+	const showOption = () =>{
+		Navigator.showBottom({
+			screen: TimeLineBottomSheet,
+			hideTitle: false,
 		})
 	}
 
@@ -43,11 +61,11 @@ const HomeTask: React.FC<TabScreenProps> = ({navigation}) => {
 					</TouchableOpacity>
 				</View>
 				<View style={styles.viewBtn}>
-					<TouchableOpacity style={styles.styleBtn}>
+					<TouchableOpacity style={styles.styleBtn} onPress={showOptionDay} >
 						<Text>Hàng ngày</Text>
 						<Image style={styles.styleIconBtn} source={images.ic_arrow_down_vector} />
 					</TouchableOpacity>
-					<TouchableOpacity style={styles.styleBtn}>
+					<TouchableOpacity style={styles.styleBtn} onPress={showOption}>
 						<Text>Tất cả</Text>
 						<Image style={styles.styleIconBtn} source={images.ic_arrow_down_vector} />
 					</TouchableOpacity>
