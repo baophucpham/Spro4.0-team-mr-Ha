@@ -5,10 +5,10 @@ import { colors, Navigator, sizes, Style } from 'core/index';
 import { ScreenProps } from 'model';
 import React, { useEffect, useState } from 'react';
 import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
+import { strings } from 'core';
 
 const InputCode: React.FC<ScreenProps> = ({ navigation }) => {
 	const [code, setCode] = useState<string>('');
-
 	useEffect(() => {
 		navigation.setOptions({
 			headerShown: false,
@@ -24,15 +24,15 @@ const InputCode: React.FC<ScreenProps> = ({ navigation }) => {
 			<ImageBackground source={images.background_onboard} style={styles.background}>
 				<View style={styles.container}>
 					<Image source={images.logo_spro} style={styles.logo} />
-					<Text style={styles.title}>Vui lòng nhập code khách hàng cho lần đầu đăng nhập</Text>
+					<Text style={styles.title}>{strings.pleaseInputCodeFirstLogin}</Text>
 					<Input
-						placeholder="Nhập mã"
+						placeholder={strings.inputCode}
 						value={code}
 						onChangeText={setCode}
 						autoCapitalize="characters"
 					/>
 					<Buttons
-						title="Tiếp tục"
+						title={strings.continue}
 						style={Style.top32}
 						//  disabled={!code}
 						onPress={onPress}

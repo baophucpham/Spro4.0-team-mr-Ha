@@ -6,11 +6,12 @@ import { ScreenProps } from 'model';
 import React, { useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Storage } from 'utils';
 
 const Setting: React.FC<ScreenProps> = ({ navigation }) => {
-
 	const setLanguage = (language: string) => {
 		strings.setLanguage(language);
+		Storage.setData(Storage.key.language, language);
 		Navigator.reset(Stacks.HomeStack);
 	};
 
