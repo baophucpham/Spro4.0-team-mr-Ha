@@ -1,7 +1,7 @@
 import { BottomTabScreenProps } from '@react-navigation/bottom-tabs'
 import { NativeStackNavigationOptions } from '@react-navigation/native-stack'
 import { StackNavigationOptions, StackScreenProps } from '@react-navigation/stack'
-import { BottomSheetProps as BTSProps } from 'component/bottomSheet/BottomSheet'
+import { BottomSheetProps as BTSProps } from './Component'
 import { BottomSheetSwipeProps as BTSSProps } from 'component/bottomSheet/BottomSheetSwipe'
 import { SelectCityProps } from 'component/customView/SelectCity'
 import { SelectCountryProps } from 'component/customView/SelectCountry'

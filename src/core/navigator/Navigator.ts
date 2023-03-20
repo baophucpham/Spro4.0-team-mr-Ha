@@ -110,7 +110,7 @@ export default class Navigator {
 	static showImagePicker(params?: ImagePickerProps) {
 		this.showBottom({
 			screen: ImagePickerPopup,
-			hideTitle: true,
+			showHeader: false,
 			style: Style.imagePicker,
 			...params,
 		});

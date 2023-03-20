@@ -16,3 +16,17 @@ export interface InputState {
 	isFocused: boolean;
 	isHidePassword?: boolean;
 }
+
+export interface BottomSheetProps {
+	screen?: any;
+	title?: string;
+	ref?: any;
+	showHeader?: boolean;
+	style?: any;
+	onClose?: () => void;
+	title?: string;
+	iconRight?: FastImageProps['source'];
+	iconLeft?: FastImageProps['source'];
+	onPressIconRight?: (requestClose: any) => void;
+	onPressIconLeft?: (requestClose: any) => void;
+}

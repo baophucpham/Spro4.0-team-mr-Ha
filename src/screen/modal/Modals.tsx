@@ -59,7 +59,7 @@ export default class Modals extends Component<any> {
 			buttonCancel = 'Cancel',
 			onSubmit = () => {},
 			onCancel = () => {},
-			screen = <></>,
+			screen,
 			height = 0,
 		} = this.params;
 		switch (type) {
