@@ -1,14 +1,15 @@
 import { Image, StyleSheet, Text, View } from 'react-native'
 import React, { useEffect } from 'react'
-import { colors, Navigator, sizes } from 'core/index';
+import { colors, Navigator, sizes, strings } from 'core/index';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import { images } from 'assets';
 import TimeLineBottomSheet from '../homeTask/TimeLineBottomSheet';
+import CreateWorkResult from './CreateWorkResult';
 
 const WorkResult = ({navigation}: any) => {
     useEffect(() => {
 		navigation.setOptions({
-            title: 'Work Result',
+            title: `${strings.workResults}`,
 		});
 	}, []);
 
@@ -19,9 +20,9 @@ const WorkResult = ({navigation}: any) => {
 		})
 	}
 
-    const showOptionNew = ()=>{
+    const showBottomCreateNew = ()=>{
         Navigator.showBottom({
-			screen: TimeLineBottomSheet,
+			screen: CreateWorkResult,
 			hideTitle: false,
             title: 'Tạo kết quả',
 		})
@@ -61,14 +62,14 @@ const WorkResult = ({navigation}: any) => {
   return (
     <View style={styles.container}>
         <View style={styles.headerContainer}>
-            <Text style={styles.titleHeader}>Task</Text>
+            <Text style={styles.titleHeader}>{strings.task}</Text>
         </View>
         <View style={styles.headerContent}>
             <Text style={styles.contentHeader}>[212390] Security for new IOS </Text>
         </View>
         <View style={styles.bodyContainer}>
             <View>
-                <Text>Kết quả (3)</Text>
+                <Text>{strings.result} (3)</Text>
             </View>
             <TouchableOpacity style={styles.styleBtn} onPress={showOptionDay}>
                 <Text style={styles.nameButton}>Task</Text>
@@ -111,9 +112,9 @@ const WorkResult = ({navigation}: any) => {
             </View>
         </ScrollView>
         <View style={styles.Footer}>
-            <TouchableOpacity style={styles.btnFooter} onPress={showOptionNew}>
+            <TouchableOpacity style={styles.btnFooter} onPress={showBottomCreateNew}>
                 <Image style={styles.iconPlush} source={images.ic_plush} />
-                <Text style={styles.updateBtnFooter}>Tạo kết quả mới</Text>
+                <Text style={styles.updateBtnFooter}>{strings.generateNewResults}</Text>
             </TouchableOpacity>
         </View>
     </View>

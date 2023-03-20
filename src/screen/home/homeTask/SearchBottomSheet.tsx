@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { colors, sizes } from 'core/index'
+import { colors, sizes, strings } from 'core/index'
 import {Input} from 'component'
 import { images } from 'assets'
 import { TouchableOpacity } from 'react-native-gesture-handler';
@@ -37,7 +37,7 @@ const SearchBootomSheet = () => {
 
   return (
     <View style={styles.searchContainer}>
-      <Input style={styles.styleSearch} placeholder="Search" iconLeft={images.ic_search}/>
+      <Input style={styles.styleSearch} placeholder={strings.search} iconLeft={images.ic_search}/>
       <View style={styles.viewItemSearch}>
         {dataSearch?.map((item:any,index: number )=>(
             <TouchableOpacity style={styles.itemSreach} key={index}>

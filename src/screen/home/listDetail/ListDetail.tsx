@@ -4,14 +4,14 @@ import React, { useEffect } from 'react'
 import { Flex, Buttons } from 'component';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import { images } from 'assets';
-import { sizes, colors, Style, Navigator } from 'core/index';
+import { sizes, colors, Style, Navigator, strings } from 'core/index';
 import CradTask from './CradTask';
 import TimeLineBottomSheet from '../homeTask/TimeLineBottomSheet';
 
 const ListDetail = ({navigation}: any) => {
     useEffect(() => {
 		navigation.setOptions({
-            title: 'List Details',
+            title: `${strings.listDetail}`,
             headerRight: ()=>(
                 <TouchableOpacity style={styles.btnHeader}>
                     <Image source={images.ic_more}/>
@@ -72,15 +72,15 @@ const ListDetail = ({navigation}: any) => {
                 </View>
                 <View style={styles.headerContent}>
                     <View style={styles.viewTextIcon} >
-                        <Text style={styles.titleContent}>Người tạo</Text>
+                        <Text style={styles.titleContent}>{strings.creator}</Text>
                         <Image style={styles.icon} source={images.avatar_default}/>
                     </View>
                     <View style={styles.viewTextIcon}>
-                        <Text style={styles.titleContent}>Người nhận</Text>
+                        <Text style={styles.titleContent}>{strings.receiver}</Text>
                         <Image style={styles.icon} source={images.avatar_default}/>
                     </View>
                     <View style={styles.viewTextIcon}>
-                        <Text style={styles.titleContent}>Trạng thái</Text>
+                        <Text style={styles.titleContent}>{strings.status}</Text>
                         <Image style={styles.icon} source={images.ic_Running}/>
                     </View>
                 </View>
@@ -99,13 +99,13 @@ const ListDetail = ({navigation}: any) => {
                     Update new Security system for the Ios...
                     </Text>
                     <TouchableOpacity style={styles.touch}>
-                        <Text style={styles.BtnViewMore}>Xem Thêm</Text>
+                        <Text style={styles.BtnViewMore}>{strings.seeMore}</Text>
                     </TouchableOpacity>
                 </View>
                 <TouchableOpacity style={styles.button}>
                     <Image style={styles.iconPlush} source={images.ic_plush}/>
                     <Text style={styles.textButton}>
-                        Tạo Task
+                        {strings.createTask}
                     </Text>
                 </TouchableOpacity>
             </View>
@@ -120,10 +120,10 @@ const ListDetail = ({navigation}: any) => {
         </ScrollView>
         <View style={styles.Footer}>
             <TouchableOpacity>
-                <Text style={styles.updateBtnFooter}>Cập nhật tiến độ</Text>
+                <Text style={styles.updateBtnFooter}>{strings.updateProgress}</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.btnFooter}>
-                <Text style={styles.btnFinish}>Hoàn thành</Text>
+                <Text style={styles.btnFinish}>{strings.complete}</Text>
             </TouchableOpacity>
         </View>
     </View>

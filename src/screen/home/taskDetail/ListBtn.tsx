@@ -2,11 +2,11 @@ import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { images } from 'assets'
-import { colors, Navigator, sizes } from 'core/index'
+import { colors, Navigator, sizes, strings } from 'core/index'
 import { Screens } from 'common'
 
 const ListBtn = () => {
-    const navigateWorkResult =() =>{
+    const navigateWorkResult = () =>{
         Navigator.navigate(Screens.WorkResult)
     }
   return (
@@ -14,7 +14,7 @@ const ListBtn = () => {
       <TouchableOpacity style={styles.viewBtn} onPress={navigateWorkResult}>
         <View style={styles.viewContentBtn}>
             <Image style={styles.iconbtn} source={images.ic_workResult}/>
-            <Text>Kết quả công việc</Text>
+            <Text>{strings.workResults}</Text>
         </View>
         <View style={styles.viewContentBtn}>
             <View style={styles.viewnumberBtn}>
@@ -26,19 +26,19 @@ const ListBtn = () => {
       <TouchableOpacity style={styles.viewBtn}>
         <View style={styles.viewContentBtn}>
             <Image style={styles.iconbtn} source={images.ic_checkList}/>
-            <Text>Đầu mục kiểm tra</Text>
+            <Text>{strings.testHeader}</Text>
         </View>
         <View style={styles.viewContentBtn}>
             <Image style={styles.iconAdd} source={images.ic_add}/>
             <View >
-                <Text style={styles.addNew}>Tạo mới</Text>
+                <Text style={styles.addNew}>{strings.create}</Text>
             </View>
         </View>
       </TouchableOpacity>
       <TouchableOpacity style={styles.viewBtn}>
         <View style={styles.viewContentBtn}>
             <Image style={styles.iconbtn} source={images.ic_link}/>
-            <Text>Kết nối với Ticket</Text>
+            <Text>{strings.connectWithTicket}</Text>
         </View>
         <View style={styles.viewContentBtn}>
             <View style={styles.viewnumberBtn}>
@@ -50,7 +50,7 @@ const ListBtn = () => {
       <TouchableOpacity style={styles.viewBtn}>
         <View style={styles.viewContentBtn}>
             <Image style={styles.iconbtn} source={images.icon_warning}/>
-            <Text>Issued</Text>
+            <Text>{strings.issue}</Text>
         </View>
         <View style={styles.viewContentBtn}>
             <View style={styles.viewnumberBtn}>
@@ -62,19 +62,19 @@ const ListBtn = () => {
       <TouchableOpacity style={styles.viewBtn}>
         <View style={styles.viewContentBtn}>
             <Image style={styles.iconbtn} source={images.ic_file}/>
-            <Text>Tệp đính kèm</Text>
+            <Text>{strings.attachments}</Text>
         </View>
         <View style={styles.viewContentBtn}>
             <Image style={styles.iconAdd} source={images.ic_add}/>
             <View >
-                <Text style={styles.addNew}>Tạo mới</Text>
+                <Text style={styles.addNew}>{strings.create}</Text>
             </View>
         </View>
       </TouchableOpacity>
       <TouchableOpacity style={styles.viewBtn}>
         <View style={styles.viewContentBtn}>
             <Image style={styles.iconbtn} source={images.ic_messenger}/>
-            <Text>Bình luận</Text>
+            <Text>{strings.comment}</Text>
         </View>
         <View style={styles.viewContentBtn}>
             <View style={styles.viewnumberBtn}>
@@ -137,6 +137,6 @@ const styles = StyleSheet.create({
        color:colors.blue,
        fontWeight: '400',
        fontSize: sizes.s14,
-       lineHeight: sizes.s22
+       lineHeight: sizes.s22,
     },
 })

@@ -2,22 +2,22 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { Input } from 'component'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import { colors, sizes } from 'core/index'
+import { colors, sizes, strings } from 'core/index'
 import { images } from 'assets'
 
 const TimeLineBottomSheet = () => {
     const dataSearch = [
         {
             id:1,
-            content:'Hàng ngày',
+            content:`${strings.daily}`,
         },
         {
             id:2,
-            content:'Hàng tuần',
+            content:`${strings.weekly}`,
         },
         {
             id:3,
-            content:'Hàng tháng',
+            content:`${strings.monthly}`,
         },
     ]
   return (

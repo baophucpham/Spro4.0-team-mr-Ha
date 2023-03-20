@@ -4,6 +4,8 @@ import { Navigator, sizes } from 'core/index'
 import { images } from 'assets'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { Screens } from 'common'
+import { strings } from 'core';
+
 
 const List = () => {
     const navigateToListDetail = () =>{
@@ -13,21 +15,21 @@ const List = () => {
     <View>
       <View style={styles.viewCard}>
             <TouchableOpacity style={styles.card} onPress={navigateToListDetail}>
-                <Text>Đã giao</Text>
+                <Text>{strings.delivered}</Text>
                 <View style={styles.viewIconNumberCard}>
                     <Image style={styles.icon} source={images.ic_Assign} />
                     <Text style={styles.mumberCard}>02</Text>
                 </View>
             </TouchableOpacity>
             <TouchableOpacity style={styles.card} onPress={navigateToListDetail}>
-                <Text>Đang chạy</Text>
+                <Text>{strings.running}</Text>
                 <View style={styles.viewIconNumberCard}>
                     <Image style={styles.icon} source={images.ic_Running} />
                     <Text style={styles.mumberCard}>02</Text>
                 </View>
             </TouchableOpacity>
             <TouchableOpacity style={styles.card} onPress={navigateToListDetail}>
-                <Text>Hoàn thành</Text>
+                <Text>{strings.complete}</Text>
                 <View style={styles.viewIconNumberCard}>
                     <Image style={styles.icon} source={images.ic_finish} />
                     <Text style={styles.mumberCard}>02</Text>
@@ -36,21 +38,21 @@ const List = () => {
         </View>
         <View style={styles.viewCard}>
             <TouchableOpacity style={styles.card} onPress={navigateToListDetail}>
-                <Text>Phản hồi</Text>
+                <Text>{strings.feedBack}</Text>
                 <View style={styles.viewIconNumberCard}>
                     <Image style={styles.icon} source={images.ic_Feedback} />
                     <Text style={styles.mumberCard}>02</Text>
                 </View>
             </TouchableOpacity>
             <TouchableOpacity style={styles.card} onPress={navigateToListDetail}>
-                <Text>Đã hủy</Text>
+                <Text>{strings.cancelled}</Text>
                 <View style={styles.viewIconNumberCard}>
                     <Image style={styles.icon} source={images.ic_CancelTask} />
                     <Text style={styles.mumberCard}>02</Text>
                 </View>
             </TouchableOpacity>
             <TouchableOpacity style={styles.card} onPress={navigateToListDetail}>
-                <Text>Chia sẻ</Text>
+                <Text>{strings.share}</Text>
                 <View style={styles.viewIconNumberCard}>
                     <Image style={styles.icon} source={images.ic_ShareTask} />
                     <Text style={styles.mumberCard}>02</Text>

@@ -3,27 +3,28 @@ import React from 'react'
 import { images } from 'assets'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { sizes } from 'core/index'
+import { strings } from 'core';
 
 const Card = () => {
   return (
     <View >
       <View style={styles.viewCard}>
         <TouchableOpacity style={styles.cartStyle}>
-            <Text>Hoàn thành</Text>
+            <Text>{strings.complete}</Text>
             <View style={styles.viewIconNumberCard}>
                 <Image style={styles.icon}  source={images.ic_finish} />
                 <Text style={styles.mumberCard}>02</Text>
             </View>
         </TouchableOpacity>
         <TouchableOpacity style={styles.cartStyle}>
-            <Text>quá hạn</Text>
+            <Text>{strings.outOfDate}</Text>
             <View style={styles.viewIconNumberCard}>
                 <Image style={styles.icon}  source={images.ic_overrated} />
                 <Text style={styles.mumberCard}>02</Text>
             </View>
         </TouchableOpacity>
         <TouchableOpacity style={styles.cartStyle}>
-            <Text>Chưa quá hạn</Text>
+            <Text>{strings.notExpiredYet}</Text>
             <View style={styles.viewIconNumberCard}>
                 <Image style={styles.icon}  source={images.ic_waiting} />
                 <Text style={styles.mumberCard}>02</Text>
@@ -33,21 +34,21 @@ const Card = () => {
 
       <View style={styles.viewCard}>
         <TouchableOpacity style={styles.cartStyle}>
-            <Text>Phản hồi</Text>
+            <Text>{strings.feedBack}</Text>
             <View style={styles.viewIconNumberCard}>
                 <Image style={styles.icon}  source={images.ic_Feedback} />
                 <Text style={styles.mumberCard}>02</Text>
             </View>
         </TouchableOpacity>
         <TouchableOpacity style={styles.cartStyle}>
-            <Text>Mở lại</Text>
+            <Text>{strings.openAgain}</Text>
             <View style={styles.viewIconNumberCard}>
                 <Image style={styles.icon}  source={images.ic_reopen} />
                 <Text style={styles.mumberCard}>02</Text>
             </View>
         </TouchableOpacity>
         <TouchableOpacity style={styles.cartStyle}>
-            <Text>Sự cố</Text>
+            <Text>{strings.problem}</Text>
             <View style={styles.viewIconNumberCard}>
                 <Image style={styles.icon}  source={images.ic_issue} />
                 <Text style={styles.mumberCard}>02</Text>
@@ -56,7 +57,7 @@ const Card = () => {
       </View>
       <View style={styles.viewCard}>
         <TouchableOpacity style={styles.cartStyle}>
-            <Text>Đã hủy</Text>
+            <Text>{strings.cancelled}</Text>
             <View style={styles.viewIconNumberCard}>
                 <Image style={styles.icon}  source={images.ic_CancelTask} />
                 <Text style={styles.mumberCard}>02</Text>

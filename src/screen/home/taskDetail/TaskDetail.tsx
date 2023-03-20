@@ -3,7 +3,7 @@ import { Image, StyleSheet, Text, View } from 'react-native'
 import React, { useEffect } from 'react'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { images } from 'assets';
-import { colors, Navigator, sizes } from 'core/index';
+import { colors, Navigator, sizes, strings } from 'core/index';
 import { Flex, ToastDebug } from 'component';
 import ListBtn from './ListBtn';
 import TimeLineBottomSheet from '../homeTask/TimeLineBottomSheet';
@@ -11,7 +11,7 @@ import TimeLineBottomSheet from '../homeTask/TimeLineBottomSheet';
 const TaskDetail = ({navigation}:any) => {
     useEffect(() => {
 		navigation.setOptions({
-            title: 'Task Details',
+            title: `${strings.taskDetails}`,
             headerRight: ()=>(
                 <TouchableOpacity style={styles.btnHeader}>
                     <Image source={images.ic_more}/>
@@ -42,26 +42,26 @@ const TaskDetail = ({navigation}:any) => {
         </View>
         <View style={styles.headerContent}>
             <View style={styles.viewTextIcon} >
-                <Text style={styles.titleContent}>Người tạo</Text>
+                <Text style={styles.titleContent}>{strings.creator}</Text>
                 <Image style={styles.icon} source={images.avatar_default}/>
             </View>
             <View style={styles.viewTextIcon}>
-                <Text style={styles.titleContent}>Người nhận</Text>
+                <Text style={styles.titleContent}>{strings.receiver}</Text>
                 <Image style={styles.icon} source={images.avatar_default}/>
             </View>
             <View style={styles.viewTextIcon}>
-                <Text style={styles.titleContent}>Trạng thái</Text>
+                <Text style={styles.titleContent}>{strings.status}</Text>
                 <Image style={styles.icon} source={images.ic_Running}/>
             </View>
         </View>
         <View style={styles.viewBtn}>
             <TouchableOpacity style={styles.styleBtn} onPress={showOptionDay}>
-                <Text style={styles.nameButton}>Task</Text>
+                <Text style={styles.nameButton}>{strings.task}</Text>
                 <Image style={styles.styleIconBtn} source={images.ic_arrow_down_vector} />
             </TouchableOpacity>
             <TouchableOpacity style={styles.styleBtn} onPress={showOptionDay}>
                 <Image style={styles.iconCrittcal} source={images.ic_critical}/>
-                <Text style={styles.nameButton}>Bình Thường</Text>
+                <Text style={styles.nameButton}>{strings.nomal}</Text>
                 <Image style={styles.styleIconBtn} source={images.ic_arrow_down_vector} />
             </TouchableOpacity>
             <View style={styles.percentTask}>
@@ -75,10 +75,10 @@ const TaskDetail = ({navigation}:any) => {
     </View>
         <View style={styles.Footer}>
             <TouchableOpacity>
-                <Text style={styles.updateBtnFooter}>Cập nhật tiến độ</Text>
+                <Text style={styles.updateBtnFooter}>{strings.updateProgress}</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.btnFooter}>
-                <Text style={styles.btnFinish}>Hoàn thành</Text>
+                <Text style={styles.btnFinish}>{strings.complete}</Text>
             </TouchableOpacity>
         </View>
     </View>

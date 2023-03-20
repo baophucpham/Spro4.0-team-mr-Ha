@@ -11,6 +11,8 @@ import List from './List';
 import Task from './Task'
 import SearchBootomSheet from './SearchBottomSheet';
 import TimeLineBottomSheet from './TimeLineBottomSheet';
+import { strings } from 'core';
+
 
 const HomeTask: React.FC<TabScreenProps> = ({navigation}) => {
 	const [changeTab, setChangeTab] = useState(1);
@@ -55,18 +57,18 @@ const HomeTask: React.FC<TabScreenProps> = ({navigation}) => {
 		<Flex style={styles.container}>
 			<View style={styles.quickReport}>
 				<View style={styles.viewHeader}>
-					<Text style={styles.textHeader}>Báo cáo nhanh</Text>
+					<Text style={styles.textHeader}>{strings.quickReport}</Text>
 					<TouchableOpacity onPress={showBottomsheet}>
 						<Image source={images.ic_search} />
 					</TouchableOpacity>
 				</View>
 				<View style={styles.viewBtn}>
 					<TouchableOpacity style={styles.styleBtn} onPress={showOptionDay} >
-						<Text>Hàng ngày</Text>
+						<Text>{strings.daily}</Text>
 						<Image style={styles.styleIconBtn} source={images.ic_arrow_down_vector} />
 					</TouchableOpacity>
 					<TouchableOpacity style={styles.styleBtn} onPress={showOption}>
-						<Text>Tất cả</Text>
+						<Text>{strings.all}</Text>
 						<Image style={styles.styleIconBtn} source={images.ic_arrow_down_vector} />
 					</TouchableOpacity>
 				</View>
@@ -77,31 +79,31 @@ const HomeTask: React.FC<TabScreenProps> = ({navigation}) => {
 
 			<View style={styles.quickReport}>
 				<View style={styles.viewHeader}>
-					<Text style={styles.textHeader}>Task của tôi</Text>
+					<Text style={styles.textHeader}>{strings.myTask}</Text>
 				</View>
 				<View style={styles.tabBottom}>
 					{changeTab === 1 ? (
 					<TouchableOpacity style={styles.sizeTabBottomHover}>
-						<Text style={styles.sizeTabBottomHover}>Bảng</Text>
+						<Text style={styles.sizeTabBottomHover}>{strings.table}</Text>
 					</TouchableOpacity>
 					) : (
 					<TouchableOpacity onPress={pressTable}>
-						<Text style={styles.sizeTabBottom}>Bảng</Text>
+						<Text style={styles.sizeTabBottom}>{strings.table}</Text>
 					</TouchableOpacity>
 					)}
 					{changeTab === 2 ? (
 					<TouchableOpacity style={styles.sizeTabBottomHover}>
-						<Text style={styles.sizeTabBottomHover}>Danh sách</Text>
+						<Text style={styles.sizeTabBottomHover}>{strings.list}</Text>
 					</TouchableOpacity>
 					) : (
 					<TouchableOpacity onPress={pressList}>
-						<Text style={styles.sizeTabBottom}>Danh sách</Text>
+						<Text style={styles.sizeTabBottom}>{strings.list}</Text>
 					</TouchableOpacity>)}
 					{changeTab === 3 ? (<TouchableOpacity style={styles.sizeTabBottomHover}>
-						<Text style={styles.sizeTabBottomHover}>Task</Text>
+						<Text style={styles.sizeTabBottomHover}>{strings.task}</Text>
 					</TouchableOpacity>) :
 					(<TouchableOpacity onPress={pressTask}>
-						<Text style={styles.sizeTabBottom}>Task</Text>
+						<Text style={styles.sizeTabBottom}>{strings.task}</Text>
 					</TouchableOpacity>)}
 				</View>
 				{changeTab === 1 && <Table/>}
