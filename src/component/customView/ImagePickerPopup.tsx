@@ -1,7 +1,7 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
-import { colors, Style } from 'core'
-import { Permission } from 'utils'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React from 'react';
+import { colors, Style } from 'core';
+import { Permission } from 'utils';
 import {
 	Asset,
 	CameraOptions,
@@ -10,13 +10,13 @@ import {
 	launchCamera,
 	launchImageLibrary,
 	MediaType,
-} from 'react-native-image-picker'
+} from 'react-native-image-picker';
 
 export interface ImagePickerProps {
-	requestClose?: () => void
-	onChange?: (data?: Asset | Asset[] | any) => void
-	mediaType?: MediaType
-	selectionLimit?: number
+	requestClose?: () => void;
+	onChange?: (data?: Asset | Asset[] | any) => void;
+	mediaType?: MediaType;
+	selectionLimit?: number;
 }
 
 const ImagePickerPopup: React.FC<ImagePickerProps> = ({
@@ -33,28 +33,28 @@ const ImagePickerPopup: React.FC<ImagePickerProps> = ({
 		quality: 0.8,
 		maxWidth: 1600,
 		maxHeight: 900,
-	}
+	};
 
 	const callbackResponseImagePicker = (result: ImagePickerResponse) => {
 		if (result?.didCancel || result?.errorCode) {
-			return
+			return;
 		}
-		const assetResponse = selectionLimit === 0 ? result?.assets || {} : result?.assets?.[0] || []
-		requestClose?.()
-		onChange?.(assetResponse)
-	}
+		const assetResponse = selectionLimit === 0 ? result?.assets || {} : result?.assets?.[0] || [];
+		requestClose?.();
+		onChange?.(assetResponse);
+	};
 
 	const openCamera = () => {
 		Permission.camera(() => {
-			launchCamera(imagePickerOptions, callbackResponseImagePicker)
-		})
-	}
+			launchCamera(imagePickerOptions, callbackResponseImagePicker);
+		});
+	};
 
 	const openLibrary = () => {
 		Permission.photoLibrary(() => {
-			launchImageLibrary(imagePickerOptions, callbackResponseImagePicker)
-		})
-	}
+			launchImageLibrary(imagePickerOptions, callbackResponseImagePicker);
+		});
+	};
 
 	return (
 		<View style={styles.container}>
@@ -65,23 +65,23 @@ const ImagePickerPopup: React.FC<ImagePickerProps> = ({
 			/>
 			<ItemPicker
 				title="Camera"
-				textStyle={[Style.txt16_primary, Style.semibold]}
+				textStyle={[Style.txt16_blue, Style.semibold]}
 				onPress={openCamera}
 			/>
 			<ItemPicker
 				title="Photo Library"
-				textStyle={[Style.txt16_primary, Style.semibold]}
+				textStyle={[Style.txt16_blue, Style.semibold]}
 				onPress={openLibrary}
 			/>
 			<ItemPicker
 				title="Cancel"
-				textStyle={[Style.txt16, { color: colors.error }, Style.semibold]}
+				textStyle={[Style.txt16, { color: colors.red }, Style.semibold]}
 				style={{ borderBottomWidth: 0 }}
 				onPress={requestClose}
 			/>
 		</View>
-	)
-}
+	);
+};
 
 const ItemPicker = ({ title, textStyle, onPress, disabled, style }: any) => {
 	return (
@@ -92,10 +92,10 @@ const ItemPicker = ({ title, textStyle, onPress, disabled, style }: any) => {
 			activeOpacity={0.6}>
 			<Text style={textStyle}>{title}</Text>
 		</TouchableOpacity>
-	)
-}
+	);
+};
 
-export default ImagePickerPopup
+export default ImagePickerPopup;
 
 const styles = StyleSheet.create({
 	container: {
@@ -110,4 +110,4 @@ const styles = StyleSheet.create({
 		borderColor: colors.border_light,
 		alignItems: 'center',
 	},
-})
+});

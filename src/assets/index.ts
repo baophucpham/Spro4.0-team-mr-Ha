@@ -42,4 +42,8 @@ export const images = {
 	ic_file: require('./images/ic_file.png'),
 	ic_messenger: require('./images/ic_messenger.png'),
 	ic_add: require('./images/ic_add.png'),
+	ic_config_app: require('./images/ic_config_app.png'),
+	ic_language: require('./images/ic_language.png'),
+	ic_checkbox: require('./images/ic_checkbox.png'),
+	ic_checkbox_checked: require('./images/ic_checkbox_checked.png'),
 };
