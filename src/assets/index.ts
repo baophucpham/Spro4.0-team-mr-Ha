@@ -25,4 +25,7 @@ export const images = {
 	ic_next: require('./images/ic_next.png'),
 	ic_setting: require('./images/ic_setting.png'),
 	ic_logout: require('./images/ic_logout.png'),
+	ic_facebook: require('./images/ic_facebook.png'),
+	ic_apple: require('./images/ic_apple.png'),
+	ic_google: require('./images/ic_google.png'),
 };
