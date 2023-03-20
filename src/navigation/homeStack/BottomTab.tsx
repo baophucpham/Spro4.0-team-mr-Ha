@@ -12,8 +12,8 @@ const TabScreen = [
 	{
 		name: 'HomeTask',
 		screen: HomeTask,
-		icon: images.ic_Feedback,
-		icon_selected: images.ic_Feedback,
+		icon: images.ic_bottomTabTasknoHover,
+		icon_selected: images.ic_bottomTabTask,
 		badge: 0,
 	},
 	{

@@ -1,14 +1,16 @@
 import { images } from 'assets';
 import { Stacks } from 'common';
-import { Buttons, Flex, Input } from 'component';
+import { Buttons, Flex, Input, ItemCheckbox } from 'component';
 import { colors, Navigator, sizes, Style } from 'core/index';
 import { ScreenProps } from 'model';
 import React, { useEffect, useState } from 'react';
 import { Image, ImageBackground, StyleSheet, View } from 'react-native';
+import { strings } from 'core';
 
 const Login: React.FC<ScreenProps> = ({ navigation }) => {
 	const [username, setUsernam] = useState<string>('');
 	const [password, setPassword] = useState<string>('');
+	const [isSaveLogin, setIsSaveLogin] = useState<boolean>(true);
 
 	useEffect(() => {
 		navigation.setOptions({
@@ -25,15 +27,21 @@ const Login: React.FC<ScreenProps> = ({ navigation }) => {
 			<ImageBackground source={images.background_login} style={styles.background}>
 				<View style={styles.container}>
 					<Image source={images.logo_spro} style={styles.logo} />
-					<Input placeholder="Tài khoản" value={username} onChangeText={setUsernam} />
+					<Input placeholder={strings.username} value={username} onChangeText={setUsernam} />
 					<Input
 						isPassword
-						placeholder="Mật khẩu"
+						placeholder={strings.password}
 						value={password}
 						onChangeText={setPassword}
 					/>
+					<ItemCheckbox
+						style={Style.top16}
+						isActive={isSaveLogin}
+						title={strings.saveLogin}
+						onChange={setIsSaveLogin}
+					/>
 					<Buttons
-						title="Tiếp tục"
+						title={strings.continue}
 						style={Style.top32}
 						// disabled={!username || !password}
 						onPress={onPress}

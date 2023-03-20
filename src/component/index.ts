@@ -27,6 +27,7 @@ export { default as Switch } from './switch/Switch';
 export { default as SlideImage } from './image/SlideImage';
 export { default as ToastDebug } from './toast/ToastDebug';
 export { default as Checkbox } from './checkbox/Checkbox';
+export { default as ItemCheckbox } from './checkbox/ItemCheckbox';
 export { default as RangeSlide } from './rangeSlider/RangeSlide';
 export { default as Input } from './input/Input';
 export { default as Separator } from './separator/Separator';
