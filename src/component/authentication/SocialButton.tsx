@@ -1,13 +1,12 @@
-import { loginSocialAction } from 'action/authenAction'
-import { images } from 'assets'
-import { Style } from 'core'
-import React, { memo } from 'react'
-import { Alert, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import { useDispatch } from 'react-redux'
-import { Device, loginApple, loginFacebook, loginGoogle } from 'utils'
+import { images } from 'assets';
+import { Style } from 'core';
+import React, { memo } from 'react';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { useDispatch } from 'react-redux';
+import { Device } from 'utils';
 
 const SocialButton: React.FC = () => {
-	const dispatch = useDispatch()
+	const dispatch = useDispatch();
 	const SocialArr = [
 		{
 			icon: images.ic_facebook,
@@ -27,49 +26,13 @@ const SocialButton: React.FC = () => {
 			onPress: () => onPressAppleLogin(),
 			isShow: false,
 		},
-	]
+	];
 
-	const onPressFacebookLogin = async () => {
-		try {
-			const userInfo = await loginFacebook()
-			dispatch(
-				loginSocialAction({
-					type: 'facebook',
-					body: userInfo,
-				})
-			)
-		} catch (e: any) {
-			Alert.alert('Alert', e)
-		}
-	}
+	const onPressFacebookLogin = async () => {};
 
-	const onPressGoolgeLogin = async () => {
-		try {
-			const userInfo = await loginGoogle()
-			dispatch(
-				loginSocialAction({
-					type: 'google',
-					body: userInfo,
-				})
-			)
-		} catch (e: any) {
-			Alert.alert('Alert', e)
-		}
-	}
+	const onPressGoolgeLogin = async () => {};
 
-	const onPressAppleLogin = async () => {
-		try {
-			const userInfo: any = await loginApple()
-			dispatch(
-				loginSocialAction({
-					type: 'apple',
-					body: userInfo,
-				})
-			)
-		} catch (e: any) {
-			Alert.alert('Error', e)
-		}
-	}
+	const onPressAppleLogin = async () => {};
 
 	return (
 		<View style={Style.top24}>
@@ -84,7 +47,7 @@ const SocialButton: React.FC = () => {
 								activeOpacity={0.7}>
 								<Image source={item.icon} style={Style.icon24} />
 							</TouchableOpacity>
-						)
+						);
 					}
 				})}
 			</View>
@@ -100,14 +63,13 @@ const SocialButton: React.FC = () => {
 				</TouchableOpacity>
 			)}
 		</View>
-	)
-}
+	);
+};
 
-export default memo(SocialButton)
+export default memo(SocialButton);
 
 const styles = StyleSheet.create({
 	button: {
-		width: '60%',
 		alignSelf: 'center',
 	},
-})
+});

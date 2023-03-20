@@ -1,6 +1,6 @@
 import { images } from 'assets';
 import { Stacks } from 'common';
-import { Buttons, Flex, Input, ItemCheckbox } from 'component';
+import { Buttons, Flex, Input, ItemCheckbox, SocialButton } from 'component';
 import { colors, Navigator, sizes, Style } from 'core/index';
 import { ScreenProps } from 'model';
 import React, { useEffect, useState } from 'react';
@@ -46,6 +46,7 @@ const Login: React.FC<ScreenProps> = ({ navigation }) => {
 						// disabled={!username || !password}
 						onPress={onPress}
 					/>
+					<SocialButton />
 				</View>
 			</ImageBackground>
 		</Flex>
