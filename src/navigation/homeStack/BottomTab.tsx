@@ -1,6 +1,6 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { images } from 'assets';
-import { colors, Navigator, sizes, Style } from 'core';
+import { colors, fonts, Navigator, sizes, strings, Style } from 'core';
 import React, { memo } from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { Device } from 'utils';
@@ -8,38 +8,34 @@ import { HomeTask, More, Notification } from 'screen/home';
 
 const Tab = createBottomTabNavigator();
 
-const TabScreen = [
-	{
-		name: 'HomeTask',
-		screen: HomeTask,
-		icon: images.ic_bottomTabTasknoHover,
-		icon_selected: images.ic_bottomTabTask,
-		badge: 0,
-	},
-	{
-		name: 'Notification',
-		screen: Notification,
-		icon: images.ic_search,
-		icon_selected: images.ic_search,
-		badge: 0,
-	},
-	{
-		name: 'More',
-		screen: More,
-		icon: images.ic_more,
-		icon_selected: images.ic_more_selected,
-		badge: 0,
-	},
-	// {
-	// 	name: 'Profile',
-	// 	screen: Profile,
-	// 	icon: images.ic_profile,
-	// 	icon_selected: images.ic_profile_selected,
-	// 	badge: 0,
-	// },
-];
-
 const BottomTab = () => {
+	const TabScreen = [
+		{
+			name: 'HomeTask',
+			screen: HomeTask,
+			icon: images.ic_bottomTabTasknoHover,
+			icon_selected: images.ic_bottomTabTask,
+			label: strings.task,
+			badge: 0,
+		},
+		// {
+		// 	name: 'Notification',
+		// 	screen: Notification,
+		// 	icon: images.ic_search,
+		// 	icon_selected: images.ic_search,
+		// 	label: strings.notification,
+		// 	badge: 0,
+		// },
+		{
+			name: 'More',
+			screen: More,
+			icon: images.ic_more,
+			icon_selected: images.ic_more_selected,
+			label: strings.more,
+			badge: 0,
+		},
+	];
+	
 	const renderTabScreen = () => {
 		return TabScreen.map((tab, index: number) => (
 			<Tab.Screen
@@ -53,13 +49,21 @@ const BottomTab = () => {
 					},
 					tabBarShowLabel: false,
 					tabBarIcon: ({ focused }) => (
-						<View>
-							<Image source={focused ? tab.icon_selected : tab.icon} style={Style.icon24} />
-							{tab.badge > 0 ? (
-								<View style={styles.badge}>
-									<Text style={styles.badge_text}>{tab.badge}</Text>
-								</View>
-							) : null}
+						<View style={Style.column_between}>
+							<View style={{ alignSelf: 'center' }}>
+								<Image
+									source={focused ? tab.icon_selected : tab.icon}
+									style={Style.icon24}
+								/>
+								{tab.badge > 0 ? (
+									<View style={styles.badge}>
+										<Text style={styles.badge_text}>{tab.badge}</Text>
+									</View>
+								) : null}
+							</View>
+							<Text style={[styles.labelTab, focused && { color: colors.blue }]}>
+								{tab.label}
+							</Text>
 						</View>
 					),
 				}}
@@ -88,4 +92,10 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 	},
 	badge_text: { ...Style.medium, fontSize: sizes.s10, color: colors.white },
+	labelTab: {
+		fontFamily: fonts.medium,
+		fontSize: sizes.s11,
+		color: colors.placeholder,
+		marginTop: sizes.s2,
+	},
 });
