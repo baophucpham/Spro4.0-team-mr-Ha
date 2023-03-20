@@ -28,7 +28,7 @@ export const images = {
 	ic_bottomTabTask: require('./images/ic_bottomTabTask.png'),
 	ic_bottomTabTasknoHover: require('./images/ic_bottomTabTasknoHover.png'),
 	avatar_default: require('./images/avatar-default.png'),
-	ic_plush:require('./images/ic_plush.png'),
+	ic_plush: require('./images/ic_plush.png'),
 	avatar_default_2: require('./images/avatar_default_2.png'),
 	ic_arrowright: require('./images/ic_arrowRight.png'),
 	ic_critical: require('./images/ic_critical.png'),
@@ -49,4 +49,5 @@ export const images = {
 	ic_facebook: require('./images/ic_facebook.png'),
 	ic_apple: require('./images/ic_apple.png'),
 	ic_google: require('./images/ic_google.png'),
+	ic_add_task: require('./images/ic_add_task.png'),
 };

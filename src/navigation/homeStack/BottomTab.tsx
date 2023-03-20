@@ -2,7 +2,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { images } from 'assets';
 import { colors, fonts, Navigator, sizes, strings, Style } from 'core';
 import React, { memo } from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Device } from 'utils';
 import { HomeTask, More, Notification } from 'screen/home';
 
@@ -17,6 +17,14 @@ const BottomTab = () => {
 			icon_selected: images.ic_bottomTabTask,
 			label: strings.task,
 			badge: 0,
+		},
+		{
+			name: 'CreateTask',
+			icon: images.ic_add_task,
+			label: strings.createTask,
+			onPress: () => {
+				alert('123');
+			},
 		},
 		// {
 		// 	name: 'Notification',
@@ -35,7 +43,7 @@ const BottomTab = () => {
 			badge: 0,
 		},
 	];
-	
+
 	const renderTabScreen = () => {
 		return TabScreen.map((tab, index: number) => (
 			<Tab.Screen
@@ -48,6 +56,9 @@ const BottomTab = () => {
 						height: sizes.s56 + Device.getBottomSpace(),
 					},
 					tabBarShowLabel: false,
+					tabBarButton: !tab?.screen
+						? (props) => <TouchableOpacity {...props} onPress={tab?.onPress} />
+						: undefined,
 					tabBarIcon: ({ focused }) => (
 						<View style={Style.column_between}>
 							<View style={{ alignSelf: 'center' }}>
@@ -55,7 +66,7 @@ const BottomTab = () => {
 									source={focused ? tab.icon_selected : tab.icon}
 									style={Style.icon24}
 								/>
-								{tab.badge > 0 ? (
+								{(tab?.badge || 0) > 0 ? (
 									<View style={styles.badge}>
 										<Text style={styles.badge_text}>{tab.badge}</Text>
 									</View>
@@ -67,7 +78,7 @@ const BottomTab = () => {
 						</View>
 					),
 				}}
-				component={tab.screen}
+				component={tab?.screen || View}
 			/>
 		));
 	};
