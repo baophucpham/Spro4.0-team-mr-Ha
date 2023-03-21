@@ -10,6 +10,8 @@ export interface InputProps extends TextInputProps {
 	onPressIconRight?: () => void;
 	onPressIconLeft?: () => void;
 	isPassword?: boolean;
+	isPicker?: boolean;
+	onPress?: () => void;
 }
 
 export interface InputState {
@@ -23,7 +25,7 @@ export interface BottomSheetProps {
 	ref?: any;
 	showHeader?: boolean;
 	style?: any;
-	onClose?: () => void;
+	onClose?: (callback?: any) => void;
 	title?: string;
 	iconRight?: FastImageProps['source'];
 	iconLeft?: FastImageProps['source'];

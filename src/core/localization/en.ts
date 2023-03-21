@@ -47,4 +47,9 @@ export const en = {
 	workTime: 'Work time',
 	notification: 'Notification',
 	more: 'More',
+	chooseTask: 'Choose type of task',
+	createTicket: 'Create ticket',
+	subtitleCreateTaskPopup: 'Công việc không cần thông qua quy trình.',
+	subtitleCreateTicketPopup: 'Công việc cần thông qua quy trình đã quy định của công ty.',
+	taskInfo: 'Task information',
 };

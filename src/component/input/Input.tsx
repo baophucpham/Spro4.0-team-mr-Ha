@@ -30,6 +30,37 @@ export default class Input extends Component<InputProps, InputState> {
 		}
 	};
 
+	renderInput = () => {
+		const { isPicker, inputStyle, placeholder, value, ...inputProps } = this.props || {};
+		const { isHidePassword } = this.state;
+
+		if (isPicker) {
+			return (
+				<Text
+					style={[
+						styles.input,
+						{ color: !!value ? colors.black : colors.placeholder },
+						inputStyle,
+					]}>
+					{value || placeholder}
+				</Text>
+			);
+		}
+
+		return (
+			<TextInput
+				{...inputProps}
+				ref={this.inputRef}
+				style={[styles.input, inputStyle]}
+				placeholder={placeholder}
+				placeholderTextColor={colors.placeholder}
+				onFocus={() => this.setState({ isFocused: true })}
+				onBlur={() => this.setState({ isFocused: false })}
+				secureTextEntry={isHidePassword}
+			/>
+		);
+	};
+
 	onPressInput = () => {
 		this.inputRef.current.focus();
 	};
@@ -37,14 +68,13 @@ export default class Input extends Component<InputProps, InputState> {
 	render() {
 		const {
 			style,
-			inputStyle,
-			placeholder,
 			iconRight,
 			iconLeft,
 			onPressIconRight,
 			onPressIconLeft,
 			isPassword,
-			...inputProps
+			isPicker,
+			onPress,
 		} = this.props || {};
 		const { isHidePassword } = this.state;
 		const borderColor = this.state.isFocused ? colors.blue : colors.borderInput;
@@ -53,26 +83,19 @@ export default class Input extends Component<InputProps, InputState> {
 			<TouchableOpacity
 				activeOpacity={1}
 				style={[styles.container, style]}
-				onPress={this.onPressInput}>
+				onPress={isPicker ? onPress : this.onPressInput}>
 				{this.renderLabel()}
 				<View style={[styles.inputContainer, { borderColor }]}>
 					{this.renderIcon(iconLeft, onPressIconLeft, styles.iconLeft)}
-					<TextInput
-						{...inputProps}
-						ref={this.inputRef}
-						style={[styles.input, inputStyle]}
-						placeholder={placeholder}
-						placeholderTextColor={colors.placeholder}
-						onFocus={() => this.setState({ isFocused: true })}
-						onBlur={() => this.setState({ isFocused: false })}
-						secureTextEntry={isHidePassword}
-					/>
+					{this.renderInput()}
 					{isPassword
 						? this.renderIcon(
 								this.state.isHidePassword ? images.ic_eye : images.ic_eye_slash,
 								() => this.setState({ isHidePassword: !isHidePassword }),
 								styles.iconRight
 						  )
+						: isPicker
+						? this.renderIcon(iconRight || images.ic_down, onPress, styles.iconRight)
 						: this.renderIcon(iconRight, onPressIconRight, styles.iconRight)}
 				</View>
 			</TouchableOpacity>
@@ -85,7 +108,7 @@ const styles = StyleSheet.create({
 		marginTop: sizes.s16,
 	},
 	inputContainer: {
-		paddingVertical: sizes.s9,
+		paddingVertical: sizes.s10,
 		paddingHorizontal: sizes.s16,
 		...Style.border,
 		borderRadius: sizes.s8,

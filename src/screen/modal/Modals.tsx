@@ -44,7 +44,7 @@ export default class Modals extends Component<any> {
 			return;
 		}
 		if (this.bottomSheetRef.current) {
-			this.bottomSheetRef.current?.close(() => Navigator.hideModal());
+			this.bottomSheetRef.current?.close(() => Navigator.hideModal(callback));
 		} else {
 			this.animationAlert(0, () => Navigator.hideModal(callback));
 		}

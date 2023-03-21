@@ -4,7 +4,7 @@ import { colors, fonts, Navigator, sizes, strings, Style } from 'core';
 import React, { memo } from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Device } from 'utils';
-import { HomeTask, More, Notification } from 'screen/home';
+import { CreateTaskPopup, HomeTask, More, Notification } from 'screen/home';
 
 const Tab = createBottomTabNavigator();
 
@@ -19,11 +19,15 @@ const BottomTab = () => {
 			badge: 0,
 		},
 		{
-			name: 'CreateTask',
+			name: 'CreateTaskPopup',
 			icon: images.ic_add_task,
 			label: strings.createTask,
 			onPress: () => {
-				alert('123');
+				Navigator.showBottom({
+					screen: CreateTaskPopup,
+					title: strings.chooseTask,
+					iconLeft: images.ic_close,
+				});
 			},
 		},
 		// {

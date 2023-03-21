@@ -50,4 +50,7 @@ export const images = {
 	ic_apple: require('./images/ic_apple.png'),
 	ic_google: require('./images/ic_google.png'),
 	ic_add_task: require('./images/ic_add_task.png'),
+	ic_add_task2: require('./images/ic_add_task2.png'),
+	ic_add_ticket: require('./images/ic_add_ticket.png'),
+	ic_down: require('./images/ic_down.png'),
 };

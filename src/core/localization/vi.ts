@@ -47,4 +47,9 @@ export const vi = {
 	workTime: 'Giờ làm',
 	notification: 'Thông báo',
 	more: 'Thêm',
+	chooseTask: 'Chọn loại công việc',
+	createTicket: 'Tạo Ticket',
+	subtitleCreateTaskPopup: 'Công việc không cần thông qua quy trình.',
+	subtitleCreateTicketPopup: 'Công việc cần thông qua quy trình đã quy định của công ty.',
+	taskInfo: 'Task information',
 };

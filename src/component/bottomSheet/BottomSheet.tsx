@@ -56,16 +56,16 @@ const BottomSheet: React.FC<BottomSheetProps> = forwardRef((props: BottomSheetPr
 				<View style={styles.header}>
 					<Icon
 						source={iconLeft}
-						size={sizes.s24}
-						style={{ padding: sizes.s4 }}
-						onPress={() => onPressIconLeft?.(onClose)}
+						size={sizes.s20}
+						style={{ padding: sizes.s6 }}
+						onPress={() => onClose?.(onPressIconLeft)}
 					/>
-					<Text style={Style.txt16}>{title}</Text>
+					<Text style={[Style.txt16, Style.bold]}>{title}</Text>
 					<Icon
 						source={iconRight}
 						size={sizes.s24}
 						style={{ padding: sizes.s4 }}
-						onPress={() => onPressIconRight?.(onClose)}
+						onPress={() => onClose?.(onPressIconRight)}
 					/>
 				</View>
 			);
