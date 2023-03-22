@@ -35,3 +35,6 @@ export { default as Separator } from './separator/Separator';
 export { default as ChangePassSuccess } from './customView/ChangePassSuccess';
 export { default as ImagePickerPopup } from './customView/ImagePickerPopup';
 export { default as PopUpAction } from './customView/PopUpAction';
+
+// create task
+export { default as SelectLabelPopup } from './createTask/SelectLabelPopup';

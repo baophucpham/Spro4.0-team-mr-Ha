@@ -2,7 +2,7 @@
  * @format
  */
 
-import {AppRegistry, Text} from 'react-native';
+import {AppRegistry, LogBox, Text} from 'react-native';
 import App from './src/App';
 import {name as appName} from './app.json';
 
@@ -20,5 +20,9 @@ if (!__DEV__) {
 }
 Text.defaultProps = Text.defaultProps || {}
 Text.defaultProps.allowFontScaling = false
+
+LogBox.ignoreLogs([
+	'Non-serializable values were found in the navigation state',
+]);
 
 AppRegistry.registerComponent(appName, () => App);

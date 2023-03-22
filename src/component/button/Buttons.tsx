@@ -131,7 +131,6 @@ const Buttons: React.FC<Props> = ({
 		Keyboard.dismiss();
 		onPress?.();
 	}, 500);
-
 	return (
 		<TouchableOpacity
 			style={[

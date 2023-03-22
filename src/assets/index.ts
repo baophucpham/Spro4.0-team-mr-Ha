@@ -53,4 +53,7 @@ export const images = {
 	ic_add_task2: require('./images/ic_add_task2.png'),
 	ic_add_ticket: require('./images/ic_add_ticket.png'),
 	ic_down: require('./images/ic_down.png'),
+	ic_tag: require('./images/ic_tag.png'),
+	ic_edit: require('./images/ic_edit.png'),
+	ic_trash: require('./images/ic_trash.png'),
 };

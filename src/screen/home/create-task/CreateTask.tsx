@@ -1,8 +1,16 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { ScreenProps } from 'model';
-import { colors, strings, Style, sizes } from 'core';
-import { Flex, NavigationBackButton, Buttons, Switch, Input } from 'component';
+import { colors, strings, Style, sizes, Navigator } from 'core';
+import {
+	Flex,
+	NavigationBackButton,
+	Buttons,
+	Switch,
+	Input,
+	Icon,
+	SelectLabelPopup,
+} from 'component';
 import { images } from 'assets';
 
 const CreateTask: React.FC<ScreenProps> = ({ navigation }) => {
@@ -18,10 +26,23 @@ const CreateTask: React.FC<ScreenProps> = ({ navigation }) => {
 
 	const onChangeActiveMission = () => setIsActiveMission(!isActiveMission);
 
+	const onPressAddTag = () => {
+		Navigator.showBottom({
+			screen: SelectLabelPopup,
+			showHeader: false,
+		});
+	};
+
 	const renderTag = () => {
 		return (
 			<View>
 				<Text style={[Style.txt14, Style.top12]}>Nhãn</Text>
+				<View style={[Style.row_wrap, Style.top8]}>
+					<TouchableOpacity style={styles.addTag} onPress={onPressAddTag}>
+						<Icon source={images.ic_add} tintColor={colors.white} size={sizes.s14} />
+						<Text style={[Style.txt12_white, Style.left4]}>Add Tag</Text>
+					</TouchableOpacity>
+				</View>
 			</View>
 		);
 	};
@@ -55,7 +76,7 @@ const CreateTask: React.FC<ScreenProps> = ({ navigation }) => {
 				{renderTag()}
 			</View>
 			<View style={[styles.block, Style.bottom24]}>
-				<Text style={Style.txt14}>Nhiệm vụ giao hộ</Text>
+				<Text style={Style.h5}>The Task will be saved to</Text>
 				<Input label="Board" placeholder="Chọn board" isPicker />
 				<Input label="List" placeholder="Chọn List" isPicker />
 			</View>
@@ -74,5 +95,12 @@ const styles = StyleSheet.create({
 		...Style.p16,
 		...Style.top8,
 		backgroundColor: colors.white,
+	},
+	addTag: {
+		...Style.row,
+		paddingVertical: sizes.s4,
+		paddingHorizontal: sizes.s8,
+		borderRadius: sizes.s12,
+		backgroundColor: colors.blue,
 	},
 });

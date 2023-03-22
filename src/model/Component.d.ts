@@ -29,6 +29,8 @@ export interface BottomSheetProps {
 	title?: string;
 	iconRight?: FastImageProps['source'];
 	iconLeft?: FastImageProps['source'];
-	onPressIconRight?: (requestClose: any) => void;
-	onPressIconLeft?: (requestClose: any) => void;
+	onPressIconRight?: (requestClose?: any) => void;
+	onPressIconLeft?: (requestClose?: any) => void;
+	closeOnPressIconRight?: boolean;
+	closeOnPressIconLeft?: boolean;
 }
