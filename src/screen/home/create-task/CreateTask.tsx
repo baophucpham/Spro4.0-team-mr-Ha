@@ -12,10 +12,11 @@ import {
 	SelectLabelPopup,
 } from 'component';
 import { images } from 'assets';
+import { remove } from 'lodash';
 
 const CreateTask: React.FC<ScreenProps> = ({ navigation }) => {
 	const [isActiveMission, setIsActiveMission] = useState<boolean>(false);
-	const [tag, setTag] = useState<any[]>([]);
+	const [tagData, setTagData] = useState<any[]>([]);
 
 	useEffect(() => {
 		navigation.setOptions({
@@ -30,6 +31,8 @@ const CreateTask: React.FC<ScreenProps> = ({ navigation }) => {
 		Navigator.showBottom({
 			screen: SelectLabelPopup,
 			showHeader: false,
+			tagSelected: tagData,
+			onSubmit: (data: any) => setTagData([...data]),
 		});
 	};
 
@@ -42,6 +45,21 @@ const CreateTask: React.FC<ScreenProps> = ({ navigation }) => {
 						<Icon source={images.ic_add} tintColor={colors.white} size={sizes.s14} />
 						<Text style={[Style.txt12_white, Style.left4]}>Add Tag</Text>
 					</TouchableOpacity>
+					{tagData.map((item, index) => (
+						<View style={[Style.row, Style.left8, Style.bottom8]}>
+							<Icon source={images.ic_tag} tintColor={item.color} size={sizes.s24} />
+							<Text style={[Style.txt14, { paddingHorizontal: sizes.s4 }]}>
+								{item.title}
+							</Text>
+							<Icon
+								source={images.ic_close_red}
+								onPress={() => {
+									remove(tagData, (e) => e.id === item.id);
+									setTagData([...tagData]);
+								}}
+							/>
+						</View>
+					))}
 				</View>
 			</View>
 		);

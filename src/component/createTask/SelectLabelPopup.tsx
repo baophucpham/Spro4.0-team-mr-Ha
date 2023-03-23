@@ -1,28 +1,37 @@
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import React, { memo, useState } from 'react';
-import { colors, sizes, Style } from 'core';
+import { colors, Navigator, sizes, Style } from 'core';
 import Input from 'component/input/Input';
 import { images } from 'assets';
 import Icon from 'component/image/Icon';
 import Buttons from 'component/button/Buttons';
 import { remove } from 'lodash';
 import BottomSheetHeader from 'component/bottomSheet/BottomSheetHeader';
+import CreateLabel from './CreateLabel';
 
 interface Props {
 	requestClose: (onClose?: any) => void;
 	onSubmit?: (data: any) => void;
+	tagSelected: any;
 }
 
-const SelectLabelPopup: React.FC<Props> = ({ requestClose, onSubmit }) => {
+const SelectLabelPopup: React.FC<Props> = ({ tagSelected = [], requestClose, onSubmit }) => {
 	const [tagData, setTagData] = useState([
 		{ id: 1, title: 'Design', color: colors.red },
 		{ id: 2, title: 'Business', color: colors.green },
 		{ id: 3, title: 'Other', color: colors.blue },
 	]);
-	const [selectedTag, setSelectedTag] = useState<any[]>([]);
+	const [selectedTag, setSelectedTag] = useState<any[]>(tagSelected);
 
 	const onAddTag = () => {
-		setTagData([...tagData, { id: 4, title: 'Dev', color: colors.orange }]);
+		Navigator.showBottom({
+			screen: CreateLabel,
+			title: 'Create label',
+			iconLeft: images.ic_close,
+			onSubmit: (addData: any) => {
+				setTagData([{ id: tagData.length + 1, ...addData }, ...tagData]);
+			},
+		});
 	};
 
 	const onSelectTag = (item: any) => {
@@ -101,7 +110,10 @@ const SelectLabelPopup: React.FC<Props> = ({ requestClose, onSubmit }) => {
 				title="Confirm"
 				isSafe
 				style={Style.mh16}
-				onPress={() => requestClose(() => onSubmit?.(selectedTag))}
+				onPress={() => {
+					requestClose();
+					onSubmit?.(selectedTag);
+				}}
 			/>
 		</View>
 	);

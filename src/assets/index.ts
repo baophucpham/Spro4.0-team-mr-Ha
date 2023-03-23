@@ -56,4 +56,6 @@ export const images = {
 	ic_tag: require('./images/ic_tag.png'),
 	ic_edit: require('./images/ic_edit.png'),
 	ic_trash: require('./images/ic_trash.png'),
+	ic_check: require('./images/ic_check.png'),
+	ic_close_red: require('./images/ic_close_red.png'),
 };

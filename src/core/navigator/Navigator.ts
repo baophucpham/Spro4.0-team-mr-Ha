@@ -76,14 +76,14 @@ export default class Navigator {
 		});
 	}
 
-	static showBottom(params?: BottomSheetProps) {
+	static showBottom<T>(params?: BottomSheetProps & T) {
 		this.showModal({
 			type: 'bottom',
 			...params,
 		});
 	}
 
-	static showBottomSwipe(params?: BottomSheetSwipeProps) {
+	static showBottomSwipe<T>(params?: BottomSheetSwipeProps & T) {
 		this.showModal({
 			type: 'bottom-swipe',
 			...params,

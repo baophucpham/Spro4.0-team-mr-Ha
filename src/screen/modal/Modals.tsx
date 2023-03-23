@@ -5,6 +5,7 @@ import { ModalsParams } from 'model';
 import React, { Component } from 'react';
 import {
 	Animated,
+	KeyboardAvoidingView,
 	StyleSheet,
 	Text,
 	TouchableOpacity,
@@ -127,7 +128,7 @@ export default class Modals extends Component<any> {
 		const { type = 'alert' } = this.params || {};
 
 		return (
-			<View style={[styles.container]}>
+			<KeyboardAvoidingView style={[styles.container]} behavior="padding">
 				<TouchableWithoutFeedback onPress={() => this.clodeModals()}>
 					<View style={[{ flex: 1 }, type === 'alert' ? styles.alert : styles.bottom]}>
 						<TouchableWithoutFeedback>
@@ -135,7 +136,7 @@ export default class Modals extends Component<any> {
 						</TouchableWithoutFeedback>
 					</View>
 				</TouchableWithoutFeedback>
-			</View>
+			</KeyboardAvoidingView>
 		);
 	}
 }
