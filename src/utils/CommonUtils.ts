@@ -29,7 +29,7 @@ export const imageSource = (image?: string) => {
 	if (!image) {
 		return { uri: images.no_img };
 	}
-	if (image?.includes('https://') || image?.includes('file://')) {
+	if (image?.includes('https://') || image?.includes('http://') || image?.includes('file://')) {
 		return { uri: image };
 	}
 	return { uri: URL + image };

@@ -12,6 +12,9 @@ export const Style = StyleSheet.create({
 	flex: {
 		flex: 1,
 	},
+	flexGrow: {
+		flexGrow: 1,
+	},
 	txtCenter: {
 		textAlign: 'center',
 	},

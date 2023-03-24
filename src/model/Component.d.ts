@@ -1,5 +1,5 @@
 import { FastImageProps } from 'react-native-fast-image';
-import { TextInputProps } from 'react-native/types';
+import { StyleProp, TextInputProps, ViewStyle } from 'react-native/types';
 
 export interface InputProps extends TextInputProps {
 	style?: StyleProp<ViewStyle>;
@@ -12,6 +12,8 @@ export interface InputProps extends TextInputProps {
 	isPassword?: boolean;
 	isPicker?: boolean;
 	onPress?: () => void;
+	isDatePicker?: boolean;
+	onChangeDate?: (data: { date: string | Date; dateString: string }) => void;
 }
 
 export interface InputState {
@@ -24,7 +26,7 @@ export interface BottomSheetProps {
 	title?: string;
 	ref?: any;
 	showHeader?: boolean;
-	style?: any;
+	style?: StyleProp<ViewStyle>;
 	onClose?: (callback?: any) => void;
 	title?: string;
 	iconRight?: FastImageProps['source'];
@@ -33,4 +35,9 @@ export interface BottomSheetProps {
 	onPressIconLeft?: (requestClose?: any) => void;
 	closeOnPressIconRight?: boolean;
 	closeOnPressIconLeft?: boolean;
+}
+
+export interface ChooseTaskBoardProps {
+	onPressBoard: (data: any) => void;
+	requestClose?: () => void;
 }

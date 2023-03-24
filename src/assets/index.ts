@@ -58,4 +58,8 @@ export const images = {
 	ic_trash: require('./images/ic_trash.png'),
 	ic_check: require('./images/ic_check.png'),
 	ic_close_red: require('./images/ic_close_red.png'),
+	no_img: 'http://sogddt.camau.gov.vn/no-avatar.png',
+	ic_calendar: require('./images/ic_calendar.png'),
+	ic_radio: require('./images/ic_radio.png'),
+	ic_radio_checked: require('./images/ic_radio_checked.png'),
 };

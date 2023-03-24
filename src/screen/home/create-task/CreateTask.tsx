@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React, { useEffect, useState } from 'react';
-import { ScreenProps } from 'model';
+import { ChooseTaskBoardProps, ScreenProps } from 'model';
 import { colors, strings, Style, sizes, Navigator } from 'core';
 import {
 	Flex,
@@ -10,13 +10,17 @@ import {
 	Input,
 	Icon,
 	SelectLabelPopup,
+	ChooseTaskBoard,
+	CreateBoard,
 } from 'component';
 import { images } from 'assets';
 import { remove } from 'lodash';
+import ChooseListTask from '../../../component/createTask/ChooseListTask';
 
 const CreateTask: React.FC<ScreenProps> = ({ navigation }) => {
 	const [isActiveMission, setIsActiveMission] = useState<boolean>(false);
 	const [tagData, setTagData] = useState<any[]>([]);
+	const [boardData, setBoardData] = useState<any>();
 
 	useEffect(() => {
 		navigation.setOptions({
@@ -33,6 +37,22 @@ const CreateTask: React.FC<ScreenProps> = ({ navigation }) => {
 			showHeader: false,
 			tagSelected: tagData,
 			onSubmit: (data: any) => setTagData([...data]),
+		});
+	};
+
+	const onPressChooseBoard = () => {
+		Navigator.showBottom<ChooseTaskBoardProps>({
+			screen: ChooseTaskBoard,
+			iconLeft: images.ic_close,
+			iconRight: images.ic_add_task,
+			onPressBoard: setBoardData,
+			onPressIconRight: () => {
+				Navigator.showBottom({
+					screen: CreateBoard,
+					title: 'Tạo bảng',
+					iconLeft: images.ic_back,
+				});
+			},
 		});
 	};
 
@@ -65,6 +85,12 @@ const CreateTask: React.FC<ScreenProps> = ({ navigation }) => {
 		);
 	};
 
+	const onPressChooseList = () => {
+		Navigator.showBottom({
+			screen: ChooseListTask,
+		});
+	};
+
 	const renderFooter = () => (
 		<View style={[Style.ph16, Style.pv12]}>
 			<Buttons title={strings.createTask} icon={images.ic_add_task} />
@@ -95,8 +121,14 @@ const CreateTask: React.FC<ScreenProps> = ({ navigation }) => {
 			</View>
 			<View style={[styles.block, Style.bottom24]}>
 				<Text style={Style.h5}>The Task will be saved to</Text>
-				<Input label="Board" placeholder="Chọn board" isPicker />
-				<Input label="List" placeholder="Chọn List" isPicker />
+				<Input
+					label="Board"
+					placeholder="Chọn board"
+					isPicker
+					onPress={onPressChooseBoard}
+					value={boardData?.title}
+				/>
+				<Input label="List" placeholder="Chọn List" isPicker onPress={onPressChooseList} />
 			</View>
 		</Flex>
 	);

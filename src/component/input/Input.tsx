@@ -1,6 +1,7 @@
 import { images } from 'assets';
 import Icon from 'component/image/Icon';
-import { colors, sizes, Style } from 'core';
+import { colors, sizes, Style, Navigator } from 'core';
+import { format } from 'date-fns';
 import { InputProps, InputState } from 'model';
 import React, { Component } from 'react';
 import { StyleSheet, Text, TextInput, View, TouchableOpacity } from 'react-native';
@@ -31,12 +32,14 @@ export default class Input extends Component<InputProps, InputState> {
 	};
 
 	renderInput = () => {
-		const { isPicker, inputStyle, placeholder, value, ...inputProps } = this.props || {};
+		const { isPicker, isDatePicker, inputStyle, placeholder, value, ...inputProps } =
+			this.props || {};
 		const { isHidePassword } = this.state;
 
-		if (isPicker) {
+		if (isPicker || isDatePicker) {
 			return (
 				<Text
+					numberOfLines={1}
 					style={[
 						styles.input,
 						{ color: !!value ? colors.black : colors.placeholder },
@@ -65,6 +68,17 @@ export default class Input extends Component<InputProps, InputState> {
 		this.inputRef.current.focus();
 	};
 
+	showDatePicker = () => {
+		Navigator.showDatePicker({
+			onChange: (date) => {
+				this.props?.onChangeDate?.({
+					date,
+					dateString: format(date, 'dd/MM/yyyy'),
+				});
+			},
+		});
+	};
+
 	render() {
 		const {
 			style,
@@ -75,6 +89,7 @@ export default class Input extends Component<InputProps, InputState> {
 			isPassword,
 			isPicker,
 			onPress,
+			isDatePicker,
 		} = this.props || {};
 		const { isHidePassword } = this.state;
 		const borderColor = this.state.isFocused ? colors.blue : colors.borderInput;
@@ -83,7 +98,7 @@ export default class Input extends Component<InputProps, InputState> {
 			<TouchableOpacity
 				activeOpacity={1}
 				style={[styles.container, style]}
-				onPress={isPicker ? onPress : this.onPressInput}>
+				onPress={isPicker ? onPress : isDatePicker ? this.showDatePicker : this.onPressInput}>
 				{this.renderLabel()}
 				<View style={[styles.inputContainer, { borderColor }]}>
 					{this.renderIcon(iconLeft, onPressIconLeft, styles.iconLeft)}
@@ -96,6 +111,12 @@ export default class Input extends Component<InputProps, InputState> {
 						  )
 						: isPicker
 						? this.renderIcon(iconRight || images.ic_down, onPress, styles.iconRight)
+						: isDatePicker
+						? this.renderIcon(
+								iconRight || images.ic_calendar,
+								this.showDatePicker,
+								styles.iconRight
+						  )
 						: this.renderIcon(iconRight, onPressIconRight, styles.iconRight)}
 				</View>
 			</TouchableOpacity>

@@ -40,3 +40,27 @@ export const TaskColorData = [
 		borderColor: 'rgba(89, 89, 89, 0.5)',
 	},
 ];
+
+export const ChooseTaskBoardData = [
+	{
+		image: 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg',
+		title: 'Lorem isum asd asd asd asd asdas d adasdasdasd ads as dasdasd sad',
+		from: '01/01',
+		to: '31/12',
+		percent: '20%',
+	},
+	{
+		image: 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg',
+		title: 'Lorem isum asd asd asd asd asdas d adasdasdasd ads as dasdasd sad',
+		from: '01/01',
+		to: '31/12',
+		percent: '20%',
+	},
+	{
+		image: 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg',
+		title: 'Lorem isum asd asd asd asd asdas d adasdasdasd ads as dasdasd sad',
+		from: '01/01',
+		to: '31/12',
+		percent: '20%',
+	},
+];

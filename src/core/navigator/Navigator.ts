@@ -90,12 +90,10 @@ export default class Navigator {
 		});
 	}
 
-	static showDatePicker(params?: DatePickerProps & BottomSheetSwipeProps) {
-		this.showBottomSwipe({
+	static showDatePicker(params?: DatePickerProps & BottomSheetProps) {
+		this.showBottom({
 			screen: DatePicker,
-			height: 450,
-			isShowButton: true,
-			buttonTitle: 'OK',
+			showHeader: false,
 			...params,
 		});
 	}
