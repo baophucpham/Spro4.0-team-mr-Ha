@@ -12,10 +12,10 @@ import {
 	SelectLabelPopup,
 	ChooseTaskBoard,
 	CreateBoard,
+	ChooseListTask,
 } from 'component';
 import { images } from 'assets';
 import { remove } from 'lodash';
-import ChooseListTask from '../../../component/createTask/ChooseListTask';
 
 const CreateTask: React.FC<ScreenProps> = ({ navigation }) => {
 	const [isActiveMission, setIsActiveMission] = useState<boolean>(false);
