@@ -3,8 +3,9 @@ import { ScreenProps } from 'model';
 import React, { useEffect } from 'react';
 import { Text, View } from 'react-native';
 import { styles } from './styles';
-import { Style } from 'core';
-import { NavigationBackButton } from 'component';
+import { Style, sizes } from 'core';
+import { Icon, NavigationBackButton } from 'component';
+import { TicketService } from 'common/data';
 
 const CreateTicket: React.FC<ScreenProps> = ({ navigation }) => {
 	useEffect(() => {
@@ -21,6 +22,17 @@ const CreateTicket: React.FC<ScreenProps> = ({ navigation }) => {
 				<Text style={[Style.txt14_secondary, Style.top4]}>
 					Chọn loại dịch vụ bạn cần yêu cầu và làm theo hướng dẫn sau đó.
 				</Text>
+			</View>
+			<View style={styles.block}>
+				{TicketService.map((item, index) => (
+					<View key={index} style={[styles.item, index === 0 && { paddingTop: 0 }]}>
+						<View style={[Style.row, Style.flex]}>
+							<Icon source={item.icon} size={sizes.s32} />
+							<Text style={[Style.flex, Style.left12, Style.txt14]}>{item.title}</Text>
+						</View>
+						<Icon source={images.ic_next} size={sizes.s24} />
+					</View>
+				))}
 			</View>
 		</View>
 	);

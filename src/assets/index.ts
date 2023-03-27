@@ -62,4 +62,9 @@ export const images = {
 	ic_calendar: require('./images/ic_calendar.png'),
 	ic_radio: require('./images/ic_radio.png'),
 	ic_radio_checked: require('./images/ic_radio_checked.png'),
+	ic_ticket_service_1: require('./images/ic_ticket_service_1.png'),
+	ic_ticket_service_2: require('./images/ic_ticket_service_2.png'),
+	ic_ticket_service_3: require('./images/ic_ticket_service_3.png'),
+	ic_ticket_service_4: require('./images/ic_ticket_service_4.png'),
+	ic_ticket_service_5: require('./images/ic_ticket_service_5.png'),
 };

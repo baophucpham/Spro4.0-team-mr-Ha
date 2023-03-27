@@ -1,3 +1,4 @@
+import { images } from 'assets';
 export const TaskColorData = [
 	{
 		backgroundColor: 'rgba(255, 77, 79,1)',
@@ -67,7 +68,27 @@ export const ChooseTaskBoardData = [
 
 export const TicketService = [
 	{
-		icon: '',
-		title:''
+		icon: images.ic_ticket_service_1,
+		title: 'Useful Information',
+	},
+	{
+		icon: images.ic_ticket_service_2,
+		title: 'Human Resource',
+	},
+	{
+		icon: images.ic_ticket_service_1,
+		title: 'Information Technology',
+	},
+	{
+		icon: images.ic_ticket_service_3,
+		title: 'Hành chính tổng hợp',
+	},
+	{
+		icon: images.ic_ticket_service_4,
+		title: 'Tài chính kế toán',
+	},
+	{
+		icon: images.ic_ticket_service_5,
+		title: 'Truyền thông tương tác',
 	},
 ];
