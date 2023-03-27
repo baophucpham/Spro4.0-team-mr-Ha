@@ -41,4 +41,4 @@ export { default as SelectLabelPopup } from './createTask/SelectLabelPopup';
 export { default as ChooseTaskBoard } from './createTask/ChooseTaskBoard';
 export { default as CreateBoard } from './createTask/CreateBoard';
 export { default as ChooseListTask } from './createTask/ChooseListTask';
-
+export { default as CreateList } from './createTask/CreateList';

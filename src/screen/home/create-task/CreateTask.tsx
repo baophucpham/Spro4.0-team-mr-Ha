@@ -13,6 +13,7 @@ import {
 	ChooseTaskBoard,
 	CreateBoard,
 	ChooseListTask,
+	CreateList,
 } from 'component';
 import { images } from 'assets';
 import { remove } from 'lodash';
@@ -62,6 +63,12 @@ const CreateTask: React.FC<ScreenProps> = ({ navigation }) => {
 			title: 'Choose list',
 			iconLeft: images.ic_close,
 			iconRight: images.ic_add_task,
+			onPressIconRight() {
+				Navigator.showBottom({
+					screen: CreateList,
+					iconLeft: images.ic_back,
+				});
+			},
 		});
 	};
 
