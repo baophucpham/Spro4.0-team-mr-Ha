@@ -56,6 +56,15 @@ const CreateTask: React.FC<ScreenProps> = ({ navigation }) => {
 		});
 	};
 
+	const onPressChooseList = () => {
+		Navigator.showBottom({
+			screen: ChooseListTask,
+			title: 'Choose list',
+			iconLeft: images.ic_close,
+			iconRight: images.ic_add_task,
+		});
+	};
+
 	const renderTag = () => {
 		return (
 			<View>
@@ -83,12 +92,6 @@ const CreateTask: React.FC<ScreenProps> = ({ navigation }) => {
 				</View>
 			</View>
 		);
-	};
-
-	const onPressChooseList = () => {
-		Navigator.showBottom({
-			screen: ChooseListTask,
-		});
 	};
 
 	const renderFooter = () => (
