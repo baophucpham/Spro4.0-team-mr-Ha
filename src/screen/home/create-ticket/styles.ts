@@ -5,14 +5,15 @@ export const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: colors.separator,
-		paddingTop: sizes.s8,
 	},
 	block: {
 		backgroundColor: colors.white,
 		padding: sizes.s16,
+		...Style.top8,
 	},
 	item: {
 		...Style.row_between,
 		...Style.borderBottom,
+		...Style.pv16,
 	},
 });
