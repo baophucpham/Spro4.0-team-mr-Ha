@@ -64,3 +64,10 @@ export const ChooseTaskBoardData = [
 		percent: '20%',
 	},
 ];
+
+export const TicketService = [
+	{
+		icon: '',
+		title:''
+	},
+];
