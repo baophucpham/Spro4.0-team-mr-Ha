@@ -4,6 +4,7 @@ import { StyleProp, TextInputProps, ViewStyle } from 'react-native/types';
 export interface InputProps extends TextInputProps {
 	style?: StyleProp<ViewStyle>;
 	inputStyle?: StyleProp<ViewStyle>;
+	inputContainerStyle?: StyleProp<ViewStyle>;
 	label?: string;
 	iconRight?: FastImageProps['source'];
 	iconLeft?: FastImageProps['source'];
@@ -40,4 +41,10 @@ export interface BottomSheetProps {
 export interface ChooseTaskBoardProps {
 	onPressBoard: (data: any) => void;
 	requestClose?: () => void;
+}
+
+export interface ItemNoticationProps {
+	title: string;
+	date: string | Date;
+	isRead: boolean;
 }

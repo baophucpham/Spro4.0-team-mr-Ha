@@ -92,3 +92,42 @@ export const TicketService = [
 		title: 'Truyền thông tương tác',
 	},
 ];
+
+export const NotificationData = [
+	{
+		id: 1,
+		title: 'Lorem Ipsum dolor sit amet, consectetur adipiscing elit',
+		date: new Date(),
+		isRead: false,
+	},
+	{
+		id: 2,
+		title: 'Lorem Ipsum dolor sit amet, consectetur adipiscing elit',
+		date: new Date(),
+		isRead: false,
+	},
+	{
+		id: 3,
+		title: 'Lorem Ipsum dolor sit amet, consectetur adipiscing elit',
+		date: new Date(),
+		isRead: false,
+	},
+	{
+		id: 4,
+		title: 'Lorem Ipsum dolor sit amet, consectetur adipiscing elit',
+		date: new Date(),
+		isRead: true,
+	},
+	{
+		id: 5,
+		title: 'Lorem Ipsum dolor sit amet, consectetur adipiscing elit',
+		date: new Date(),
+		isRead: true,
+	},
+	{
+		id: 6,
+		title: 'Lorem Ipsum dolor sit amet, consectetur adipiscing elit',
+		date: new Date(),
+		isRead: true,
+	},
+];

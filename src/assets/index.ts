@@ -67,4 +67,8 @@ export const images = {
 	ic_ticket_service_3: require('./images/ic_ticket_service_3.png'),
 	ic_ticket_service_4: require('./images/ic_ticket_service_4.png'),
 	ic_ticket_service_5: require('./images/ic_ticket_service_5.png'),
+	ic_notification: require('./images/ic_notification.png'),
+	ic_notification_selected: require('./images/ic_notification_selected.png'),
+	ic_notification_1: require('./images/ic_notification_1.png'),
+	ic_notification_2: require('./images/ic_notification_2.png'),
 };

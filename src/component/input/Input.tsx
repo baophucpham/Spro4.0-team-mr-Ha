@@ -90,6 +90,7 @@ export default class Input extends Component<InputProps, InputState> {
 			isPicker,
 			onPress,
 			isDatePicker,
+			inputContainerStyle,
 		} = this.props || {};
 		const { isHidePassword } = this.state;
 		const borderColor = this.state.isFocused ? colors.blue : colors.borderInput;
@@ -100,7 +101,7 @@ export default class Input extends Component<InputProps, InputState> {
 				style={[styles.container, style]}
 				onPress={isPicker ? onPress : isDatePicker ? this.showDatePicker : this.onPressInput}>
 				{this.renderLabel()}
-				<View style={[styles.inputContainer, { borderColor }]}>
+				<View style={[styles.inputContainer, { borderColor },inputContainerStyle]}>
 					{this.renderIcon(iconLeft, onPressIconLeft, styles.iconLeft)}
 					{this.renderInput()}
 					{isPassword

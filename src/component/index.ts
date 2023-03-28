@@ -42,3 +42,6 @@ export { default as ChooseTaskBoard } from './createTask/ChooseTaskBoard';
 export { default as CreateBoard } from './createTask/CreateBoard';
 export { default as ChooseListTask } from './createTask/ChooseListTask';
 export { default as CreateList } from './createTask/CreateList';
+
+// notifications
+export { default as ItemNotification } from './notification/ItemNotification';
