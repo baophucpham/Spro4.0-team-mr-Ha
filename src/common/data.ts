@@ -92,3 +92,135 @@ export const TicketService = [
 		title: 'Truyền thông tương tác',
 	},
 ];
+
+export const NotificationData = [
+	{
+		id: 1,
+		title: 'Lorem Ipsum dolor sit amet, consectetur adipiscing elit',
+		date: new Date(),
+		isRead: false,
+	},
+	{
+		id: 2,
+		title: 'Lorem Ipsum dolor sit amet, consectetur adipiscing elit',
+		date: new Date(),
+		isRead: false,
+	},
+	{
+		id: 3,
+		title: 'Lorem Ipsum dolor sit amet, consectetur adipiscing elit',
+		date: new Date(),
+		isRead: false,
+	},
+	{
+		id: 4,
+		title: 'Lorem Ipsum dolor sit amet, consectetur adipiscing elit',
+		date: new Date(),
+		isRead: true,
+	},
+	{
+		id: 5,
+		title: 'Lorem Ipsum dolor sit amet, consectetur adipiscing elit',
+		date: new Date(),
+		isRead: true,
+	},
+	{
+		id: 6,
+		title: 'Lorem Ipsum dolor sit amet, consectetur adipiscing elit',
+		date: new Date(),
+		isRead: true,
+	},
+];
+
+export const CommentData = [
+	{
+		id: 0,
+		avatar: '',
+		username: 'Nguyen Van A',
+		date: new Date(),
+		content: 'Lorem Ipsum dolor sit amet, consectetur adipis sad asd asd ad a dasd sad ',
+		isReply: false,
+	},
+	{
+		id: 1,
+		avatar:
+			'https://vcdn1-giaitri.vnecdn.net/2022/09/23/-2181-1663929656.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=apYgDs9tYQiwn7pcDOGbNg',
+		username: 'Nguyen Van A',
+		date: new Date(),
+		content: 'Lorem Ipsum dolor sit amet, consectetur adipis sad asd asd ad a dasd sad ',
+		isReply: false,
+	},
+	{
+		id: 2,
+		avatar: '',
+		username: 'Nguyen Van A',
+		date: new Date(),
+		content: 'Lorem Ipsum dolor sit amet, consectetur adipis sad asd asd ad a dasd sad ',
+		isReply: true,
+	},
+	{
+		id: 3,
+		avatar: '',
+		username: 'Nguyen Van A',
+		date: new Date(),
+		content: 'Lorem Ipsum dolor sit amet, consectetur adipis sad asd asd ad a dasd sad ',
+		isReply: true,
+	},
+	{
+		id: 4,
+		avatar:
+			'https://vcdn1-giaitri.vnecdn.net/2022/09/23/-2181-1663929656.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=apYgDs9tYQiwn7pcDOGbNg',
+		username: 'Nguyen Van A',
+		date: new Date(),
+		content: 'Lorem Ipsum dolor sit amet, consectetur adipis sad asd asd ad a dasd sad ',
+		isReply: false,
+	},
+	{
+		id: 5,
+		avatar: '',
+		username: 'Nguyen Van A',
+		date: new Date(),
+		content: 'Lorem Ipsum dolor sit amet, consectetur adipis sad asd asd ad a dasd sad ',
+		isReply: true,
+	},
+	{
+		id: 6,
+		avatar: '',
+		username: 'Nguyen Van A',
+		date: new Date(),
+		content: 'Lorem Ipsum dolor sit amet, consectetur adipis sad asd asd ad a dasd sad ',
+		isReply: true,
+	},
+	{
+		id: 7,
+		avatar: '',
+		username: 'Nguyen Van A',
+		date: new Date(),
+		content: 'Lorem Ipsum dolor sit amet, consectetur adipis sad asd asd ad a dasd sad ',
+		isReply: true,
+	},
+	{
+		id: 8,
+		avatar: '',
+		username: 'Nguyen Van A',
+		date: new Date(),
+		content: 'Lorem Ipsum dolor sit amet, consectetur adipis sad asd asd ad a dasd sad ',
+		isReply: true,
+	},
+	{
+		id: 9,
+		avatar: '',
+		username: 'Nguyen Van A',
+		date: new Date(),
+		content: 'Lorem Ipsum dolor sit amet, consectetur adipis sad asd asd ad a dasd sad ',
+		isReply: true,
+	},
+	{
+		id: 10,
+		avatar: '',
+		username: 'Nguyen Van A',
+		date: new Date(),
+		content: 'Lorem Ipsum dolor sit amet, consectetur adipis sad asd asd ad a dasd sad ',
+		isReply: false,
+	},
+];
