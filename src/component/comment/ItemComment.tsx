@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React, { memo } from 'react';
-import { Style, sizes } from 'core';
+import { Style, sizes, colors } from 'core';
 import Icon from 'component/image/Icon';
 import { avatarUri } from 'utils';
 import { ItemCommentProps } from 'model';
@@ -24,6 +24,9 @@ const ItemComment: React.FC<ItemCommentProps> = ({
 					</Text>
 				</Text>
 				<Text style={[Style.txt14, Style.top8]}>{content}</Text>
+				<View style={Style.row}>
+					<Text style={styles.txt_reply}>Reply</Text>
+				</View>
 			</View>
 		</View>
 	);
@@ -42,5 +45,11 @@ const styles = StyleSheet.create({
 		marginLeft: sizes.s8,
 		paddingBottom: sizes.s12,
 		...Style.borderBottom,
+	},
+	txt_reply: {
+		marginTop: sizes.s4,
+		...Style.txt14,
+		...Style.bold,
+		color: colors.blue,
 	},
 });
