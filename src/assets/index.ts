@@ -71,4 +71,5 @@ export const images = {
 	ic_notification_selected: require('./images/ic_notification_selected.png'),
 	ic_notification_1: require('./images/ic_notification_1.png'),
 	ic_notification_2: require('./images/ic_notification_2.png'),
+	ic_send: require('./images/ic_send.png'),
 };

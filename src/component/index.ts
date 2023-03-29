@@ -45,3 +45,6 @@ export { default as CreateList } from './createTask/CreateList';
 
 // notifications
 export { default as ItemNotification } from './notification/ItemNotification';
+
+// comment
+export { default as ItemComment } from './comment/ItemComment';

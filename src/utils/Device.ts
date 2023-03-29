@@ -1,6 +1,6 @@
-import { Platform } from 'react-native'
-import { EdgeInsets } from 'react-native-safe-area-context'
-import { getBottomSpace, getStatusBarHeight } from './IphoneHelper'
+import { Platform } from 'react-native';
+import { EdgeInsets } from 'react-native-safe-area-context';
+import { getBottomSpace, getStatusBarHeight } from './IphoneHelper';
 /**
 	**returns** - the height of the status bar:
 	`59` for safe iPhone 14 pro and 14 pro max
@@ -17,22 +17,22 @@ export default class Device {
 		left: 0,
 		bottom: 0,
 		right: 0,
-	}
-	static isIos = Platform.OS === 'ios'
-	static isAndroid = Platform.OS === 'android'
+	};
+	static isIos = Platform.OS === 'ios';
+	static isAndroid = Platform.OS === 'android';
 
 	static setDeviceInset(insets: EdgeInsets) {
-		this.insets = insets
+		this.insets = insets;
 	}
 
 	static getStatusBarHeight() {
-		return this.insets.top || getStatusBarHeight()
+		return this.insets.top || getStatusBarHeight();
 	}
 
 	static getBottomSpace() {
-		return this.insets.bottom || getBottomSpace()
+		return this.insets.bottom || getBottomSpace();
 	}
 	static setHeaderHeight(height: number) {
-		return this.getStatusBarHeight() + height
+		return this.getStatusBarHeight() + height;
 	}
 }

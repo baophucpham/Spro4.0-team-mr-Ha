@@ -48,3 +48,11 @@ export interface ItemNoticationProps {
 	date: string | Date;
 	isRead: boolean;
 }
+
+export interface ItemCommentProps {
+	avatar?: string;
+	username?: string;
+	date?: string | Date;
+	content?: string;
+	isReply?: boolean;
+}
