@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">AwesomeProject</string>
+    <string name="app_name">Task MKT</string>
+    <string name="facebook_app_id">6380200025337153</string>
+    <string name="fb_login_protocol_scheme">fb6380200025337153</string>
+    <string name="facebook_client_token">45098db1b3fcad01a938cfe8bc9bfbe5</string>
+
+
 </resources>

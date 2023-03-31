@@ -47,7 +47,35 @@
 				<string>com.googleusercontent.apps.828847573751-bt73g0o5qf0q92sdsiphs3mkslvjd43q</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>CFBundleURLSchemes</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb6380200025337153</string>
+			</array>
+		</dict>
 	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+  		<string>fbapi</string>
+  		<string>fb-messenger-share-api</string>
+	</array>
+	<key>FacebookAppID</key>
+	<string>6380200025337153</string>
+	<key>FacebookClientToken</key>
+	<string>45098db1b3fcad01a938cfe8bc9bfbe5</string>
+	<key>FacebookDisplayName</key>
+	<string>Task MKT</string>
+
+	<key>NSCameraUsageDescription</key>
+ 	<string>Ứng dụng yêu cầu quyền truy cập máy ảnh để chụp hình</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+  	<string>Ứng dụng yêu cầu quyền try cập thư viện ảnh để chọn hình</string>
+  	<key>NSPhotoLibraryAddUsageDescription</key>
+  	<string>Ứng dụng yêu cầu quyền lưu ảnh video vào thiết bị của bạn</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
 	<key>UIAppFonts</key>

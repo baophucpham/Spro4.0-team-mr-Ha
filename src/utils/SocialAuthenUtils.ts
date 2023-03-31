@@ -1,5 +1,6 @@
 import { GoogleSignin, User } from '@react-native-google-signin/google-signin';
 import { isEmpty } from 'lodash';
+import { AccessToken, LoginManager, Profile } from 'react-native-fbsdk-next';
 import Device from './Device';
 
 GoogleSignin.configure({
@@ -32,26 +33,26 @@ export const loginGoogle = async () => {
 	} catch (error: any) {}
 };
 
-// export const loginFacebook = async () => {
-// 	try {
-// 		const result = await LoginManager.logInWithPermissions(['email', 'public_profile']);
-// 		if (result.isCancelled) {
-// 			throw 'System error!';
-// 		} else {
-// 			// Once signed in, get the users AccesToken
-// 			const data = await AccessToken.getCurrentAccessToken();
-// 			const currentProfile: any = await Profile.getCurrentProfile();
-// 			const userFB = Object.assign({}, data, currentProfile);
-// 			if (userFB.email === '' || userFB?.name === '') {
-// 				throw 'System error!';
-// 			} else {
-// 				return userFB;
-// 			}
-// 		}
-// 	} catch (error: any) {
-// 		throw 'User cancelled the login process';
-// 	}
-// };
+export const loginFacebook = async () => {
+	try {
+		const result = await LoginManager.logInWithPermissions(['email', 'public_profile']);
+		if (result.isCancelled) {
+			throw 'System error!';
+		} else {
+			// Once signed in, get the users AccesToken
+			const data = await AccessToken.getCurrentAccessToken();
+			const currentProfile: any = await Profile.getCurrentProfile();
+			const userFB = Object.assign({}, data, currentProfile);
+			if (userFB.email === '' || userFB?.name === '') {
+				throw 'System error!';
+			} else {
+				return userFB;
+			}
+		}
+	} catch (error: any) {
+		throw 'User cancelled the login process';
+	}
+};
 
 // export const loginApple = async () => {
 // 	try {
