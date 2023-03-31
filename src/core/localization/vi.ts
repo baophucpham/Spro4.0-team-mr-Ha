@@ -52,4 +52,12 @@ export const vi = {
 	subtitleCreateTaskPopup: 'Công việc không cần thông qua quy trình.',
 	subtitleCreateTicketPopup: 'Công việc cần thông qua quy trình đã quy định của công ty.',
 	taskInfo: 'Task information',
+	describe:'Mô tả',
+	progress:'Tiến độ',
+	saveResults:'lưu kết quả',
+	newCheckItem:'Đầu việc mới',
+	createList:'Tạo danh sách',
+	nameList:'Tên danh sách',
+	Issue:'Issue',
+	createIssue:'Tạo Issue mới',
 };

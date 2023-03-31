@@ -7,6 +7,7 @@ import { images } from 'assets';
 import { sizes, colors, Style, Navigator, strings } from 'core/index';
 import CradTask from './CradTask';
 import TimeLineBottomSheet from '../homeTask/TimeLineBottomSheet';
+import { Screens } from 'common';
 
 const ListDetail = ({navigation}: any) => {
     useEffect(() => {
@@ -26,6 +27,10 @@ const ListDetail = ({navigation}: any) => {
 			hideTitle: false,
 		})
 	}
+
+    const goCreateTask = () => {
+        Navigator.navigate(Screens.CreateTask);
+    }
 
     const data = [
         {   id: 1,
@@ -102,7 +107,7 @@ const ListDetail = ({navigation}: any) => {
                         <Text style={styles.BtnViewMore}>{strings.seeMore}</Text>
                     </TouchableOpacity>
                 </View>
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity style={styles.button} onPress={goCreateTask}>
                     <Image style={styles.iconPlush} source={images.ic_plush}/>
                     <Text style={styles.textButton}>
                         {strings.createTask}

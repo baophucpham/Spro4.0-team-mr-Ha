@@ -9,6 +9,13 @@ const ListBtn = () => {
     const navigateWorkResult = () =>{
         Navigator.navigate(Screens.WorkResult)
     }
+    const navigateCheckItem = () =>{
+        Navigator.navigate(Screens.CheckItem)
+    }
+    const navigateIssue =()=>{
+        Navigator.navigate(Screens.Issue)
+    }
+
   return (
     <View>
       <TouchableOpacity style={styles.viewBtn} onPress={navigateWorkResult}>
@@ -23,7 +30,7 @@ const ListBtn = () => {
             <Image style={styles.iconArrow} source={images.ic_arrowRightBlack}/>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.viewBtn}>
+      <TouchableOpacity style={styles.viewBtn} onPress={navigateCheckItem}>
         <View style={styles.viewContentBtn}>
             <Image style={styles.iconbtn} source={images.ic_checkList}/>
             <Text>{strings.testHeader}</Text>
@@ -47,7 +54,7 @@ const ListBtn = () => {
             <Image style={styles.iconArrow} source={images.ic_arrowRightBlack}/>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.viewBtn}>
+      <TouchableOpacity style={styles.viewBtn} onPress={navigateIssue}>
         <View style={styles.viewContentBtn}>
             <Image style={styles.iconbtn} source={images.icon_warning}/>
             <Text>{strings.issue}</Text>
