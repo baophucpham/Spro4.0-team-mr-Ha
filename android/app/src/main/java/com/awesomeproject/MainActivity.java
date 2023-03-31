@@ -1,4 +1,4 @@
-package com.awesomeproject;
+package com.taskmkt;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

@@ -1,9 +1,10 @@
 import { images } from 'assets';
-import { Style } from 'core';
+import { Navigator, Style } from 'core';
 import React, { memo } from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { Device } from 'utils';
+import { loginGoogle } from 'utils/SocialAuthenUtils';
 
 const SocialButton: React.FC = () => {
 	const dispatch = useDispatch();
@@ -30,7 +31,12 @@ const SocialButton: React.FC = () => {
 
 	const onPressFacebookLogin = async () => {};
 
-	const onPressGoolgeLogin = async () => {};
+	const onPressGoolgeLogin = async () => {
+		try {
+			const data = await loginGoogle();
+			Navigator.goHome();
+		} catch (error) {}
+	};
 
 	const onPressAppleLogin = async () => {};
 
