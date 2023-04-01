@@ -20,21 +20,6 @@
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>$(CURRENT_PROJECT_VERSION)</string>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSExceptionDomains</key>
-		<dict>
-			<key>localhost</key>
-			<dict>
-				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-			</dict>
-		</dict>
-	</dict>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -58,26 +43,42 @@
 			</array>
 		</dict>
 	</array>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-  		<string>fbapi</string>
-  		<string>fb-messenger-share-api</string>
-	</array>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>FacebookAppID</key>
 	<string>6380200025337153</string>
 	<key>FacebookClientToken</key>
 	<string>45098db1b3fcad01a938cfe8bc9bfbe5</string>
 	<key>FacebookDisplayName</key>
 	<string>Task MKT</string>
-
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+	</array>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>New Exception Domain</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
 	<key>NSCameraUsageDescription</key>
- 	<string>Ứng dụng yêu cầu quyền truy cập máy ảnh để chụp hình</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-  	<string>Ứng dụng yêu cầu quyền try cập thư viện ảnh để chọn hình</string>
-  	<key>NSPhotoLibraryAddUsageDescription</key>
-  	<string>Ứng dụng yêu cầu quyền lưu ảnh video vào thiết bị của bạn</string>
+	<string>Ứng dụng yêu cầu quyền truy cập máy ảnh để chụp hình</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Ứng dụng yêu cầu quyền lưu ảnh video vào thiết bị của bạn</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Ứng dụng yêu cầu quyền try cập thư viện ảnh để chọn hình</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Manrope-Bold.ttf</string>

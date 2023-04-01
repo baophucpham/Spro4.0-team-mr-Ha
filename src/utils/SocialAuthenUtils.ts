@@ -1,3 +1,4 @@
+import appleAuth from '@invertase/react-native-apple-authentication';
 import { GoogleSignin, User } from '@react-native-google-signin/google-signin';
 import { isEmpty } from 'lodash';
 import { AccessToken, LoginManager, Profile } from 'react-native-fbsdk-next';
@@ -54,17 +55,17 @@ export const loginFacebook = async () => {
 	}
 };
 
-// export const loginApple = async () => {
-// 	try {
-// 		const userApple = await appleAuth.performRequest({
-// 			requestedOperation: appleAuth.Operation.LOGIN,
-// 			requestedScopes: [appleAuth.Scope.EMAIL, appleAuth.Scope.FULL_NAME],
-// 		});
-// 		if (!userApple) {
-// 			throw 'System error!';
-// 		}
-// 		return userApple;
-// 	} catch (error: any) {
-// 		throw 'User cancelled the login process';
-// 	}
-// };
+export const loginApple = async () => {
+	try {
+		const userApple = await appleAuth.performRequest({
+			requestedOperation: appleAuth.Operation.LOGIN,
+			requestedScopes: [appleAuth.Scope.EMAIL, appleAuth.Scope.FULL_NAME],
+		});
+		if (!userApple) {
+			throw 'System error!';
+		}
+		return userApple;
+	} catch (error: any) {
+		throw 'User cancelled the login process';
+	}
+};
