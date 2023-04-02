@@ -78,7 +78,8 @@ const ListBtn = () => {
             </View>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.viewBtn}>
+      <TouchableOpacity style={styles.viewBtn} 
+            onPress={() => Navigator.navigate(Screens.Comment)}>
         <View style={styles.viewContentBtn}>
             <Image style={styles.iconbtn} source={images.ic_messenger}/>
             <Text>{strings.comment}</Text>
