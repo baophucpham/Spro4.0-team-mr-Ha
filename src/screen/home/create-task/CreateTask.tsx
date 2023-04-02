@@ -12,10 +12,11 @@ import {
 	SelectLabelPopup,
 	ChooseTaskBoard,
 	CreateBoard,
+	ChooseListTask,
+	CreateList,
 } from 'component';
 import { images } from 'assets';
 import { remove } from 'lodash';
-import ChooseListTask from '../../../component/createTask/ChooseListTask';
 
 const CreateTask: React.FC<ScreenProps> = ({ navigation }) => {
 	const [isActiveMission, setIsActiveMission] = useState<boolean>(false);
@@ -56,6 +57,21 @@ const CreateTask: React.FC<ScreenProps> = ({ navigation }) => {
 		});
 	};
 
+	const onPressChooseList = () => {
+		Navigator.showBottom({
+			screen: ChooseListTask,
+			title: 'Choose list',
+			iconLeft: images.ic_close,
+			iconRight: images.ic_add_task,
+			onPressIconRight() {
+				Navigator.showBottom({
+					screen: CreateList,
+					iconLeft: images.ic_back,
+				});
+			},
+		});
+	};
+
 	const renderTag = () => {
 		return (
 			<View>
@@ -83,12 +99,6 @@ const CreateTask: React.FC<ScreenProps> = ({ navigation }) => {
 				</View>
 			</View>
 		);
-	};
-
-	const onPressChooseList = () => {
-		Navigator.showBottom({
-			screen: ChooseListTask,
-		});
 	};
 
 	const renderFooter = () => (

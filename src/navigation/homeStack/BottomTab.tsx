@@ -30,14 +30,14 @@ const BottomTab = () => {
 				});
 			},
 		},
-		// {
-		// 	name: 'Notification',
-		// 	screen: Notification,
-		// 	icon: images.ic_search,
-		// 	icon_selected: images.ic_search,
-		// 	label: strings.notification,
-		// 	badge: 0,
-		// },
+		{
+			name: 'Notification',
+			screen: Notification,
+			icon: images.ic_notification,
+			icon_selected: images.ic_notification_selected,
+			label: strings.notification,
+			badge: 0,
+		},
 		{
 			name: 'More',
 			screen: More,

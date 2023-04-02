@@ -4,6 +4,7 @@ export { default as Notification } from './notification/Notification';
 export { default as ListDetail } from './listDetail/ListDetail';
 export { default as TaskDetail } from './taskDetail/TaskDetail';
 export { default as WorkResult } from './workResult/WorkResult';
+export { default as Comment } from './workResult/Comment';
 
 // create task
 export { default as CreateTaskPopup } from './create-task/CreateTaskPopup';

@@ -1,9 +1,9 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import { TouchableOpacity } from 'react-native-gesture-handler'
-import { images } from 'assets'
-import { colors, Navigator, sizes, strings } from 'core/index'
-import { Screens } from 'common'
+import { Image, StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { images } from 'assets';
+import { colors, Navigator, sizes, strings } from 'core/index';
+import { Screens } from 'common';
 
 const ListBtn = () => {
     const navigateWorkResult = () =>{
@@ -94,56 +94,56 @@ const ListBtn = () => {
   )
 }
 
-export default ListBtn
+export default ListBtn;
 
 const styles = StyleSheet.create({
-    viewBtn:{
-        flexDirection:'row',
-        alignItems:'center',
-        paddingHorizontal: sizes.s16,
-        paddingVertical: sizes.s12,
-        justifyContent:'space-between',
-        marginBottom:sizes.s1,
-        backgroundColor: colors.white,
-    },
-    viewContentBtn:{
-        flexDirection:'row',
-        alignItems:'center',
-    },
-    iconbtn:{
-        width: sizes.s32,
-        height: sizes.s32,
-        marginRight: sizes.s14,
-    },
-    iconArrow:{
-        width: sizes.s6,
-        height: sizes.s12,
-        marginLeft: sizes.s14,
-    },
-    iconAdd:{
-        width: sizes.s16,
-        height: sizes.s16,
-        marginRight: sizes.s14,
-    },
-    viewnumberBtn:{
-        backgroundColor: colors.red,
-        width: sizes.s20,
-        height: sizes.s20,
-        alignItems:'center',
-        justifyContent:'center',
-        borderRadius: sizes.s22,
-        textAlign:'center',
-    },
-    numberBtn:{
-        color: colors.white,
-        fontWeight:'400',
-        fontSize: sizes.s14,
-        lineHeight: sizes.s22,
-    },
-    addNew:{
-       color:colors.blue,
-       fontWeight: '400',
-       fontSize: sizes.s14,
-       lineHeight: sizes.s22,
-    },
-})
+	viewBtn: {
+		flexDirection: 'row',
+		alignItems: 'center',
+		paddingHorizontal: sizes.s16,
+		paddingVertical: sizes.s12,
+		justifyContent: 'space-between',
+		marginBottom: sizes.s1,
+		backgroundColor: colors.white,
+	},
+	viewContentBtn: {
+		flexDirection: 'row',
+		alignItems: 'center',
+	},
+	iconbtn: {
+		width: sizes.s32,
+		height: sizes.s32,
+		marginRight: sizes.s14,
+	},
+	iconArrow: {
+		width: sizes.s6,
+		height: sizes.s12,
+		marginLeft: sizes.s14,
+	},
+	iconAdd: {
+		width: sizes.s16,
+		height: sizes.s16,
+		marginRight: sizes.s14,
+	},
+	viewnumberBtn: {
+		backgroundColor: colors.red,
+		width: sizes.s20,
+		height: sizes.s20,
+		alignItems: 'center',
+		justifyContent: 'center',
+		borderRadius: sizes.s22,
+		textAlign: 'center',
+	},
+	numberBtn: {
+		color: colors.white,
+		fontWeight: '400',
+		fontSize: sizes.s14,
+		lineHeight: sizes.s22,
+	},
+	addNew: {
+		color: colors.blue,
+		fontWeight: '400',
+		fontSize: sizes.s14,
+		lineHeight: sizes.s22,
+	},
+});

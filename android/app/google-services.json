@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "828847573751",
+    "project_id": "task-mkt",
+    "storage_bucket": "task-mkt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:828847573751:android:a06120baababc372c461f2",
+        "android_client_info": {
+          "package_name": "com.taskmkt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "828847573751-his43gi0n3m5bvasjchj5mu3p95k1971.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAH7cCOYiPglbJW1h8q9C4mxdo75J-xhYc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "828847573751-af7i4hdfja1jrklpk98nt77vgu6ssoac.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "828847573751-bt73g0o5qf0q92sdsiphs3mkslvjd43q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.taskmkt"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
