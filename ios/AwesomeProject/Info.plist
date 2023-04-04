@@ -71,6 +71,8 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>CodePushDeploymentKey</key>
+	<string>Ypf8puKPmclARaAJmUtuEoleKrFxNqMmn4elQ</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Ứng dụng yêu cầu quyền truy cập máy ảnh để chụp hình</string>
 	<key>NSLocationWhenInUseUsageDescription</key>

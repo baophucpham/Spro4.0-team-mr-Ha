@@ -11,6 +11,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';
 import { Device } from 'utils';
 import store from './redux/store';
+import withCodePush from 'config/CodePush';
 
 const App: React.FC = () => {
 	useEffect(() => {
@@ -38,4 +39,4 @@ const App: React.FC = () => {
 	);
 };
 
-export default App;
+export default withCodePush(App);

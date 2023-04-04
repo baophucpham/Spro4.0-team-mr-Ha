@@ -19,6 +19,7 @@
 		A6EDE59C306448F2AD00B4E1 /* Manrope-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B9CB745FE2F4EF99F1B3E99 /* Manrope-Bold.ttf */; };
 		BF5C552849D3424883B40478 /* Manrope-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE35E490C26540FDA5D178C5 /* Manrope-Light.ttf */; };
 		E1A4F3042D7443F7BFA83274 /* Manrope-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8D606936C3D4C6DAFB0D59C /* Manrope-Medium.ttf */; };
+		E863838C29DC656700BBFC18 /* AppCenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = E863838B29DC656700BBFC18 /* AppCenter-Config.plist */; };
 		E8EAD77729D5D0B5000AEDD4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8EAD77629D5D0B5000AEDD4 /* GoogleService-Info.plist */; };
 		F89A00C1C3734FA7A2C9FCFA /* Manrope-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C237749F2F247A69EE998C3 /* Manrope-Regular.ttf */; };
 		F94A762134494B18A174482C /* Manrope-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FA2C524D5BC44E982595DE1 /* Manrope-SemiBold.ttf */; };
@@ -57,6 +58,7 @@
 		89C6BE57DB24E9ADA2F236DE /* Pods-AwesomeProject-AwesomeProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeProject-AwesomeProjectTests.release.xcconfig"; path = "Target Support Files/Pods-AwesomeProject-AwesomeProjectTests/Pods-AwesomeProject-AwesomeProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		B8D606936C3D4C6DAFB0D59C /* Manrope-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Manrope-Medium.ttf"; path = "../src/assets/fonts/Manrope-Medium.ttf"; sourceTree = "<group>"; };
 		BB2F6AB68B837E8D8B6FC8EA /* Pods_AwesomeProject_AwesomeProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AwesomeProject_AwesomeProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E863838B29DC656700BBFC18 /* AppCenter-Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AppCenter-Config.plist"; sourceTree = "<group>"; };
 		E89404B929D7E4C900F2C137 /* AwesomeProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = AwesomeProject.entitlements; path = AwesomeProject/AwesomeProject.entitlements; sourceTree = "<group>"; };
 		E8EAD77629D5D0B5000AEDD4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -117,6 +119,7 @@
 		13B07FAE1A68108700A75B9A /* AwesomeProject */ = {
 			isa = PBXGroup;
 			children = (
+				E863838B29DC656700BBFC18 /* AppCenter-Config.plist */,
 				E89404B929D7E4C900F2C137 /* AwesomeProject.entitlements */,
 				E8EAD77629D5D0B5000AEDD4 /* GoogleService-Info.plist */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -286,6 +289,7 @@
 				E1A4F3042D7443F7BFA83274 /* Manrope-Medium.ttf in Resources */,
 				E8EAD77729D5D0B5000AEDD4 /* GoogleService-Info.plist in Resources */,
 				F89A00C1C3734FA7A2C9FCFA /* Manrope-Regular.ttf in Resources */,
+				E863838C29DC656700BBFC18 /* AppCenter-Config.plist in Resources */,
 				F94A762134494B18A174482C /* Manrope-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

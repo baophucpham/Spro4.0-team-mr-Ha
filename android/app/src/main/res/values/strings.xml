@@ -4,5 +4,8 @@
     <string name="fb_login_protocol_scheme">fb6380200025337153</string>
     <string name="facebook_client_token">45098db1b3fcad01a938cfe8bc9bfbe5</string>
 
+    <string name="appCenterCrashes_whenToSendCrashes" moduleConfig="true" translatable="false">DO_NOT_ASK_JAVASCRIPT</string>
+    <string name="appCenterAnalytics_whenToEnableAnalytics" moduleConfig="true" translatable="false">ALWAYS_SEND</string>
+    <string moduleConfig="true" name="CodePushDeploymentKey">8W4LGrS8oDp6onZ13i5DnJRE-UtuX3xYcUZ0Q</string>
 
 </resources>
