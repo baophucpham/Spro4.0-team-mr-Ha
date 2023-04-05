@@ -1,18 +1,18 @@
-import { UpdateView } from 'component'
-import React from 'react'
-import CodePush from 'react-native-code-push'
+import { UpdateView } from 'component';
+import React from 'react';
+import CodePush from 'react-native-code-push';
 
 //auto check when open app
 const CODE_PUSH_OPTIONS = {
 	checkFrequency: CodePush.CheckFrequency.ON_APP_RESUME,
-}
+};
 
 const withCodePush = (WrappedComponent: any) => {
 	class WrappedApp extends React.PureComponent<any, any> {
 		state = {
 			loading: false,
 			percent: 0,
-		}
+		};
 		componentDidMount() {
 			CodePush.sync(
 				{
@@ -26,16 +26,16 @@ const withCodePush = (WrappedComponent: any) => {
 				},
 				(status) => {
 					if (status === CodePush.SyncStatus.UPDATE_INSTALLED) {
-						this.setState({ loading: false })
+						this.setState({ loading: false });
 					}
 				},
 				(process) => {
 					this.setState({
 						loading: true,
 						percent: Math.round((process.receivedBytes / process.totalBytes) * 100),
-					})
+					});
 				}
-			)
+			);
 		}
 
 		render() {
@@ -47,9 +47,9 @@ const withCodePush = (WrappedComponent: any) => {
 					/>
 					<WrappedComponent />
 				</>
-			)
+			);
 		}
 	}
-	return CodePush(CODE_PUSH_OPTIONS)(WrappedApp)
-}
-export default withCodePush
+	return CodePush(CODE_PUSH_OPTIONS)(WrappedApp);
+};
+export default withCodePush;
