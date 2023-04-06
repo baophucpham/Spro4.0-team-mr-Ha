@@ -1,14 +1,14 @@
 import { images } from 'assets';
-import { Stacks } from 'common';
+import { Screens, Stacks } from 'common';
 import { Buttons, Flex, Input, ItemCheckbox, SocialButton } from 'component';
 import { colors, Navigator, sizes, Style } from 'core/index';
 import { ScreenProps } from 'model';
 import React, { useEffect, useState } from 'react';
-import { Image, ImageBackground, StyleSheet, View } from 'react-native';
+import { Image, ImageBackground, StyleSheet, View, Text } from 'react-native';
 import { strings } from 'core';
 
 const Login: React.FC<ScreenProps> = ({ navigation }) => {
-	const [username, setUsernam] = useState<string>('');
+	const [username, setUsername] = useState<string>('');
 	const [password, setPassword] = useState<string>('');
 	const [isSaveLogin, setIsSaveLogin] = useState<boolean>(true);
 
@@ -18,16 +18,19 @@ const Login: React.FC<ScreenProps> = ({ navigation }) => {
 		});
 	}, []);
 
-	const onPress = () => {
+	const onPressLogin = () => {
 		Navigator.reset(Stacks.HomeStack);
 	};
 
+	const onPressSignup = () => {
+		Navigator.navigate(Screens.SignUp);
+	};
 	return (
 		<Flex style={Style.flex} safeFooter={false} keyboardOffset={1}>
 			<ImageBackground source={images.background_login} style={styles.background}>
 				<View style={styles.container}>
 					<Image source={images.logo_spro} style={styles.logo} />
-					<Input placeholder={strings.username} value={username} onChangeText={setUsernam} />
+					<Input placeholder={strings.username} value={username} onChangeText={setUsername} />
 					<Input
 						isPassword
 						placeholder={strings.password}
@@ -44,8 +47,13 @@ const Login: React.FC<ScreenProps> = ({ navigation }) => {
 						title={strings.continue}
 						style={Style.top32}
 						// disabled={!username || !password}
-						onPress={onPress}
+						onPress={onPressLogin}
 					/>
+					<Text
+						onPress={onPressSignup}
+						style={[Style.txt16_blue, Style.top8, Style.txtCenter]}>
+						{strings.signup}
+					</Text>
 					<SocialButton />
 				</View>
 			</ImageBackground>
@@ -55,7 +63,7 @@ const Login: React.FC<ScreenProps> = ({ navigation }) => {
 
 export default Login;
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
 	background: {
 		flex: 1,
 		justifyContent: 'center',
