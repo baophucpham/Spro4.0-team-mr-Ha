@@ -1,2 +1,1 @@
-export const URL = 'API_URL';
-export const BASE_URL = `${URL}/api`;
+export const BASE_URL = `https://taskapi.mktvn.co`;

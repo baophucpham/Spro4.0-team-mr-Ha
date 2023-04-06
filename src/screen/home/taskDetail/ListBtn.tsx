@@ -6,94 +6,97 @@ import { colors, Navigator, sizes, strings } from 'core/index';
 import { Screens } from 'common';
 
 const ListBtn = () => {
-    const navigateWorkResult = () =>{
-        Navigator.navigate(Screens.WorkResult)
-    }
-    const navigateCheckItem = () =>{
-        Navigator.navigate(Screens.CheckItem)
-    }
-    const navigateIssue =()=>{
-        Navigator.navigate(Screens.Issue)
-    }
+	const navigateWorkResult = () => {
+		Navigator.navigate(Screens.WorkResult);
+	};
+	const navigateCheckItem = () => {
+		Navigator.navigate(Screens.CheckItem);
+	};
+	const navigateIssue = () => {
+		Navigator.navigate(Screens.Issue);
+	};
 
-  return (
-    <View>
-      <TouchableOpacity style={styles.viewBtn} onPress={navigateWorkResult}>
-        <View style={styles.viewContentBtn}>
-            <Image style={styles.iconbtn} source={images.ic_workResult}/>
-            <Text>{strings.workResults}</Text>
-        </View>
-        <View style={styles.viewContentBtn}>
-            <View style={styles.viewnumberBtn}>
-                <Text style={styles.numberBtn}>9</Text>
-            </View>
-            <Image style={styles.iconArrow} source={images.ic_arrowRightBlack}/>
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.viewBtn} onPress={navigateCheckItem}>
-        <View style={styles.viewContentBtn}>
-            <Image style={styles.iconbtn} source={images.ic_checkList}/>
-            <Text>{strings.testHeader}</Text>
-        </View>
-        <View style={styles.viewContentBtn}>
-            <Image style={styles.iconAdd} source={images.ic_add}/>
-            <View >
-                <Text style={styles.addNew}>{strings.create}</Text>
-            </View>
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.viewBtn}>
-        <View style={styles.viewContentBtn}>
-            <Image style={styles.iconbtn} source={images.ic_link}/>
-            <Text>{strings.connectWithTicket}</Text>
-        </View>
-        <View style={styles.viewContentBtn}>
-            <View style={styles.viewnumberBtn}>
-                <Text style={styles.numberBtn}>9</Text>
-            </View>
-            <Image style={styles.iconArrow} source={images.ic_arrowRightBlack}/>
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.viewBtn} onPress={navigateIssue}>
-        <View style={styles.viewContentBtn}>
-            <Image style={styles.iconbtn} source={images.icon_warning}/>
-            <Text>{strings.issue}</Text>
-        </View>
-        <View style={styles.viewContentBtn}>
-            <View style={styles.viewnumberBtn}>
-                <Text style={styles.numberBtn}>9</Text>
-            </View>
-            <Image style={styles.iconArrow} source={images.ic_arrowRightBlack}/>
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.viewBtn}>
-        <View style={styles.viewContentBtn}>
-            <Image style={styles.iconbtn} source={images.ic_file}/>
-            <Text>{strings.attachments}</Text>
-        </View>
-        <View style={styles.viewContentBtn}>
-            <Image style={styles.iconAdd} source={images.ic_add}/>
-            <View >
-                <Text style={styles.addNew}>{strings.create}</Text>
-            </View>
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.viewBtn} 
-            onPress={() => Navigator.navigate(Screens.Comment)}>
-        <View style={styles.viewContentBtn}>
-            <Image style={styles.iconbtn} source={images.ic_messenger}/>
-            <Text>{strings.comment}</Text>
-        </View>
-        <View style={styles.viewContentBtn}>
-            <View style={styles.viewnumberBtn}>
-                <Text style={styles.numberBtn}>9</Text>
-            </View>
-            <Image style={styles.iconArrow} source={images.ic_arrowRightBlack}/>
-        </View>
-      </TouchableOpacity>
-    </View>
-  )
-}
+	return (
+		<View>
+			<TouchableOpacity style={styles.viewBtn} onPress={navigateWorkResult}>
+				<View style={styles.viewContentBtn}>
+					<Image style={styles.iconbtn} source={images.ic_workResult} />
+					<Text>{strings.workResults}</Text>
+				</View>
+				<View style={styles.viewContentBtn}>
+					<View style={styles.viewnumberBtn}>
+						<Text style={styles.numberBtn}>9</Text>
+					</View>
+					<Image style={styles.iconArrow} source={images.ic_arrowRightBlack} />
+				</View>
+			</TouchableOpacity>
+			<TouchableOpacity style={styles.viewBtn} onPress={navigateCheckItem}>
+				<View style={styles.viewContentBtn}>
+					<Image style={styles.iconbtn} source={images.ic_checkList} />
+					<Text>{strings.testHeader}</Text>
+				</View>
+				<View style={styles.viewContentBtn}>
+					<Image style={styles.iconAdd} source={images.ic_add} />
+					<View>
+						<Text style={styles.addNew}>{strings.create}</Text>
+					</View>
+				</View>
+			</TouchableOpacity>
+			<TouchableOpacity style={styles.viewBtn}>
+				<View style={styles.viewContentBtn}>
+					<Image style={styles.iconbtn} source={images.ic_link} />
+					<Text>{strings.connectWithTicket}</Text>
+				</View>
+				<View style={styles.viewContentBtn}>
+					<View style={styles.viewnumberBtn}>
+						<Text style={styles.numberBtn}>9</Text>
+					</View>
+					<Image style={styles.iconArrow} source={images.ic_arrowRightBlack} />
+				</View>
+			</TouchableOpacity>
+			<TouchableOpacity style={styles.viewBtn} onPress={navigateIssue}>
+				<View style={styles.viewContentBtn}>
+					<Image style={styles.iconbtn} source={images.icon_warning} />
+					<Text>{strings.issue}</Text>
+				</View>
+				<View style={styles.viewContentBtn}>
+					<View style={styles.viewnumberBtn}>
+						<Text style={styles.numberBtn}>9</Text>
+					</View>
+					<Image style={styles.iconArrow} source={images.ic_arrowRightBlack} />
+				</View>
+			</TouchableOpacity>
+			<TouchableOpacity
+				style={styles.viewBtn}
+				onPress={() => Navigator.navigate(Screens.Doccument)}>
+				<View style={styles.viewContentBtn}>
+					<Image style={styles.iconbtn} source={images.ic_file} />
+					<Text>{strings.attachments}</Text>
+				</View>
+				<View style={styles.viewContentBtn}>
+					<Image style={styles.iconAdd} source={images.ic_add} />
+					<View>
+						<Text style={styles.addNew}>{strings.create}</Text>
+					</View>
+				</View>
+			</TouchableOpacity>
+			<TouchableOpacity
+				style={styles.viewBtn}
+				onPress={() => Navigator.navigate(Screens.Comment)}>
+				<View style={styles.viewContentBtn}>
+					<Image style={styles.iconbtn} source={images.ic_messenger} />
+					<Text>{strings.comment}</Text>
+				</View>
+				<View style={styles.viewContentBtn}>
+					<View style={styles.viewnumberBtn}>
+						<Text style={styles.numberBtn}>9</Text>
+					</View>
+					<Image style={styles.iconArrow} source={images.ic_arrowRightBlack} />
+				</View>
+			</TouchableOpacity>
+		</View>
+	);
+};
 
 export default ListBtn;
 
