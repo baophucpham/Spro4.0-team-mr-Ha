@@ -10,18 +10,10 @@ import {
 	RadioButton,
 } from 'component';
 import { ImagePickerProps } from 'component/customView/ImagePickerPopup';
-import { PopUpActionProps } from 'component/customView/PopUpAction';
 import { DatePickerProps } from 'component/datePicker/DatePicker';
 import { RadioButtonProps } from 'component/radioButton/RadioButton';
 import { sizes } from 'core';
-import {
-	AlertParams,
-	BottomSheetProps,
-	BottomSheetSwipeProps,
-	DialogProps,
-	ModalsParams,
-	ScreenParams,
-} from 'model';
+import { AlertParams, DialogProps, ModalsParams, ScreenParams } from 'model';
 import { Keyboard } from 'react-native';
 import { Device, IphoneHelper } from 'utils';
 import { colors } from '../style/colors';
@@ -114,13 +106,9 @@ export default class Navigator {
 		});
 	}
 
-	static showActionPopUp(params: PopUpActionProps & BottomSheetSwipeProps) {
-		this.showBottomSwipe({
+	static showActionPopUp(params: PopUpActionProps & BottomSheetProps) {
+		this.showBottom({
 			screen: PopUpAction,
-			height:
-				(params.data?.length || 0) * sizes.s44 + // height of item
-				sizes.s48 + // swipe icon height
-				IphoneHelper.ifIphoneX(Device.getBottomSpace(), sizes.s16), // bottom height
 			...params,
 		});
 	}

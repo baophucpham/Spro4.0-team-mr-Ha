@@ -62,4 +62,5 @@ export const en = {
 	Issue: 'Issue',
 	createIssue: 'Create new Issue',
 	signup: 'Sign Up',
+	login: 'Login',
 };

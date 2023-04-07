@@ -40,10 +40,6 @@ export default class Modals extends Component<any> {
 	}
 
 	clodeModals = throttle((callback?: () => void) => {
-		const { closeOnTouchOutSide = true } = this.params;
-		if (!closeOnTouchOutSide) {
-			return;
-		}
 		if (this.bottomSheetRef.current) {
 			this.bottomSheetRef.current?.close(() => Navigator.hideModal(callback));
 		} else {
@@ -129,7 +125,14 @@ export default class Modals extends Component<any> {
 
 		return (
 			<KeyboardAvoidingView style={[styles.container]} behavior="padding">
-				<TouchableWithoutFeedback onPress={() => this.clodeModals()}>
+				<TouchableWithoutFeedback
+					onPress={() => {
+						const { closeOnTouchOutSide = true } = this.params;
+						if (!closeOnTouchOutSide) {
+							return;
+						}
+						this.clodeModals();
+					}}>
 					<View style={[{ flex: 1 }, type === 'alert' ? styles.alert : styles.bottom]}>
 						<TouchableWithoutFeedback>
 							<View>{this.renderComponent()}</View>

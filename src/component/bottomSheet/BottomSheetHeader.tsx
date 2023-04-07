@@ -2,7 +2,6 @@ import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { sizes, Style } from 'core';
 import Icon from 'component/image/Icon';
-import { BottomSheetProps } from 'model/Component';
 
 const BottomSheetHeader = (props: BottomSheetProps) => {
 	const {

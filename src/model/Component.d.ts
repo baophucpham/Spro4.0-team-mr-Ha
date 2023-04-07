@@ -1,7 +1,4 @@
-import { FastImageProps } from 'react-native-fast-image';
-import { StyleProp, TextInputProps, ViewStyle } from 'react-native/types';
-
-export interface InputProps extends TextInputProps {
+interface InputProps extends TextInputProps {
 	style?: StyleProp<ViewStyle>;
 	inputStyle?: StyleProp<ViewStyle>;
 	inputContainerStyle?: StyleProp<ViewStyle>;
@@ -17,12 +14,12 @@ export interface InputProps extends TextInputProps {
 	onChangeDate?: (data: { date: string | Date; dateString: string }) => void;
 }
 
-export interface InputState {
+interface InputState {
 	isFocused: boolean;
 	isHidePassword?: boolean;
 }
 
-export interface BottomSheetProps {
+interface BottomSheetProps {
 	screen?: any;
 	title?: string;
 	ref?: any;
@@ -36,23 +33,51 @@ export interface BottomSheetProps {
 	onPressIconLeft?: (requestClose?: any) => void;
 	closeOnPressIconRight?: boolean;
 	closeOnPressIconLeft?: boolean;
+	closeOnTouchOutSide?: boolean;
 }
 
-export interface ChooseTaskBoardProps {
+interface BottomSheetSwipeProps {
+	screen?: any;
+	draggable?: boolean;
+	height?: number;
+	onClose?: (callback?: () => void) => void;
+	isShowButton?: boolean;
+	buttonTitle?: string;
+	buttonOnPress?: () => void;
+	closeOnTouchOutSide?: boolean;
+}
+
+interface ChooseTaskBoardProps {
 	onPressBoard: (data: any) => void;
 	requestClose?: () => void;
 }
 
-export interface ItemNoticationProps {
+interface ItemNoticationProps {
 	title: string;
 	date: string | Date;
 	isRead: boolean;
 }
 
-export interface ItemCommentProps {
+interface ItemCommentProps {
 	avatar?: string;
 	username?: string;
 	date?: string | Date;
 	content?: string;
 	isReply?: boolean;
+}
+
+interface PopUpActionProps {
+	closeOntouch?: boolean; // auto close popup when press any item
+	requestClose?: (callback?: () => void) => void;
+	keyTitle?: string;
+	data: {
+		icon?: any;
+		title?: string | any;
+		onPress?: (data?: any) => void;
+		titleColor?: string;
+		closeOntouchItem?: boolean; // auto close popup when press each item
+		isShow?: boolean;
+		[key: string]: any;
+	}[];
+	onPress?: (data?: any) => void;
 }

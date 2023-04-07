@@ -3,7 +3,6 @@ import React, { memo } from 'react';
 import { Style, sizes, colors } from 'core';
 import Icon from 'component/image/Icon';
 import { avatarUri } from 'utils';
-import { ItemCommentProps } from 'model';
 import { format } from 'date-fns';
 
 const ItemComment: React.FC<ItemCommentProps> = ({

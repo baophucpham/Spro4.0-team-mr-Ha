@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import React from 'react';
-import { ItemNoticationProps } from 'model';
 import { Style, sizes, colors } from 'core';
 import Icon from 'component/image/Icon';
 import { images } from 'assets';

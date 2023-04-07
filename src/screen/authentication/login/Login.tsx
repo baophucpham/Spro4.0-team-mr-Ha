@@ -1,16 +1,19 @@
+import { loginAction } from 'action/authenAction';
 import { images } from 'assets';
-import { Screens, Stacks } from 'common';
+import { Screens } from 'common';
 import { Buttons, Flex, Input, ItemCheckbox, SocialButton } from 'component';
+import { strings } from 'core';
 import { colors, Navigator, sizes, Style } from 'core/index';
 import { ScreenProps } from 'model';
 import React, { useEffect, useState } from 'react';
-import { Image, ImageBackground, StyleSheet, View, Text } from 'react-native';
-import { strings } from 'core';
+import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
+import { useDispatch } from 'react-redux';
 
 const Login: React.FC<ScreenProps> = ({ navigation }) => {
-	const [username, setUsername] = useState<string>('');
-	const [password, setPassword] = useState<string>('');
+	const [username, setUsername] = useState<string>('admin');
+	const [password, setPassword] = useState<string>('1q2w3e4r5t');
 	const [isSaveLogin, setIsSaveLogin] = useState<boolean>(true);
+	const dispatch = useDispatch();
 
 	useEffect(() => {
 		navigation.setOptions({
@@ -19,7 +22,7 @@ const Login: React.FC<ScreenProps> = ({ navigation }) => {
 	}, []);
 
 	const onPressLogin = () => {
-		Navigator.reset(Stacks.HomeStack);
+		dispatch(loginAction({ username, password }));
 	};
 
 	const onPressSignup = () => {
@@ -46,7 +49,7 @@ const Login: React.FC<ScreenProps> = ({ navigation }) => {
 					<Buttons
 						title={strings.continue}
 						style={Style.top32}
-						// disabled={!username || !password}
+						disabled={!username || !password}
 						onPress={onPressLogin}
 					/>
 					<Text

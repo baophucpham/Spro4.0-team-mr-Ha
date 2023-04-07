@@ -1,47 +1,38 @@
-import Buttons from 'component/button/Buttons'
-import { colors, sizes, Style } from 'core'
-import React, { Component } from 'react'
-import { Animated, PanResponder, StyleSheet, View } from 'react-native'
+import Buttons from 'component/button/Buttons';
+import { colors, sizes, Style } from 'core';
+import React, { Component } from 'react';
+import { Animated, PanResponder, StyleSheet, View } from 'react-native';
 
-export interface BottomSheetSwipeProps {
-	screen?: any
-	draggable?: boolean
-	height?: number
-	onClose?: (callback?: () => void) => void
-	isShowButton?: boolean
-	buttonTitle?: string
-	buttonOnPress?: () => void
-}
 interface States {
-	modalVisible: boolean
-	animatedHeight: any
-	pan: any
+	modalVisible: boolean;
+	animatedHeight: any;
+	pan: any;
 }
-const time = 300
+const time = 300;
 
 class BottomSheetSwipe extends Component<BottomSheetSwipeProps, States> {
-	panResponder: any
+	panResponder: any;
 
 	constructor(props: BottomSheetSwipeProps) {
-		super(props)
+		super(props);
 		this.state = {
 			modalVisible: false,
 			animatedHeight: new Animated.Value(0),
 			pan: new Animated.ValueXY(),
-		}
+		};
 
-		this.createPanResponder(props)
+		this.createPanResponder(props);
 	}
 
 	setModalVisible(visible: boolean, closeFunction: any = undefined) {
-		const { height = 0, onClose = () => {} } = this.props
-		const { animatedHeight, pan } = this.state
+		const { height = 0, onClose = () => {} } = this.props;
+		const { animatedHeight, pan } = this.state;
 		if (visible) {
 			Animated.timing(animatedHeight, {
 				toValue: height,
 				duration: time,
 				useNativeDriver: false,
-			}).start()
+			}).start();
 		} else {
 			Animated.timing(animatedHeight, {
 				toValue: 0,
@@ -49,48 +40,48 @@ class BottomSheetSwipe extends Component<BottomSheetSwipeProps, States> {
 				useNativeDriver: false,
 			}).start(() => {
 				if (typeof closeFunction === 'function') {
-					closeFunction()
-					return
+					closeFunction();
+					return;
 				}
-				onClose()
-			})
+				onClose();
+			});
 		}
 	}
 
 	createPanResponder(props: BottomSheetSwipeProps) {
-		const { height = 0 } = props
-		const { pan } = this.state
+		const { height = 0 } = props;
+		const { pan } = this.state;
 		this.panResponder = PanResponder.create({
 			onStartShouldSetPanResponder: () => true,
 			onPanResponderMove: (e, gestureState) => {
 				if (gestureState.dy > 0) {
 					Animated.event([null, { dy: pan.y }], {
 						useNativeDriver: false,
-					})(e, gestureState)
+					})(e, gestureState);
 				}
 			},
 			onPanResponderRelease: (e, gestureState) => {
-				const gestureLimitArea = height / 3
-				const gestureDistance = gestureState.dy
+				const gestureLimitArea = height / 3;
+				const gestureDistance = gestureState.dy;
 				if (gestureDistance > gestureLimitArea) {
-					this.setModalVisible(false)
+					this.setModalVisible(false);
 				} else {
-					Animated.spring(pan, { toValue: { x: 0, y: 0 }, useNativeDriver: false }).start()
+					Animated.spring(pan, { toValue: { x: 0, y: 0 }, useNativeDriver: false }).start();
 				}
 			},
-		})
+		});
 	}
 
 	open() {
-		this.setModalVisible(true)
+		this.setModalVisible(true);
 	}
 
 	close(func: any = undefined) {
-		this.setModalVisible(false, func)
+		this.setModalVisible(false, func);
 	}
 
 	componentDidMount() {
-		this.open()
+		this.open();
 	}
 
 	render() {
@@ -101,12 +92,12 @@ class BottomSheetSwipe extends Component<BottomSheetSwipeProps, States> {
 			buttonTitle,
 			buttonOnPress,
 			onClose = () => {},
-		} = this.props
-		const { animatedHeight, pan } = this.state
+		} = this.props;
+		const { animatedHeight, pan } = this.state;
 		const panStyle = {
 			transform: pan.getTranslateTransform(),
-		}
-		const ScreenComponent = screen
+		};
+		const ScreenComponent = screen;
 
 		return (
 			<Animated.View
@@ -134,11 +125,11 @@ class BottomSheetSwipe extends Component<BottomSheetSwipeProps, States> {
 					/>
 				)}
 			</Animated.View>
-		)
+		);
 	}
 }
 
-export default BottomSheetSwipe
+export default BottomSheetSwipe;
 const styles = StyleSheet.create({
 	container: {
 		width: '100%',
@@ -156,4 +147,4 @@ const styles = StyleSheet.create({
 		alignSelf: 'center',
 		marginTop: sizes.s16,
 	},
-})
+});

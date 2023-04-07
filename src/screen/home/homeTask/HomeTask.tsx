@@ -3,20 +3,19 @@ import React, { useEffect, useState } from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { TabScreenProps } from 'model';
-import { BottomSheet, BottomSheetSwipe, Flex } from 'component';
+import { Flex } from 'component';
 import { colors, Navigator, sizes } from 'core/index';
 import Card from './Card';
 import Table from './Table';
 import List from './List';
-import Task from './Task'
+import Task from './Task';
 import SearchBootomSheet from './SearchBottomSheet';
 import TimeLineBottomSheet from './TimeLineBottomSheet';
 import { strings } from 'core';
 
-
-const HomeTask: React.FC<TabScreenProps> = ({navigation}) => {
+const HomeTask: React.FC<TabScreenProps> = ({ navigation }) => {
 	const [changeTab, setChangeTab] = useState(1);
-	const [openSreach, setOpenSearch] = useState<boolean>(false)
+	const [openSreach, setOpenSearch] = useState<boolean>(false);
 	useEffect(() => {
 		navigation.setOptions({
 			headerShown: false,
@@ -24,34 +23,34 @@ const HomeTask: React.FC<TabScreenProps> = ({navigation}) => {
 	}, []);
 
 	const pressTable = () => {
-		setChangeTab(1)
-	}
+		setChangeTab(1);
+	};
 	const pressList = () => {
-		setChangeTab(2)
-	}
+		setChangeTab(2);
+	};
 	const pressTask = () => {
-		setChangeTab(3)
-	}
+		setChangeTab(3);
+	};
 	const showBottomsheet = () => {
 		Navigator.showBottom({
 			screen: SearchBootomSheet,
 			hideTitle: false,
-		})
-	}
+		});
+	};
 
-	const showOptionDay = () =>{
+	const showOptionDay = () => {
 		Navigator.showBottom({
 			screen: TimeLineBottomSheet,
 			hideTitle: false,
-		})
-	}
+		});
+	};
 
-	const showOption = () =>{
+	const showOption = () => {
 		Navigator.showBottom({
 			screen: TimeLineBottomSheet,
 			hideTitle: false,
-		})
-	}
+		});
+	};
 
 	return (
 		<Flex style={styles.container}>
@@ -63,7 +62,7 @@ const HomeTask: React.FC<TabScreenProps> = ({navigation}) => {
 					</TouchableOpacity>
 				</View>
 				<View style={styles.viewBtn}>
-					<TouchableOpacity style={styles.styleBtn} onPress={showOptionDay} >
+					<TouchableOpacity style={styles.styleBtn} onPress={showOptionDay}>
 						<Text>{strings.daily}</Text>
 						<Image style={styles.styleIconBtn} source={images.ic_arrow_down_vector} />
 					</TouchableOpacity>
@@ -83,32 +82,36 @@ const HomeTask: React.FC<TabScreenProps> = ({navigation}) => {
 				</View>
 				<View style={styles.tabBottom}>
 					{changeTab === 1 ? (
-					<TouchableOpacity style={styles.sizeTabBottomHover}>
-						<Text style={styles.sizeTabBottomHover}>{strings.table}</Text>
-					</TouchableOpacity>
+						<TouchableOpacity style={styles.sizeTabBottomHover}>
+							<Text style={styles.sizeTabBottomHover}>{strings.table}</Text>
+						</TouchableOpacity>
 					) : (
-					<TouchableOpacity onPress={pressTable}>
-						<Text style={styles.sizeTabBottom}>{strings.table}</Text>
-					</TouchableOpacity>
+						<TouchableOpacity onPress={pressTable}>
+							<Text style={styles.sizeTabBottom}>{strings.table}</Text>
+						</TouchableOpacity>
 					)}
 					{changeTab === 2 ? (
-					<TouchableOpacity style={styles.sizeTabBottomHover}>
-						<Text style={styles.sizeTabBottomHover}>{strings.list}</Text>
-					</TouchableOpacity>
+						<TouchableOpacity style={styles.sizeTabBottomHover}>
+							<Text style={styles.sizeTabBottomHover}>{strings.list}</Text>
+						</TouchableOpacity>
 					) : (
-					<TouchableOpacity onPress={pressList}>
-						<Text style={styles.sizeTabBottom}>{strings.list}</Text>
-					</TouchableOpacity>)}
-					{changeTab === 3 ? (<TouchableOpacity style={styles.sizeTabBottomHover}>
-						<Text style={styles.sizeTabBottomHover}>{strings.task}</Text>
-					</TouchableOpacity>) :
-					(<TouchableOpacity onPress={pressTask}>
-						<Text style={styles.sizeTabBottom}>{strings.task}</Text>
-					</TouchableOpacity>)}
+						<TouchableOpacity onPress={pressList}>
+							<Text style={styles.sizeTabBottom}>{strings.list}</Text>
+						</TouchableOpacity>
+					)}
+					{changeTab === 3 ? (
+						<TouchableOpacity style={styles.sizeTabBottomHover}>
+							<Text style={styles.sizeTabBottomHover}>{strings.task}</Text>
+						</TouchableOpacity>
+					) : (
+						<TouchableOpacity onPress={pressTask}>
+							<Text style={styles.sizeTabBottom}>{strings.task}</Text>
+						</TouchableOpacity>
+					)}
 				</View>
-				{changeTab === 1 && <Table/>}
-				{changeTab === 2 && <List/>}
-				{changeTab === 3 && <Task/>}
+				{changeTab === 1 && <Table />}
+				{changeTab === 2 && <List />}
+				{changeTab === 3 && <Task />}
 			</View>
 		</Flex>
 	);
@@ -167,8 +170,8 @@ const styles = StyleSheet.create({
 		paddingHorizontal: sizes.s16,
 		justifyContent: 'space-between',
 	},
-	tabBottom:{
-		flexDirection:'row',
+	tabBottom: {
+		flexDirection: 'row',
 		justifyContent: 'space-around',
 		marginTop: sizes.s10,
 		borderBottomWidth: sizes.s2,
@@ -176,12 +179,12 @@ const styles = StyleSheet.create({
 		paddingBottom: sizes.s10,
 		marginBottom: sizes.s10,
 	},
-	sizeTabBottom:{
+	sizeTabBottom: {
 		fontWeight: '500',
 		fontSize: sizes.s14,
 		color: '#8C8C8C',
 	},
-	sizeTabBottomHover:{
+	sizeTabBottomHover: {
 		fontWeight: '500',
 		fontSize: sizes.s14,
 		color: '#1890FF',

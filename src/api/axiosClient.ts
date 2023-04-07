@@ -37,8 +37,8 @@ axiosClient.interceptors.request.use(
 		console.log(
 			config.method?.toUpperCase(),
 			config.url,
-			`\nbody: ${config?.data}`,
-			`\nparams: ${config?.params}`
+			`\nbody: ${JSON.stringify(config?.data)}`,
+			`\nparams: ${JSON.stringify(config?.params)}`
 		);
 
 		return config;

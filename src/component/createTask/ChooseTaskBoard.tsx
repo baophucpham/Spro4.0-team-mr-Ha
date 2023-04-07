@@ -4,7 +4,6 @@ import Icon from 'component/image/Icon';
 import Input from 'component/input/Input';
 import Separator from 'component/separator/Separator';
 import { colors, screenHeight, sizes, Style } from 'core';
-import { ChooseTaskBoardProps } from 'model';
 import React from 'react';
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import FastImage from 'react-native-fast-image';

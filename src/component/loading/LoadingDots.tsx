@@ -1,6 +1,6 @@
-import { colors, sizes } from 'core'
-import React, { useEffect, useRef } from 'react'
-import { Animated, StyleSheet, View } from 'react-native'
+import { colors, sizes } from 'core';
+import React, { useEffect, useRef } from 'react';
+import { Animated, StyleSheet, View } from 'react-native';
 
 function Loader() {
 	const animations = {
@@ -8,7 +8,7 @@ function Loader() {
 		two: useRef(new Animated.Value(0)).current,
 		three: useRef(new Animated.Value(0)).current,
 		four: useRef(new Animated.Value(0)).current,
-	}
+	};
 
 	function onAnimate(animation: any, nextAnimation: any) {
 		Animated.sequence([
@@ -22,66 +22,66 @@ function Loader() {
 				duration: 400,
 				useNativeDriver: true,
 			}),
-		]).start()
+		]).start();
 
-		setTimeout(nextAnimation, 200)
+		setTimeout(nextAnimation, 200);
 	}
 
 	function onStartAnimate() {
 		function onFourAnimation() {
 			onAnimate(animations.four, () => {
-				setTimeout(onStartAnimate, 300)
-			})
+				setTimeout(onStartAnimate, 300);
+			});
 		}
 		function onThreeAnimation() {
-			onAnimate(animations.three, onFourAnimation)
+			onAnimate(animations.three, onFourAnimation);
 		}
 
 		function onTwoAnimation() {
-			onAnimate(animations.two, onThreeAnimation)
+			onAnimate(animations.two, onThreeAnimation);
 		}
 
-		onAnimate(animations.one, onTwoAnimation)
+		onAnimate(animations.one, onTwoAnimation);
 	}
 
 	useEffect(() => {
-		onStartAnimate()
-	}, [])
+		onStartAnimate();
+	}, []);
 
 	return (
 		<View style={styles.container}>
 			<Animated.View
 				style={{
 					...styles.ball,
-					backgroundColor: colors.primary,
+					backgroundColor: colors.blue,
 					transform: [{ translateY: animations.one }],
 				}}
 			/>
 			<Animated.View
 				style={{
 					...styles.ball,
-					backgroundColor: colors.primary_400,
+					backgroundColor: colors.lightBlue,
 					transform: [{ translateY: animations.two }],
 				}}
 			/>
 			<Animated.View
 				style={{
 					...styles.ball,
-					backgroundColor: colors.primary_300,
+					backgroundColor: colors.blue2,
 					transform: [{ translateY: animations.three }],
 				}}
 			/>
-			<Animated.View
+			{/* <Animated.View
 				style={{
 					...styles.ball,
 					backgroundColor: colors.primary_200,
 					transform: [{ translateY: animations.four }],
 				}}
-			/>
+			/> */}
 		</View>
-	)
+	);
 }
-export default React.memo(Loader)
+export default React.memo(Loader);
 const styles = StyleSheet.create({
 	container: {
 		width: 54,
@@ -94,4 +94,4 @@ const styles = StyleSheet.create({
 		height: sizes.s9,
 		borderRadius: sizes.s9,
 	},
-})
+});

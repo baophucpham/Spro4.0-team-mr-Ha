@@ -52,8 +52,9 @@ export default class Input extends Component<InputProps, InputState> {
 
 		return (
 			<TextInput
-				{...inputProps}
 				ref={this.inputRef}
+				{...inputProps}
+				value={value}
 				style={[styles.input, inputStyle]}
 				placeholder={placeholder}
 				placeholderTextColor={colors.placeholder}
@@ -101,7 +102,7 @@ export default class Input extends Component<InputProps, InputState> {
 				style={[styles.container, style]}
 				onPress={isPicker ? onPress : isDatePicker ? this.showDatePicker : this.onPressInput}>
 				{this.renderLabel()}
-				<View style={[styles.inputContainer, { borderColor },inputContainerStyle]}>
+				<View style={[styles.inputContainer, { borderColor }, inputContainerStyle]}>
 					{this.renderIcon(iconLeft, onPressIconLeft, styles.iconLeft)}
 					{this.renderInput()}
 					{isPassword
