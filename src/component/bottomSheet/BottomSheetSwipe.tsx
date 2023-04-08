@@ -1,5 +1,6 @@
 import Buttons from 'component/button/Buttons';
 import { colors, sizes, Style } from 'core';
+import { BottomSheetSwipeProps } from 'model';
 import React, { Component } from 'react';
 import { Animated, PanResponder, StyleSheet, View } from 'react-native';
 

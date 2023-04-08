@@ -1,8 +1,8 @@
-import { StyleProp, StyleSheet, TouchableOpacity, View, ViewStyle } from 'react-native';
-import React from 'react';
-import { colors, Navigator, sizes, Style } from 'core';
-import FastImage from 'react-native-fast-image';
 import { images } from 'assets';
+import { Navigator, sizes, Style } from 'core';
+import React from 'react';
+import { StyleProp, StyleSheet, TouchableOpacity, ViewStyle } from 'react-native';
+import FastImage from 'react-native-fast-image';
 import { Asset } from 'react-native-image-picker';
 import { avatarUri } from 'utils';
 

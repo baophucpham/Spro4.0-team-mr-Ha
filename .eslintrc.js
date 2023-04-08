@@ -25,7 +25,9 @@ module.exports = {
 						html: true,
 					},
 				],
-				'block-scoped':'off'
+				'block-scoped':'off',
+				'react/no-unstable-nested-components':'off',
+				'no-mixed-spaces-and-tabs':'off',
 			},
 		},
 	],

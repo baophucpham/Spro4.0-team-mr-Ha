@@ -12,10 +12,16 @@ import {
 import { ImagePickerProps } from 'component/customView/ImagePickerPopup';
 import { DatePickerProps } from 'component/datePicker/DatePicker';
 import { RadioButtonProps } from 'component/radioButton/RadioButton';
-import { sizes } from 'core';
-import { AlertParams, DialogProps, ModalsParams, ScreenParams } from 'model';
+import {
+	AlertParams,
+	BottomSheetProps,
+	BottomSheetSwipeProps,
+	DialogProps,
+	ModalsParams,
+	PopUpActionProps,
+	ScreenParams,
+} from 'model';
 import { Keyboard } from 'react-native';
-import { Device, IphoneHelper } from 'utils';
 import { colors } from '../style/colors';
 import { Style } from '../style/styles';
 

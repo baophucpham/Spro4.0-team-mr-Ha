@@ -18,7 +18,6 @@ export { default as KeyboardAvoiding } from './keyboardAvoidingView/KeyboardAvoi
 export { default as Buttons } from './button/Buttons';
 export { default as Logo } from './logo/Logo';
 export { default as SocialButton } from './authentication/SocialButton';
-export { default as Gender } from './authentication/Gender';
 export { default as DatePicker } from './datePicker/DatePicker';
 export { default as RadioButton } from './radioButton/RadioButton';
 export { default as AutoFastImage } from './image/AutoFastImage';

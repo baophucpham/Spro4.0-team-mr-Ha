@@ -3,6 +3,7 @@ import React from 'react';
 import { colors, sizes, Style } from 'core';
 import { Device } from 'utils';
 import Icon from 'component/image/Icon';
+import { PopUpActionProps } from 'model';
 
 const PopUpAction: React.FC<PopUpActionProps> = ({
 	requestClose,

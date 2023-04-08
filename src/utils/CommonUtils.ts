@@ -1,7 +1,7 @@
 import { images } from 'assets';
 import { throttle } from 'lodash';
 import { Alert, LayoutAnimation } from 'react-native';
-import { URL } from './https';
+import {BASE_URL as URL } from './https';
 
 export const showAlert = (
 	message = 'Something went wrong, please try again later.',

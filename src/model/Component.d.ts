@@ -1,4 +1,7 @@
-interface InputProps extends TextInputProps {
+import { FastImageProps } from 'react-native-fast-image';
+import { StyleProp, TextInputProps, ViewStyle } from 'react-native/types';
+
+export interface InputProps extends TextInputProps {
 	style?: StyleProp<ViewStyle>;
 	inputStyle?: StyleProp<ViewStyle>;
 	inputContainerStyle?: StyleProp<ViewStyle>;
@@ -14,12 +17,12 @@ interface InputProps extends TextInputProps {
 	onChangeDate?: (data: { date: string | Date; dateString: string }) => void;
 }
 
-interface InputState {
+export interface InputState {
 	isFocused: boolean;
 	isHidePassword?: boolean;
 }
 
-interface BottomSheetProps {
+export interface BottomSheetProps {
 	screen?: any;
 	title?: string;
 	ref?: any;
@@ -36,7 +39,7 @@ interface BottomSheetProps {
 	closeOnTouchOutSide?: boolean;
 }
 
-interface BottomSheetSwipeProps {
+export interface BottomSheetSwipeProps {
 	screen?: any;
 	draggable?: boolean;
 	height?: number;
@@ -47,18 +50,18 @@ interface BottomSheetSwipeProps {
 	closeOnTouchOutSide?: boolean;
 }
 
-interface ChooseTaskBoardProps {
+export interface ChooseTaskBoardProps {
 	onPressBoard: (data: any) => void;
 	requestClose?: () => void;
 }
 
-interface ItemNoticationProps {
+export interface ItemNoticationProps {
 	title: string;
 	date: string | Date;
 	isRead: boolean;
 }
 
-interface ItemCommentProps {
+export interface ItemCommentProps {
 	avatar?: string;
 	username?: string;
 	date?: string | Date;
@@ -66,7 +69,7 @@ interface ItemCommentProps {
 	isReply?: boolean;
 }
 
-interface PopUpActionProps {
+export interface PopUpActionProps {
 	closeOntouch?: boolean; // auto close popup when press any item
 	requestClose?: (callback?: () => void) => void;
 	keyTitle?: string;

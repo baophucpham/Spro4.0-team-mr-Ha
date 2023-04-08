@@ -21,7 +21,7 @@ export const authenReducer = (state = initialState, action: AnyAction) => {
 };
 
 const logOut = async () => {
-	const arrKey = Object.keys(Storage.key).filter((key) => key !== Storage.key.onboarding);
+	const arrKey = Object.keys(Storage.key);
 	setApiToken('');
 	await Storage.multiRemoveData(arrKey);
 	Navigator.goLogin();

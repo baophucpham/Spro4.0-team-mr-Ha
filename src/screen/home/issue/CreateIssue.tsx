@@ -8,7 +8,7 @@ const CreateIssue = () => {
     const [workTimes,setWorkTimes ] = useState<string>('');
     const [describe, setDescribe] = useState<string>('');
     const [valueSlider, setValueSlider] = useState<number>(0)
-    
+
   return (
     <View style={styles.comtainerCreateWork}>
         <Input label={strings.Issue} placeholder={strings.Issue} value={Issue} onChangeText={setIssue} />

@@ -42,7 +42,7 @@ export default class Input extends Component<InputProps, InputState> {
 					numberOfLines={1}
 					style={[
 						styles.input,
-						{ color: !!value ? colors.black : colors.placeholder },
+						{ color: value ? colors.black : colors.placeholder },
 						inputStyle,
 					]}>
 					{value || placeholder}

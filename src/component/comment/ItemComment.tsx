@@ -4,6 +4,7 @@ import { Style, sizes, colors } from 'core';
 import Icon from 'component/image/Icon';
 import { avatarUri } from 'utils';
 import { format } from 'date-fns';
+import { ItemCommentProps } from 'model';
 
 const ItemComment: React.FC<ItemCommentProps> = ({
 	avatar,

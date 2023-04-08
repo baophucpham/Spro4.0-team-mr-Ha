@@ -4,6 +4,7 @@ import { Style, sizes, colors } from 'core';
 import Icon from 'component/image/Icon';
 import { images } from 'assets';
 import { format } from 'date-fns';
+import { ItemNoticationProps } from 'model';
 
 const ItemNotification: React.FC<ItemNoticationProps> = ({ title, date, isRead }) => {
 	return (

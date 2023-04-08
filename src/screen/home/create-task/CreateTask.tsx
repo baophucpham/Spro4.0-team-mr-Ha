@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React, { useEffect, useState } from 'react';
-import { ScreenProps } from 'model';
+import { ChooseTaskBoardProps, ScreenProps } from 'model';
 import { colors, strings, Style, sizes, Navigator } from 'core';
 import {
 	Flex,

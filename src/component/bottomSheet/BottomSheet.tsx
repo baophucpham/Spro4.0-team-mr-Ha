@@ -1,4 +1,5 @@
 import { colors, screenHeight, sizes } from 'core';
+import { BottomSheetProps } from 'model';
 import React, { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import { Animated, StyleSheet } from 'react-native';
 import BottomSheetHeader from './BottomSheetHeader';
