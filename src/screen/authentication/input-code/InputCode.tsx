@@ -1,14 +1,18 @@
+import { verifyEmailCodeAction } from 'action/authenAction';
 import { images } from 'assets';
-import { Screens } from 'common';
 import { Buttons, Flex, Input } from 'component';
-import { colors, Navigator, sizes, Style } from 'core/index';
+import { strings } from 'core';
+import { colors, sizes, Style } from 'core/index';
 import { ScreenProps } from 'model';
 import React, { useEffect, useState } from 'react';
 import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
-import { strings } from 'core';
+import { useDispatch } from 'react-redux';
 
-const InputCode: React.FC<ScreenProps> = ({ navigation }) => {
+const InputCode: React.FC<ScreenProps> = ({ navigation, route }) => {
+	const { email } = route?.params || {};
 	const [code, setCode] = useState<string>('');
+	const dispatch = useDispatch();
+
 	useEffect(() => {
 		navigation.setOptions({
 			headerShown: false,
@@ -16,7 +20,7 @@ const InputCode: React.FC<ScreenProps> = ({ navigation }) => {
 	}, []);
 
 	const onPress = () => {
-		Navigator.navigate(Screens.Login);
+		dispatch(verifyEmailCodeAction({ email, code }));
 	};
 
 	return (
@@ -34,7 +38,7 @@ const InputCode: React.FC<ScreenProps> = ({ navigation }) => {
 					<Buttons
 						title={strings.continue}
 						style={Style.top32}
-						//  disabled={!code}
+						disabled={!code}
 						onPress={onPress}
 					/>
 				</View>

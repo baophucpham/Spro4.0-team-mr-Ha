@@ -6,6 +6,7 @@ class AuthenApi {
 		SIGNUP: '/signup',
 		GET_ALL_CAREER: '/career/getAll',
 		GET_ONE_CAREER: '/career/getOne?pk=',
+		VERIFY_EMAIL_CODE: '/verify',
 	};
 
 	static login = (body: LoginPayload): Promise<LoginResponse> => {
@@ -14,6 +15,10 @@ class AuthenApi {
 
 	static signup = (body: SignUpPayload) => {
 		return axiosClient.post(this.URL.SIGNUP, body);
+	};
+
+	static verifyEmailCode = (body: VerifyEmailCodePayload) => {
+		return axiosClient.post(this.URL.VERIFY_EMAIL_CODE, body);
 	};
 
 	static getAllCareer = () => {

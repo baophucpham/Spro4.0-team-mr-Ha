@@ -33,7 +33,18 @@ function* signUpSaga(action: PayloadAction<SignUpPayload>) {
 	try {
 		Navigator.showLoading();
 		const response: SignInResponse = yield call(AuthenApi.signup, action.payload);
-		Navigator.navigate(Screens.InputCode);
+		Navigator.navigate(Screens.InputCode, { email: action.payload.email });
+	} catch (error) {
+	} finally {
+		Navigator.hideLoading();
+	}
+}
+
+function* verifyEmailCodeSaga(action: PayloadAction<VerifyEmailCodePayload>) {
+	try {
+		Navigator.showLoading();
+		const response: SignInResponse = yield call(AuthenApi.verifyEmailCode, action.payload);
+		Navigator.popToTop();
 	} catch (error) {
 	} finally {
 		Navigator.hideLoading();
@@ -43,4 +54,5 @@ function* signUpSaga(action: PayloadAction<SignUpPayload>) {
 export default function* () {
 	yield takeLatest(Actions.LOGIN, loginSaga);
 	yield takeLatest(Actions.SIGN_UP, signUpSaga);
+	yield takeLatest(Actions.VERIFY_EMAIL_CODE, verifyEmailCodeSaga);
 }

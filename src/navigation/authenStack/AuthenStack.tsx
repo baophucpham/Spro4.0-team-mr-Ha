@@ -24,7 +24,7 @@ const AuthenStack: React.FC<StackScreenProps<any>> = () => {
 	}, []);
 
 	return (
-		<Stack.Navigator screenOptions={screenOptionsStack} initialRouteName={Screens.InputCode}>
+		<Stack.Navigator screenOptions={screenOptionsStack} initialRouteName={Screens.Login}>
 			{renderStackScreen()}
 		</Stack.Navigator>
 	);

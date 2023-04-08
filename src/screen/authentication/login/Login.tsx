@@ -33,7 +33,12 @@ const Login: React.FC<ScreenProps> = ({ navigation }) => {
 			<ImageBackground source={images.background_login} style={styles.background}>
 				<View style={styles.container}>
 					<Image source={images.logo_spro} style={styles.logo} />
-					<Input placeholder={strings.username} value={username} onChangeText={setUsername} />
+					<Input
+						placeholder={strings.username}
+						value={username}
+						onChangeText={setUsername}
+						keyboardType="email-address"
+					/>
 					<Input
 						isPassword
 						placeholder={strings.password}

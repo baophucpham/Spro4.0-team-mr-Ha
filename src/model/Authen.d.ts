@@ -24,3 +24,8 @@ interface Career {
 	name_vn: string;
 	details: Array<{ id: number; name_en: string; name_vn: string }>;
 }
+
+interface VerifyEmailCodePayload {
+	email: string;
+	code: string;
+}
