@@ -4,6 +4,7 @@ import { StackNavigationOptions, StackScreenProps } from '@react-navigation/stac
 import { SelectCityProps } from 'component/customView/SelectCity';
 import { SelectCountryProps } from 'component/customView/SelectCountry';
 import { StyleProp, ViewStyle } from 'react-native';
+import { BottomSheetProps, BottomSheetSwipeProps } from './Component';
 
 export interface ScreenProps extends StackScreenProps<any> {}
 export interface TabScreenProps extends BottomTabScreenProps<any> {}

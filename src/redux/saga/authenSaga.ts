@@ -6,6 +6,7 @@ import { showAlert } from 'utils';
 import AuthenApi from 'api/AuthenApi';
 import { setApiToken } from 'api/axiosClient';
 import { screenHeight } from 'core';
+import { Screens } from 'common';
 /**===========LOGIN================== */
 function* loginSaga(action: PayloadAction<LoginPayload>) {
 	try {
@@ -32,7 +33,7 @@ function* signUpSaga(action: PayloadAction<SignUpPayload>) {
 	try {
 		Navigator.showLoading();
 		const response: SignInResponse = yield call(AuthenApi.signup, action.payload);
-		Navigator.goBack();
+		Navigator.navigate(Screens.InputCode);
 	} catch (error) {
 	} finally {
 		Navigator.hideLoading();
